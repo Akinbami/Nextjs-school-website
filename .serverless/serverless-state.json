@@ -1,0 +1,2217 @@
+{
+  "service": {
+    "service": "abc-app",
+    "serviceObject": {
+      "name": "abc-app"
+    },
+    "provider": {
+      "stage": "dev",
+      "variableSyntax": "\\${([^{}]+?)}",
+      "name": "aws",
+      "runtime": "nodejs10.x",
+      "region": "us-east-2",
+      "profile": "smartpy",
+      "versionFunctions": true,
+      "remoteFunctionData": null,
+      "compiledCloudFormationTemplate": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "The AWS CloudFormation template for this Serverless application",
+        "Resources": {
+          "ServerlessDeploymentBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "BucketEncryption": {
+                "ServerSideEncryptionConfiguration": [
+                  {
+                    "ServerSideEncryptionByDefault": {
+                      "SSEAlgorithm": "AES256"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ServerlessDeploymentBucketPolicy": {
+            "Type": "AWS::S3::BucketPolicy",
+            "Properties": {
+              "Bucket": {
+                "Ref": "ServerlessDeploymentBucket"
+              },
+              "PolicyDocument": {
+                "Statement": [
+                  {
+                    "Action": "s3:*",
+                    "Effect": "Deny",
+                    "Principal": "*",
+                    "Resource": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":s3:::",
+                            {
+                              "Ref": "ServerlessDeploymentBucket"
+                            },
+                            "/*"
+                          ]
+                        ]
+                      }
+                    ],
+                    "Condition": {
+                      "Bool": {
+                        "aws:SecureTransport": false
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "404LogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/abc-app-dev-404"
+            }
+          },
+          "NotDashfoundLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/abc-app-dev-not-found"
+            }
+          },
+          "AboutLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/abc-app-dev-about"
+            }
+          },
+          "IndexLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/abc-app-dev-index"
+            }
+          },
+          "IamRoleLambdaExecution": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+              "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                  {
+                    "Effect": "Allow",
+                    "Principal": {
+                      "Service": [
+                        "lambda.amazonaws.com"
+                      ]
+                    },
+                    "Action": [
+                      "sts:AssumeRole"
+                    ]
+                  }
+                ]
+              },
+              "Policies": [
+                {
+                  "PolicyName": {
+                    "Fn::Join": [
+                      "-",
+                      [
+                        "abc-app-dev",
+                        "lambda"
+                      ]
+                    ]
+                  },
+                  "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                      {
+                        "Effect": "Allow",
+                        "Action": [
+                          "logs:CreateLogStream",
+                          "logs:CreateLogGroup"
+                        ],
+                        "Resource": [
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/abc-app-dev*:*"
+                          }
+                        ]
+                      },
+                      {
+                        "Effect": "Allow",
+                        "Action": [
+                          "logs:PutLogEvents"
+                        ],
+                        "Resource": [
+                          {
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/abc-app-dev*:*:*"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "Path": "/",
+              "RoleName": {
+                "Fn::Join": [
+                  "-",
+                  [
+                    "abc-app-dev",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    "lambdaRole"
+                  ]
+                ]
+              }
+            }
+          },
+          "404LambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/abc-app/dev/1584950614564-2020-03-23T08:03:34.564Z/abc-app.zip"
+              },
+              "FunctionName": "abc-app-dev-404",
+              "Handler": "sls-next-build/404.html.render",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs10.x",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "404LogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "404LambdaVersion9ttQDpK0ZfCP1PZKxllzqI805vRSqE9WGPHzu2qi0": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "404LambdaFunction"
+              },
+              "CodeSha256": "2VweTQjfkOv6N3I/iBMqnsSRkW7aWFf9e2hSBLjKTNY="
+            }
+          },
+          "NotDashfoundLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/abc-app/dev/1584950614564-2020-03-23T08:03:34.564Z/abc-app.zip"
+              },
+              "FunctionName": "abc-app-dev-not-found",
+              "Handler": "sls-next-build/_error.render",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs10.x",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "NotDashfoundLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "NotDashfoundLambdaVersionfMHapAcTtSlh050JdC2DbGGrW7QxLuxXuSolWlG8": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "NotDashfoundLambdaFunction"
+              },
+              "CodeSha256": "2VweTQjfkOv6N3I/iBMqnsSRkW7aWFf9e2hSBLjKTNY="
+            }
+          },
+          "AboutLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/abc-app/dev/1584950614564-2020-03-23T08:03:34.564Z/abc-app.zip"
+              },
+              "FunctionName": "abc-app-dev-about",
+              "Handler": "sls-next-build/about.html.render",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs10.x",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "AboutLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "AboutLambdaVersionq5Dxl5a9Zm3vLm38zy0DIpQnHgBJovo1qzMuykb2uc": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "AboutLambdaFunction"
+              },
+              "CodeSha256": "2VweTQjfkOv6N3I/iBMqnsSRkW7aWFf9e2hSBLjKTNY="
+            }
+          },
+          "IndexLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/abc-app/dev/1584950614564-2020-03-23T08:03:34.564Z/abc-app.zip"
+              },
+              "FunctionName": "abc-app-dev-index",
+              "Handler": "sls-next-build/index.html.render",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "nodejs10.x",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "IndexLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "IndexLambdaVersionoiKoSwttcZKddJxfJDbkhs7OTR3nQTqC4mu9Zjp0": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "IndexLambdaFunction"
+              },
+              "CodeSha256": "2VweTQjfkOv6N3I/iBMqnsSRkW7aWFf9e2hSBLjKTNY="
+            }
+          },
+          "ApiGatewayRestApi": {
+            "Type": "AWS::ApiGateway::RestApi",
+            "Properties": {
+              "Name": "dev-abc-app",
+              "EndpointConfiguration": {
+                "Types": [
+                  "EDGE"
+                ]
+              },
+              "Policy": ""
+            }
+          },
+          "ApiGatewayResource404html": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "404.html",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceProxyVar": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "{proxy+}",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceAbouthtml": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "about.html",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethod404htmlGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResource404html"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "404LambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethod404htmlHead": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "HEAD",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResource404html"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "404LambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodProxyVarGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceProxyVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "NotDashfoundLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodProxyVarHead": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "HEAD",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceProxyVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "NotDashfoundLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodAbouthtmlGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAbouthtml"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "AboutLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodAbouthtmlHead": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "HEAD",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAbouthtml"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "AboutLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "IndexLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodHead": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "HEAD",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "IndexLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayDeployment1584950596117": {
+            "Type": "AWS::ApiGateway::Deployment",
+            "Properties": {
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "StageName": "dev"
+            },
+            "DependsOn": [
+              "ApiGatewayMethod404htmlGet",
+              "ApiGatewayMethod404htmlHead",
+              "ApiGatewayMethodProxyVarGet",
+              "ApiGatewayMethodProxyVarHead",
+              "ApiGatewayMethodAbouthtmlGet",
+              "ApiGatewayMethodAbouthtmlHead",
+              "ApiGatewayMethodGet",
+              "ApiGatewayMethodHead"
+            ]
+          },
+          "404LambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "404LambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "NotDashfoundLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "NotDashfoundLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "AboutLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "AboutLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "IndexLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "IndexLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "NextStaticAssetsS3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "AccessControl": "PublicRead",
+              "CorsConfiguration": {
+                "CorsRules": [
+                  {
+                    "AllowedHeaders": [
+                      "*"
+                    ],
+                    "AllowedMethods": [
+                      "GET"
+                    ],
+                    "AllowedOrigins": [
+                      "*"
+                    ],
+                    "ExposedHeaders": [
+                      "Date"
+                    ],
+                    "Id": "NextStaticAssetsS3BucketId1",
+                    "MaxAge": "3600"
+                  }
+                ]
+              },
+              "BucketName": "abc-assets-dev",
+              "WebsiteConfiguration": {
+                "IndexDocument": "index.html",
+                "ErrorDocument": "error.html"
+              }
+            },
+            "DeletionPolicy": "Retain"
+          },
+          "NextStaticAssetsProxyParentResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "_next",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "NextStaticAssetsProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Ref": "NextStaticAssetsProxyParentResource"
+              },
+              "PathPart": "{proxy+}",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "NextStaticAssetsProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "NextStaticAssetsProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "RequestParameters": {
+                "method.request.path.proxy": true
+              },
+              "Integration": {
+                "IntegrationHttpMethod": "GET",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/_next/{proxy}",
+                "RequestParameters": {
+                  "integration.request.path.proxy": "method.request.path.proxy"
+                },
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "DSStoreProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": ".DS_Store",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "DSStoreProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "DSStoreProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/.DS_Store",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "AbilogoProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "abi_logo.png",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "AbilogoProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "AbilogoProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/abi_logo.png",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "CssProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "css",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "CssProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "CssProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/css",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "FaviconProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "favicon.ico",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "FaviconProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "FaviconProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/favicon.ico",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "FontsProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "fonts",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "FontsProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "FontsProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/fonts",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "ImagesProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "images",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ImagesProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "ImagesProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/images",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "JsProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "js",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "JsProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "JsProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/js",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "SassProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "sass",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "SassProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "SassProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/sass",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          },
+          "ZeitProxyResource": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "zeit.svg",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ZeitProxyMethod": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "ResourceId": {
+                "Ref": "ZeitProxyResource"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "HttpMethod": "GET",
+              "MethodResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ],
+              "Integration": {
+                "IntegrationHttpMethod": "ANY",
+                "Type": "HTTP_PROXY",
+                "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/zeit.svg",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": 200
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "Outputs": {
+          "ServerlessDeploymentBucketName": {
+            "Value": {
+              "Ref": "ServerlessDeploymentBucket"
+            }
+          },
+          "404LambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "404LambdaVersion9ttQDpK0ZfCP1PZKxllzqI805vRSqE9WGPHzu2qi0"
+            }
+          },
+          "NotDashfoundLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "NotDashfoundLambdaVersionfMHapAcTtSlh050JdC2DbGGrW7QxLuxXuSolWlG8"
+            }
+          },
+          "AboutLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "AboutLambdaVersionq5Dxl5a9Zm3vLm38zy0DIpQnHgBJovo1qzMuykb2uc"
+            }
+          },
+          "IndexLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "IndexLambdaVersionoiKoSwttcZKddJxfJDbkhs7OTR3nQTqC4mu9Zjp0"
+            }
+          },
+          "ServiceEndpoint": {
+            "Description": "URL of the service endpoint",
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Ref": "ApiGatewayRestApi"
+                  },
+                  ".execute-api.",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ".",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  },
+                  "/dev"
+                ]
+              ]
+            }
+          },
+          "NextStaticAssetsS3BucketWebsiteURL": {
+            "Value": {
+              "Fn::GetAtt": [
+                "NextStaticAssetsS3Bucket",
+                "WebsiteURL"
+              ]
+            },
+            "Description": "URL for the S3 website hosting the static assets"
+          },
+          "NextStaticAssetsS3BucketSecureURL": {
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Fn::GetAtt": [
+                      "NextStaticAssetsS3Bucket",
+                      "DomainName"
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Description": "S3 Bucket which holds the static assets"
+          }
+        }
+      },
+      "coreCloudFormationTemplate": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "The AWS CloudFormation template for this Serverless application",
+        "Resources": {
+          "ServerlessDeploymentBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "BucketEncryption": {
+                "ServerSideEncryptionConfiguration": [
+                  {
+                    "ServerSideEncryptionByDefault": {
+                      "SSEAlgorithm": "AES256"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ServerlessDeploymentBucketPolicy": {
+            "Type": "AWS::S3::BucketPolicy",
+            "Properties": {
+              "Bucket": {
+                "Ref": "ServerlessDeploymentBucket"
+              },
+              "PolicyDocument": {
+                "Statement": [
+                  {
+                    "Action": "s3:*",
+                    "Effect": "Deny",
+                    "Principal": "*",
+                    "Resource": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":s3:::",
+                            {
+                              "Ref": "ServerlessDeploymentBucket"
+                            },
+                            "/*"
+                          ]
+                        ]
+                      }
+                    ],
+                    "Condition": {
+                      "Bool": {
+                        "aws:SecureTransport": false
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "NextStaticAssetsS3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+              "AccessControl": "PublicRead",
+              "CorsConfiguration": {
+                "CorsRules": [
+                  {
+                    "AllowedHeaders": [
+                      "*"
+                    ],
+                    "AllowedMethods": [
+                      "GET"
+                    ],
+                    "AllowedOrigins": [
+                      "*"
+                    ],
+                    "ExposedHeaders": [
+                      "Date"
+                    ],
+                    "Id": "NextStaticAssetsS3BucketId1",
+                    "MaxAge": "3600"
+                  }
+                ]
+              },
+              "BucketName": "abc-assets-dev",
+              "WebsiteConfiguration": {
+                "IndexDocument": "index.html",
+                "ErrorDocument": "error.html"
+              }
+            },
+            "DeletionPolicy": "Retain"
+          }
+        },
+        "Outputs": {
+          "ServerlessDeploymentBucketName": {
+            "Value": {
+              "Ref": "ServerlessDeploymentBucket"
+            }
+          },
+          "NextStaticAssetsS3BucketWebsiteURL": {
+            "Value": {
+              "Fn::GetAtt": [
+                "NextStaticAssetsS3Bucket",
+                "WebsiteURL"
+              ]
+            },
+            "Description": "URL for the S3 website hosting the static assets"
+          },
+          "NextStaticAssetsS3BucketSecureURL": {
+            "Value": {
+              "Fn::Join": [
+                "",
+                [
+                  "https://",
+                  {
+                    "Fn::GetAtt": [
+                      "NextStaticAssetsS3Bucket",
+                      "DomainName"
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Description": "S3 Bucket which holds the static assets"
+          }
+        }
+      },
+      "vpc": {}
+    },
+    "custom": {
+      "name": "abc-app",
+      "serverless-nextjs": {
+        "assetsBucketName": "abc-assets-dev"
+      }
+    },
+    "plugins": [
+      "serverless-nextjs-plugin"
+    ],
+    "pluginsData": {},
+    "functions": {
+      "404": {
+        "handler": "sls-next-build/404.html.render",
+        "events": [
+          {
+            "http": {
+              "path": "404.html",
+              "method": "get",
+              "integration": "AWS_PROXY"
+            }
+          },
+          {
+            "http": {
+              "path": "404.html",
+              "method": "head",
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "abc-app-dev-404",
+        "package": {},
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs10.x",
+        "vpc": {},
+        "versionLogicalId": "404LambdaVersion9ttQDpK0ZfCP1PZKxllzqI805vRSqE9WGPHzu2qi0"
+      },
+      "not-found": {
+        "handler": "sls-next-build/_error.render",
+        "events": [
+          {
+            "http": {
+              "path": "{proxy+}",
+              "method": "get",
+              "integration": "AWS_PROXY"
+            }
+          },
+          {
+            "http": {
+              "path": "{proxy+}",
+              "method": "head",
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "abc-app-dev-not-found",
+        "package": {},
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs10.x",
+        "vpc": {},
+        "versionLogicalId": "NotDashfoundLambdaVersionfMHapAcTtSlh050JdC2DbGGrW7QxLuxXuSolWlG8"
+      },
+      "about": {
+        "handler": "sls-next-build/about.html.render",
+        "events": [
+          {
+            "http": {
+              "path": "about.html",
+              "method": "get",
+              "integration": "AWS_PROXY"
+            }
+          },
+          {
+            "http": {
+              "path": "about.html",
+              "method": "head",
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "abc-app-dev-about",
+        "package": {},
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs10.x",
+        "vpc": {},
+        "versionLogicalId": "AboutLambdaVersionq5Dxl5a9Zm3vLm38zy0DIpQnHgBJovo1qzMuykb2uc"
+      },
+      "index": {
+        "handler": "sls-next-build/index.html.render",
+        "events": [
+          {
+            "http": {
+              "path": "",
+              "method": "get",
+              "integration": "AWS_PROXY"
+            }
+          },
+          {
+            "http": {
+              "path": "",
+              "method": "head",
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "abc-app-dev-index",
+        "package": {},
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs10.x",
+        "vpc": {},
+        "versionLogicalId": "IndexLambdaVersionoiKoSwttcZKddJxfJDbkhs7OTR3nQTqC4mu9Zjp0"
+      }
+    },
+    "resources": {
+      "Resources": {
+        "NextStaticAssetsS3Bucket": {
+          "Type": "AWS::S3::Bucket",
+          "Properties": {
+            "AccessControl": "PublicRead",
+            "CorsConfiguration": {
+              "CorsRules": [
+                {
+                  "AllowedHeaders": [
+                    "*"
+                  ],
+                  "AllowedMethods": [
+                    "GET"
+                  ],
+                  "AllowedOrigins": [
+                    "*"
+                  ],
+                  "ExposedHeaders": [
+                    "Date"
+                  ],
+                  "Id": "NextStaticAssetsS3BucketId1",
+                  "MaxAge": "3600"
+                }
+              ]
+            },
+            "BucketName": "abc-assets-dev",
+            "WebsiteConfiguration": {
+              "IndexDocument": "index.html",
+              "ErrorDocument": "error.html"
+            }
+          },
+          "DeletionPolicy": "Retain"
+        },
+        "NextStaticAssetsProxyParentResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "_next",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "NextStaticAssetsProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Ref": "NextStaticAssetsProxyParentResource"
+            },
+            "PathPart": "{proxy+}",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "NextStaticAssetsProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "NextStaticAssetsProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "RequestParameters": {
+              "method.request.path.proxy": true
+            },
+            "Integration": {
+              "IntegrationHttpMethod": "GET",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/_next/{proxy}",
+              "RequestParameters": {
+                "integration.request.path.proxy": "method.request.path.proxy"
+              },
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "DSStoreProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": ".DS_Store",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "DSStoreProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "DSStoreProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/.DS_Store",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "AbilogoProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "abi_logo.png",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "AbilogoProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "AbilogoProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/abi_logo.png",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "CssProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "css",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "CssProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "CssProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/css",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "FaviconProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "favicon.ico",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "FaviconProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "FaviconProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/favicon.ico",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "FontsProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "fonts",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "FontsProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "FontsProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/fonts",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "ImagesProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "images",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "ImagesProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "ImagesProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/images",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "JsProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "js",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "JsProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "JsProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/js",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "SassProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "sass",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "SassProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "SassProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/sass",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        },
+        "ZeitProxyResource": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Fn::GetAtt": [
+                "ApiGatewayRestApi",
+                "RootResourceId"
+              ]
+            },
+            "PathPart": "zeit.svg",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "ZeitProxyMethod": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "ResourceId": {
+              "Ref": "ZeitProxyResource"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "HttpMethod": "GET",
+            "MethodResponses": [
+              {
+                "StatusCode": 200
+              }
+            ],
+            "Integration": {
+              "IntegrationHttpMethod": "ANY",
+              "Type": "HTTP_PROXY",
+              "Uri": "https://s3-us-east-2.amazonaws.com/abc-assets-dev/public/zeit.svg",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": 200
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Outputs": {
+        "NextStaticAssetsS3BucketWebsiteURL": {
+          "Value": {
+            "Fn::GetAtt": [
+              "NextStaticAssetsS3Bucket",
+              "WebsiteURL"
+            ]
+          },
+          "Description": "URL for the S3 website hosting the static assets"
+        },
+        "NextStaticAssetsS3BucketSecureURL": {
+          "Value": {
+            "Fn::Join": [
+              "",
+              [
+                "https://",
+                {
+                  "Fn::GetAtt": [
+                    "NextStaticAssetsS3Bucket",
+                    "DomainName"
+                  ]
+                }
+              ]
+            ]
+          },
+          "Description": "S3 Bucket which holds the static assets"
+        }
+      }
+    },
+    "serviceFilename": "serverless.yml",
+    "layers": {},
+    "isDashboardMonitoringPreconfigured": false,
+    "artifact": "/Users/dayoakinbami/Desktop/dev/abc-frontend/abc/.serverless/abc-app.zip"
+  },
+  "package": {
+    "artifactDirectoryName": "serverless/abc-app/dev/1584950614564-2020-03-23T08:03:34.564Z",
+    "artifact": "abc-app.zip"
+  }
+}
