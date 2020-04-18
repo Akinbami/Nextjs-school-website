@@ -1,70 +1,79 @@
 import Link from 'next/link';
+import ActiveLink from './NavLink';
 
 const Header = () => (
 	<React.Fragment>
-		<header>
-			<div class="topbar">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-sm-8 col-md-6">
-							<div class="info">
-								<div class="info-item">
-									<i class="fa fa-phone"></i> +62 7144 3300
+		<header  className="header header-1">
+			
+			<div className="topbar">
+				<div className="container">
+					<div className="row align-items-center text-center">
+						<div className="col-sm-8 col-md-6">
+							<div className="info">
+								<div className="info-item">
+									<i className="fa fa-phone"></i> 07985 290 316
 								</div>
-								<div class="info-item">
-									<i class="fa fa-envelope-o"></i> <a href="mailto:support@kids.com" title="">support@kids.com</a>
+								<div className="info-item">
+									<i className="fa fa-envelope-o"></i> <a href="mailto:info@schoolofabi.com" title="">info@schoolofabi.com</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-4 col-md-6">
-							<div class="sosmed-icon pull-right d-inline-flex">
-								<a href="#"><i class="fa fa-facebook"></i></a> 
-								<a href="#"><i class="fa fa-twitter"></i></a> 
-								<a href="#"><i class="fa fa-instagram"></i></a> 
-								<a href="#"><i class="fa fa-linkedin"></i></a> 
+						<div className="col-sm-4 col-md-6">
+							<div className="sosmed-icon d-inline-flex">
+								<a href="https://www.facebook.com/SchoolofABI/"><i className="fa fa-facebook"></i></a> 
+								<a href="https://twitter.com/schoolofabi?s=20"><i className="fa fa-twitter"></i></a> 
+								<a href="https://www.instagram.com/schoolofabi/"><i className="fa fa-instagram"></i></a> 
+								<a href="https://www.linkedin.com/in/tawa-akib-52575452/"><i className="fa fa-linkedin"></i></a> 
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="container">
-				<nav id="navbar-example" class="navbar navbar-expand-lg">
-			        <Link href="/">
-			        	<a className="navbar-brand">
+			<div className="navbar-main">
+				<div className="container">
+					<nav id="navbar-example" className="navbar navbar-expand-lg">
+				        
+			        	<a href="/" className="navbar-brand">
 							<img className="abc-logo" src="abi_logo.png" alt="" />
 						</a>
-					</Link>
-			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-			            <span class="navbar-toggler-icon"></span>
-			        </button>
-			        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-			            <ul class="navbar-nav ml-auto">
-			            	<li class="nav-item active">
-			                    	<a href="/" class="nav-link">HOME</a>
-			                </li>
-			            	<li class="nav-item">
-			                    	<a href="/about" class="nav-link">ABOUT US</a>
-			                </li>
-			            	<li class="nav-item">
-			            		<Link href="/blog">
-			                    	<a class="nav-link">BLOG</a>
-			                    </Link>
-			                </li>
-			            	<li class="nav-item">
-			            		<Link href="/services">
-			                    	<a class="nav-link">SERVICES</a>
-			                    </Link>
-			                </li>
-			            	
-			            	<li class="nav-item">
-			            		<Link href="/contact-us">
-			                    	<a class="nav-link">CONTACT US</a>
-			                    </Link>
-			                </li>
-			            </ul>
-			        </div>
-			    </nav>
-			</div> 
+						
+				        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				            <span className="navbar-toggler-icon"></span>
+				        </button>
+				        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+				            <ul className="navbar-nav ml-auto">
+				            	<li className="nav-item active">
+				            		<ActiveLink activeClassName="active" href="/">
+				            			<a className="nav-link">HOME</a>
+				            		</ActiveLink>
+				                </li>
+				            	<li className="nav-item">
+				            		<ActiveLink activeClassName="active" href="/about">
+				            			<a className="nav-link">ABOUT US</a>
+				            		</ActiveLink>
+				                </li>
+				            	<li className="nav-item">
+				            		<ActiveLink activeClassName="active" href="/blog">
+				            			<a className="nav-link">BLOG</a>
+				            		</ActiveLink>
+				                </li>
+				            	<li className="nav-item">
+				            		<ActiveLink activeClassName="active" href="/service">
+				                    	<a className="nav-link">SERVICES</a>
+				                    </ActiveLink>
+				                </li>
+				            	
+				            	<li className="nav-item">
+				            		<ActiveLink activeClassName="active" href="/contact">
+				                    	<a className="nav-link">CONTACT US</a>
+				                    </ActiveLink>
+				                </li>
+				                
+				            </ul>
+				        </div>
+				    </nav>
+				</div> 
+			</div>
 		</header>
 
 	    
@@ -78,21 +87,25 @@ const Header = () => (
 	          background-color: #fd008f !important;
 	        }
 
-	      .navbar{
-	      	height: 5rem;
-	      }
 
 	      .nav-link:hover {
 	      	color: #fd008f !important;
 	      }
 
+	      .header-1 .navbar-main .active {
+	      	color: #fd008f;
+	      }
+
 	      .header-1 .navbar-main .active > .nav-link {
-	      	background-color: #fd008f !important;
+	      	color: #222222; 
+	      	background-color: transparent !important;
 	      }
 
 	      .header-1 .navbar-main .active > .nav-link:hover {
 	      	background-color: transparent !important;
 	      }
+
+
 
 
 
@@ -104,18 +117,18 @@ const Header = () => (
 
 export default Header;
 
-// <li class="nav-item dropdown dmenu">
-// 			                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+// <li className="nav-item dropdown dmenu">
+// 			                    <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 // 						          PAGES
 // 						        </a>
-// 			                    <div class="dropdown-menu">
-// 			                    	<a class="dropdown-item" href="page-gallery.html">GALLERY</a>
-// 			                    	<a class="dropdown-item" href="page-testimonials.html">TESTIMONIALS</a>
-// 	          						<a class="dropdown-item" href="page-faq.html">FAQ</a>
-// 	          						<a class="dropdown-item" href="page-404.html">404 PAGE</a>
-// 	          						<a class="dropdown-item" href="page-events.html">EVENTS</a>
-// 	          						<a class="dropdown-item" href="page-events-single.html">SINGLE EVENTS</a>
-// 	          						<a class="dropdown-item" href="page-news.html">NEWS</a>
-// 	          						<a class="dropdown-item" href="page-news-single.html">SINGLE NEWS</a>
+// 			                    <div className="dropdown-menu">
+// 			                    	<a className="dropdown-item" href="page-gallery.html">GALLERY</a>
+// 			                    	<a className="dropdown-item" href="page-testimonials.html">TESTIMONIALS</a>
+// 	          						<a className="dropdown-item" href="page-faq.html">FAQ</a>
+// 	          						<a className="dropdown-item" href="page-404.html">404 PAGE</a>
+// 	          						<a className="dropdown-item" href="page-events.html">EVENTS</a>
+// 	          						<a className="dropdown-item" href="page-events-single.html">SINGLE EVENTS</a>
+// 	          						<a className="dropdown-item" href="page-news.html">NEWS</a>
+// 	          						<a className="dropdown-item" href="page-news-single.html">SINGLE NEWS</a>
 // 							    </div>
 // 			                </li>

@@ -3,58 +3,58 @@ import React from 'react';
 
 const Banner = props => (
   <React.Fragment>
-  		<div id="oc-fullslider" class="banner">
-	    	<div class="owl-carousel owl-theme full-screen">
-		    	<div class="item">
+  		<div id="oc-fullslider" className="banner">
+	    	<div className="owl-carousel owl-theme full-screen">
+		    	<div className="item">
 		        	<img src="images/dummy-img-1920x900.jpg" alt="Slider" />
-		        	<div class="overlay-bg"></div>
-		        	<div class="container d-flex align-items-center">
-		            	<div class="wrap-caption">
-		            		<h5 class="caption-supheading">Welcome to Kids</h5>
-			                <h1 class="caption-heading">Best Kindergarten at California</h1>
-			                <a href="#" class="btn btn-secondary">LEARN MORE</a>
+		        	<div className="overlay-bg"></div>
+		        	<div className="container d-flex align-items-center">
+		            	<div className="wrap-caption">
+		            		<h5 className="caption-supheading">Welcome to Kids</h5>
+			                <h1 className="caption-heading">Best Kindergarten at California</h1>
+			                <a href="#" className="btn btn-secondary">LEARN MORE</a>
 			            </div>  
 		            </div>
 		    	</div>
 	    	</div>
-		    <div class="custom-nav owl-nav"></div>
+		    <div className="custom-nav owl-nav"></div>
 	    </div>	
-  		<div class="section services">
-			<div class="content-wrap">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 col-md-12">
-							<div class="row col-0 overlap no-gutters">
-								<div class="col-sm-12 col-md-4 col-lg-4">
-									<div class="rs-feature-box-1 bg-primary">
-										<i class="fa fa-clock-o"></i>
-										<div class="body">
+  		<div className="section services">
+			<div className="content-wrap">
+				<div className="container">
+					<div className="row">
+						<div className="col-sm-12 col-md-12">
+							<div className="row col-0 overlap no-gutters">
+								<div className="col-sm-12 col-md-4 col-lg-4">
+									<div className="rs-feature-box-1 bg-primary">
+										<i className="fa fa-clock-o"></i>
+										<div className="body">
 											<h4>Full Day Programs</h4>
 											<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-											<div class="spacer-10"></div>
-											<a href="#" class="btn">LEARN MORE</a>
+											<div className="spacer-10"></div>
+											<a href="#" className="btn">LEARN MORE</a>
 										</div>
 						            </div>
 								</div>
-								<div class="col-sm-12 col-md-4 col-lg-4">
-									<div class="rs-feature-box-1 bg-secondary">
-										<i class="fa fa-home"></i>
-										<div class="body">
+								<div className="col-sm-12 col-md-4 col-lg-4">
+									<div className="rs-feature-box-1 bg-secondary">
+										<i className="fa fa-home"></i>
+										<div className="body">
 											<h4>Full Day Programs</h4>
 											<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium</p>
-											<div class="spacer-10"></div>
-											<a href="#" class="btn">LEARN MORE</a>
+											<div className="spacer-10"></div>
+											<a href="#" className="btn">LEARN MORE</a>
 										</div>
 						            </div>
 								</div>
-								<div class="col-sm-12 col-md-4 col-lg-4">
-									<div class="rs-feature-box-1 bg-tertiary">
-										<i class="fa fa-trophy"></i>
-										<div class="body">
+								<div className="col-sm-12 col-md-4 col-lg-4">
+									<div className="rs-feature-box-1 bg-tertiary">
+										<i className="fa fa-trophy"></i>
+										<div className="body">
 											<h4>Full Day Programs</h4>
 											<p>Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium</p>
-											<div class="spacer-10"></div>
-											<a href="#" class="btn">LEARN MORE</a>
+											<div className="spacer-10"></div>
+											<a href="#" className="btn">LEARN MORE</a>
 										</div>
 						            </div>
 								</div>
