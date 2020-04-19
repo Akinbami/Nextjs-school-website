@@ -26,7 +26,7 @@ const Layout = props => (
 	        
 	        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 	        <link rel="stylesheet" href="https://getbootstrap.com/docs/4.4/examples/carousel/carousel.css" crossorigin="anonymous" />
-	        
+
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/font-awesome.min.css" />
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/owl.carousel.min.css" />
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/owl.theme.default.min.css" />
@@ -55,11 +55,7 @@ const Layout = props => (
 		                <div className="cta-1 text-center">
 		                          <div className="body-text mb-3">
 		                            <h3 className="my-1 text-secondary">Note!</h3>
-		                            <p className="uk18 mb-0 text-white">Please note: We are a private practice and offer our services throughout the UK, Europe, Africa
-		                            and the Middle-East. We are totally independent of any organisation and have no formal
-		                            associations with other agencies or consultancies on ABA therapy.
-
-		                            For information and to discuss further the support we offer, contact us</p>
+		                            <p className="uk18 mb-0 text-white">We create a personalised and bespoke programmes, encourages and support parental involvement.  Promote child development in communication, self confidence and independence. Provide clear guidance on teaching materials, individual educational plans and programmes. Also, we provide a calm and purposeful learning environment</p>
 		                            <Link href="/contact">
 		                              <a className="btn btn-light mt-3">CONTACT US</a>
 		                            </Link>
@@ -100,19 +96,19 @@ const Layout = props => (
 		                      <div className="info-icon">
 		                        <span className="fa fa-phone"></span>
 		                      </div>
-		                      <div className="info-text">(0761) 654-123987</div>
+		                      <div className="info-text"> 07985 290 316</div>
 		                    </li>
 		                    <li>
 		                      <div className="info-icon">
 		                        <span className="fa fa-envelope"></span>
 		                      </div>
-		                      <div className="info-text">info@yoursite.com</div>
+		                      <div className="info-text">info@schoolofabi.com</div>
 		                    </li>
 		                    <li>
 		                      <div className="info-icon">
 		                        <span className="fa fa-clock-o"></span>
 		                      </div>
-		                      <div className="info-text">Mon - Sat 09:00 - 17:00</div>
+		                      <div className="info-text">Mon - Fri 9.00am - 6.00pm</div>
 		                    </li>
 		                  </ul>
 
@@ -141,12 +137,11 @@ const Layout = props => (
 		                  <div className="footer-title">
 		                    Get in Touch
 		                  </div>
-		                  <p>Lit sed The Best in dolor sit amet consectetur adipisicing elit sedconsectetur adipisicing</p>
 		                  <div className="sosmed-icon d-inline-flex">
-		                    <a href="#" className="fb"><i className="fa fa-facebook"></i></a> 
-		                    <a href="#" className="tw"><i className="fa fa-twitter"></i></a> 
-		                    <a href="#" className="ig"><i className="fa fa-instagram"></i></a> 
-		                    <a href="#" className="in"><i className="fa fa-linkedin"></i></a> 
+		                    <a href="https://www.facebook.com/SchoolofABI/" target="_blank" className="fb"><i className="fa fa-facebook"></i></a> 
+		                    <a href="https://twitter.com/schoolofabi?s=20" className="tw" target="_blank"><i className="fa fa-twitter"></i></a> 
+		                    <a href="https://www.instagram.com/schoolofabi/" className="ig" target="_blank"><i className="fa fa-instagram"></i></a> 
+		                    <a href="https://www.linkedin.com/in/tawa-akib-52575452/" className="in" target="_blank"><i className="fa fa-linkedin"></i></a> 
 		                  </div>
 		                </div>
 		              </div>
@@ -158,7 +153,7 @@ const Layout = props => (
 		          <div className="container">
 		            <div className="row">
 		              <div className="col-sm-12 col-md-12">
-		                <p className="ftex">Copyright 2020 &copy; <span className="color-primary">ABC</span>. Designed by <span className="color-primary">smartpy.</span></p> 
+		                <p className="ftex">Copyright 2020 &copy; <span className="color-primary">ABI</span>. Designed by <span className="color-primary">smartpy.</span></p> 
 		              </div>
 		            </div>
 		          </div>
@@ -191,10 +186,6 @@ const Layout = props => (
 
         .bg-tertiary{
           background-color: #0070ff !important;
-        }
-
-        .body-box{
-        	text-align: center;
         }
 
         .body-text{
@@ -245,6 +236,14 @@ const Layout = props => (
             position: relative;
             color: #000;
             padding-left: 25px;
+        }
+
+        .footer .footer-item .list li a:before {
+		    color: #000000 !important;
+		}
+
+        .info-icon{
+        	color: #000 !important;
         }
 
         .list-info li {

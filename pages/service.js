@@ -27,61 +27,57 @@ const Service = (props) => (
 
       <div className="section">
         <div className="content-wrap">
-          <div className="container">       
+          <div className="service-content"> 
 
-            <div className="row">
-
-              
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="rs-class-box mb-5">
-                  <div className="media-box">
-                    <img src="images/consultation.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="body-box">
-                    <div className="class-name">
-                      <div className="title">Consultation</div>
-                    </div>
-                    <p>This involves advice and guidance on speciﬁc learning needs. Discussing programmes and strategies
-                      that work to meet your child’s targets as well as strategies to improve behaviour and life skills. </p>
-                      <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="rs-class-box mb-5">
-                  <div className="media-box">
-                    <img src="images/assessment.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="body-box">
-                    <div className="class-name">
-                      <div className="title">Assessments</div>
-                    </div>
-                    <p>We offer a variety of assessments; including careful screening and observations on communication,
-                      academia and social interaction skills.Our consultants will evaluate the milestones of your child’s </p>
-                      <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-12 col-lg-4">
-                <div className="rs-class-box mb-5">
-                  <div className="media-box">
-                    <img src="images/training.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="body-box">
-                    <div className="class-name">
-                      <div className="title">Training Programmes</div>
-                    </div>
-                    <p>Our interactive training programmes are designed for individuals and teams looking to achieve
-                      sustainable results. We cover current issues, hands on training, best practices, tips and tools,</p>
-                    <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
-                  </div>
-                </div>
-              </div>
-
+            <div className="service-item">
+              <p className="title">Consultation</p>
+              <p className="service-text">
+                This involves advice and guidance on speciﬁc learning needs. 
+                Discussing programmes and strategies that work to meet your child’s 
+                targets as well as strategies to improve behaviour and life skills. 
+                We hope that by creating a clear pathway you are able to build conﬁdence
+                 for all involved in your child’s developmental journey
+              </p>
             </div>
+
+            <div className="service-item">
+              <p className="title">Assessments</p>
+              <p className="service-text">
+                We offer a variety of assessments; including careful screening and observations on communication, academia and social interaction skills. 
+                Our consultants will evaluate the milestones of your child’s development in areas such as learning, play, communication, self-help and transitioning. It is important to get an indication of your child’s stage of development in order to implement a programme at an appropriate level. 
+              </p>
+            </div> 
+
+            <div className="service-item">
+              <p className="title">Training Programmes</p>
+              <p className="service-text">
+                Our interactive training programmes are designed for individuals and teams 
+                looking to achieve sustainable results. We cover current issues, hands on training, 
+                best practices, tips and tools, with real example cases on ethics. 
+              </p>
+            </div> 
+
+            <div className="service-item">
+              <p className="title">Therapeutic Input/curriculum development</p>
+              <p className="service-text">
+                Once a detailed assessment has been completed and a referral is made 
+                for therapeutic support, we are able to offer a personalised programme 
+                  to support all areas of your child’s need in the best way possible. We 
+                will work in partnership with external agencies where necessary to ensure 
+                optimal and lasting improvements. Continuous advice and updates will be given during the course of therapy. 
+              </p>
+            </div>  
+
+            <div className="service-note">
+              <p className="title service-note-title">Please note:</p>
+              <p className="service-note-text">
+                We are a private practice and offer our services throughout the UK, 
+                Europe, Africa and the Middle-East. We are totally independent of any 
+                organisation and have no formal associations with other agencies or 
+                consultancies on ABA therapy.
+              </p>
+              <p className="service-note-text">For information and to discuss further the support we offer, contact us</p>
+            </div>            
 
           </div>
         </div>
@@ -95,12 +91,36 @@ const Service = (props) => (
           line-height: 1.5;
         }
 
+        .service-content{
+          padding-left: 20%;
+          padding-right: 20%;
+        }
+
+        .service-note-text{
+          color: #fd008f !important;
+          font-size: 0.8rem;
+        }
+
+        .service-note-title{
+          font-size: 1.2rem !important;
+          font-weight: 700;
+        }
+
+        .title{
+          font-size: 1.3rem;
+          font-weight: 500;
+          margin-bottom: 0; 
+        }
 
 
         @media (max-width: 600px) {
           .grid {
             width: 100%;
             flex-direction: column;
+          }
+          .service-content{
+            padding-left: 5%;
+            padding-right: 5%;
           }
         }
       `}</style>
@@ -117,6 +137,10 @@ const Service = (props) => (
 
         .abc-logo{
           width: 3rem;
+        }
+
+        .body-box{
+          text-align: left;
         }
 
         .body-text{

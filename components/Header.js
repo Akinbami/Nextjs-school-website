@@ -20,10 +20,10 @@ const Header = () => (
 						</div>
 						<div className="col-sm-4 col-md-6">
 							<div className="sosmed-icon d-inline-flex">
-								<a href="https://www.facebook.com/SchoolofABI/"><i className="fa fa-facebook"></i></a> 
-								<a href="https://twitter.com/schoolofabi?s=20"><i className="fa fa-twitter"></i></a> 
-								<a href="https://www.instagram.com/schoolofabi/"><i className="fa fa-instagram"></i></a> 
-								<a href="https://www.linkedin.com/in/tawa-akib-52575452/"><i className="fa fa-linkedin"></i></a> 
+								<a href="https://www.facebook.com/SchoolofABI/" target="_blank"><i className="fa fa-facebook"></i></a> 
+								<a href="https://twitter.com/schoolofabi?s=20" target="_blank"><i className="fa fa-twitter"></i></a> 
+								<a href="https://www.instagram.com/schoolofabi/" target="_blank"><i className="fa fa-instagram"></i></a> 
+								<a href="https://www.linkedin.com/in/tawa-akib-52575452/" target="_blank"><i className="fa fa-linkedin"></i></a> 
 							</div>
 						</div>
 					</div>

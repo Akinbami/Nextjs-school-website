@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "1lHO");
+/******/ 	return __webpack_require__(__webpack_require__.s = "uhwQ");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1061,242 +1061,6 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 
 /***/ }),
 
-/***/ "1lHO":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-
-    
-    
-    
-    const runtimeConfig = {}
-    const {parse} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const {renderToHTML} = __webpack_require__("/bjS");
-    const { tryGetPreviewData } = __webpack_require__("PCLx");
-    const {sendHTML} = __webpack_require__("LuNM");
-    const {sendPayload} = __webpack_require__("KyNf");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("VDXt").default;
-    const Error = __webpack_require__("/a9y").default;
-    const App = __webpack_require__("B5Ud").default;
-    
-    const { getRouteMatcher } = __webpack_require__("gguc");
-      const { getRouteRegex } = __webpack_require__("YTqd");
-  
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-    const ComponentInfo = __webpack_require__("dz4I")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const getStaticProps = ComponentInfo['getStaticProp' + 's']
-    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
-    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
-
-    // kept for detecting legacy exports
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    const dynamicRouteMatcher = getRouteMatcher(getRouteRegex("/p/[slug]"))
-  
-    
-    const getCustomRouteMatcher = pathMatch(true)
-    const {prepareDestination} = __webpack_require__("dtb4")
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params
-          )
-          Object.assign(parsedUrl.query, parsedDestination.query, params)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/p/[slug]'){
-            break
-          }
-          
-            const dynamicParams = dynamicRouteMatcher(parsedUrl.pathname);            if (dynamicParams) {
-              parsedUrl.query = {
-                ...parsedUrl.query,
-                ...dynamicParams
-              }
-              break
-            }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
-      const fromExport = renderMode === 'export' || renderMode === true;
-      
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        getStaticProps,
-        getServerSideProps,
-        getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "z9wd4D243fy-rbX42I51r",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"bfba30b6f21f41d7bf24958e60f9c41c",previewModeSigningKey:"ba3526a14053de5517db476ddfa60f6d07fca928e4969a41bb6297cb3913525a",previewModeEncryptionKey:"56fc1b9f6ae1115a650931de47f45fefdef71fbb0f6b903b87c03cebf5eda030"},
-        env: process.env,
-        ..._renderOpts
-      }
-      let _nextData = false
-
-      const parsedUrl = handleRewrites(parse(req.url, true))
-
-      if (parsedUrl.pathname.match(/_next\/data/)) {
-        _nextData = true
-        parsedUrl.pathname = parsedUrl.pathname
-          .replace(new RegExp('/_next/data/z9wd4D243fy\-rbX42I51r/'), '/')
-          .replace(/\.json$/, '')
-      }
-
-      const renderOpts = Object.assign(
-        {
-          Component,
-          pageConfig: config,
-          nextExport: fromExport
-        },
-        options,
-      )
-      try {
-        
-        const params = fromExport && !getStaticProps && !getServerSideProps ? {} : dynamicRouteMatcher(parsedUrl.pathname) || {};
-        const nowParams = req.headers && req.headers["x-now-route-matches"]
-              ? getRouteMatcher(
-                  (function() {
-                    const { re, groups } = getRouteRegex("/p/[slug]");
-                    return {
-                      re: {
-                        // Simulate a RegExp match from the `req.url` input
-                        exec: str => {
-                          const obj = parseQs(str);
-                          return Object.keys(obj).reduce(
-                            (prev, key) =>
-                              Object.assign(prev, {
-                                [key]: obj[key]
-                              }),
-                            {}
-                          );
-                        }
-                      },
-                      groups
-                    };
-                  })()
-                )(req.headers["x-now-route-matches"])
-              : null;
-          
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        const previewData = tryGetPreviewData(req, res, options.previewProps)
-        const isPreviewMode = previewData !== false
-
-        let result = await renderToHTML(req, res, "/p/[slug]", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (!renderMode) {
-          if (_nextData || getStaticProps || getServerSideProps) {
-            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
-              private: isPreviewMode,
-              stateful: !!getServerSideProps,
-              revalidate: renderOpts.revalidate,
-            })
-            return null
-          }
-        } else if (isPreviewMode) {
-          res.setHeader(
-            'Cache-Control',
-            'private, no-cache, no-store, max-age=0, must-revalidate'
-          )
-        }
-
-        if (renderMode) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            getStaticProps: undefined,
-            getStaticPaths: undefined,
-            getServerSideProps: undefined,
-            Component: Error
-          }))
-          return result
-        } else {
-          console.error(err)
-          res.statusCode = 500
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            getStaticProps: undefined,
-            getStaticPaths: undefined,
-            getServerSideProps: undefined,
-            Component: Error,
-            err
-          }))
-          return result
-        }
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendHTML(req, res, html, {generateEtags: true})
-        }
-      } catch(err) {
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        console.error(err)
-        res.statusCode = 500
-        res.end('Internal Server Error')
-      }
-    }
-  
-
-/***/ }),
-
 /***/ "2qu3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1747,300 +1511,302 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 const Layout = props => __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, __jsx("meta", {
   charset: "utf-8",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("meta", {
   "http-equiv": "x-ua-compatible",
   content: "IE=9",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("meta", {
   name: "viewport",
   content: "width=device-width, initial-scale=1",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("title", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "ABC"), __jsx("meta", {
   name: "description",
   content: "ABC description",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("meta", {
   name: "keywords",
   content: "ABC",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("meta", {
   name: "author",
   content: "rometheme.net",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "shortcut icon",
   href: "/images/favicon.ico",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   href: "/images/apple-touch-icon.png",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   sizes: "72x72",
   href: "/images/apple-touch-icon-72x72.png",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   sizes: "114x114",
   href: "/images/apple-touch-icon-114x114.png",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   href: "https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
   rel: "stylesheet",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
   integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
   crossorigin: "anonymous",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   href: "https://getbootstrap.com/docs/4.4/examples/carousel/carousel.css",
   crossorigin: "anonymous",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/font-awesome.min.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/owl.carousel.min.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/owl.theme.default.min.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/magnific-popup.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/animate.min.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/style.css",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/vendor/modernizr.min.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 })), __jsx(_Header__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], null), __jsx("main", {
   role: "main",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, props.children, __jsx("div", {
-  className: "jsx-2672092748" + " " + "section bg-tertiary"
+  className: "jsx-995436206" + " " + "section bg-tertiary"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "content-wrap py-5"
+  className: "jsx-995436206" + " " + "content-wrap py-5"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "container"
+  className: "jsx-995436206" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "row align-items-center"
+  className: "jsx-995436206" + " " + "row align-items-center"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-12"
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-12"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "cta-1 text-center"
+  className: "jsx-995436206" + " " + "cta-1 text-center"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "body-text mb-3"
+  className: "jsx-995436206" + " " + "body-text mb-3"
 }, __jsx("h3", {
-  className: "jsx-2672092748" + " " + "my-1 text-secondary"
+  className: "jsx-995436206" + " " + "my-1 text-secondary"
 }, "Note!"), __jsx("p", {
-  className: "jsx-2672092748" + " " + "uk18 mb-0 text-white"
-}, "Please note: We are a private practice and offer our services throughout the UK, Europe, Africa and the Middle-East. We are totally independent of any organisation and have no formal associations with other agencies or consultancies on ABA therapy. For information and to discuss further the support we offer, contact us"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  className: "jsx-995436206" + " " + "uk18 mb-0 text-white"
+}, "We create a personalised and bespoke programmes, encourages and support parental involvement.  Promote child development in communication, self confidence and independence. Provide clear guidance on teaching materials, individual educational plans and programmes. Also, we provide a calm and purposeful learning environment"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
   href: "/contact"
 }, __jsx("a", {
-  className: "jsx-2672092748" + " " + "btn btn-light mt-3"
+  className: "jsx-995436206" + " " + "btn btn-light mt-3"
 }, "CONTACT US"))))))))), __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer"
+  className: "jsx-995436206" + " " + "footer"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "content-wrap"
+  className: "jsx-995436206" + " " + "content-wrap"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "container"
+  className: "jsx-995436206" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "row"
+  className: "jsx-995436206" + " " + "row"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-item"
+  className: "jsx-995436206" + " " + "footer-item"
 }, __jsx("img", {
   src: "/abi_logo.png",
   alt: "logo bottom",
-  className: "jsx-2672092748" + " " + "abc-logo"
+  className: "jsx-995436206" + " " + "abc-logo"
 }), __jsx("div", {
-  className: "jsx-2672092748" + " " + "spacer-30"
+  className: "jsx-995436206" + " " + "spacer-30"
 }), __jsx("p", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "School of Academic and Behavioural Interventions (ABI), offers a consultancy and management service to support parents and educational providers when working with children on the autistic spectrum and related disorders."), __jsx("a", {
   href: "/about",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("i", {
-  className: "jsx-2672092748" + " " + "fa fa-angle-right"
+  className: "jsx-995436206" + " " + "fa fa-angle-right"
 }), " Read More"))), __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-item"
+  className: "jsx-995436206" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-title"
+  className: "jsx-995436206" + " " + "footer-title"
 }, "Contact Info"), __jsx("ul", {
-  className: "jsx-2672092748" + " " + "list-info"
+  className: "jsx-995436206" + " " + "list-info"
 }, __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-icon"
+  className: "jsx-995436206" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2672092748" + " " + "fa fa-map-marker"
+  className: "jsx-995436206" + " " + "fa fa-map-marker"
 })), __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-text"
+  className: "jsx-995436206" + " " + "info-text"
 }, "99 S.t Jomblo Park Pekanbaru 28292. Indonesia"), " "), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-icon"
+  className: "jsx-995436206" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2672092748" + " " + "fa fa-phone"
+  className: "jsx-995436206" + " " + "fa fa-phone"
 })), __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-text"
-}, "(0761) 654-123987")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206" + " " + "info-text"
+}, " 07985 290 316")), __jsx("li", {
+  className: "jsx-995436206"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-icon"
+  className: "jsx-995436206" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2672092748" + " " + "fa fa-envelope"
+  className: "jsx-995436206" + " " + "fa fa-envelope"
 })), __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-text"
-}, "info@yoursite.com")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206" + " " + "info-text"
+}, "info@schoolofabi.com")), __jsx("li", {
+  className: "jsx-995436206"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-icon"
+  className: "jsx-995436206" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2672092748" + " " + "fa fa-clock-o"
+  className: "jsx-995436206" + " " + "fa fa-clock-o"
 })), __jsx("div", {
-  className: "jsx-2672092748" + " " + "info-text"
-}, "Mon - Sat 09:00 - 17:00"))))), __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-995436206" + " " + "info-text"
+}, "Mon - Fri 9.00am - 6.00pm"))))), __jsx("div", {
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-item"
+  className: "jsx-995436206" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-title"
+  className: "jsx-995436206" + " " + "footer-title"
 }, "Useful Links"), __jsx("ul", {
-  className: "jsx-2672092748" + " " + "list text-dark"
+  className: "jsx-995436206" + " " + "list text-dark"
 }, __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("a", {
   href: "/",
   title: "About us",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "Home")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("a", {
   href: "/about",
   title: "About us",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "About us")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("a", {
   href: "/",
   title: "Our Classes",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "Our Services")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("a", {
   href: "/blogs",
   title: "Our Events",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "Blogs")), __jsx("li", {
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, __jsx("a", {
   href: "/contact",
   title: "Contact Us",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }, "Contact Us"))))), __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-item"
+  className: "jsx-995436206" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "footer-title"
-}, "Get in Touch"), __jsx("p", {
-  className: "jsx-2672092748"
-}, "Lit sed The Best in dolor sit amet consectetur adipisicing elit sedconsectetur adipisicing"), __jsx("div", {
-  className: "jsx-2672092748" + " " + "sosmed-icon d-inline-flex"
+  className: "jsx-995436206" + " " + "footer-title"
+}, "Get in Touch"), __jsx("div", {
+  className: "jsx-995436206" + " " + "sosmed-icon d-inline-flex"
 }, __jsx("a", {
-  href: "#",
-  className: "jsx-2672092748" + " " + "fb"
+  href: "https://www.facebook.com/SchoolofABI/",
+  target: "_blank",
+  className: "jsx-995436206" + " " + "fb"
 }, __jsx("i", {
-  className: "jsx-2672092748" + " " + "fa fa-facebook"
+  className: "jsx-995436206" + " " + "fa fa-facebook"
 })), __jsx("a", {
-  href: "#",
-  className: "jsx-2672092748" + " " + "tw"
+  href: "https://twitter.com/schoolofabi?s=20",
+  target: "_blank",
+  className: "jsx-995436206" + " " + "tw"
 }, __jsx("i", {
-  className: "jsx-2672092748" + " " + "fa fa-twitter"
+  className: "jsx-995436206" + " " + "fa fa-twitter"
 })), __jsx("a", {
-  href: "#",
-  className: "jsx-2672092748" + " " + "ig"
+  href: "https://www.instagram.com/schoolofabi/",
+  target: "_blank",
+  className: "jsx-995436206" + " " + "ig"
 }, __jsx("i", {
-  className: "jsx-2672092748" + " " + "fa fa-instagram"
+  className: "jsx-995436206" + " " + "fa fa-instagram"
 })), __jsx("a", {
-  href: "#",
-  className: "jsx-2672092748" + " " + "in"
+  href: "https://www.linkedin.com/in/tawa-akib-52575452/",
+  target: "_blank",
+  className: "jsx-995436206" + " " + "in"
 }, __jsx("i", {
-  className: "jsx-2672092748" + " " + "fa fa-linkedin"
+  className: "jsx-995436206" + " " + "fa fa-linkedin"
 })))))))), __jsx("div", {
-  className: "jsx-2672092748" + " " + "fcopy"
+  className: "jsx-995436206" + " " + "fcopy"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "container"
+  className: "jsx-995436206" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "row"
+  className: "jsx-995436206" + " " + "row"
 }, __jsx("div", {
-  className: "jsx-2672092748" + " " + "col-sm-12 col-md-12"
+  className: "jsx-995436206" + " " + "col-sm-12 col-md-12"
 }, __jsx("p", {
-  className: "jsx-2672092748" + " " + "ftex"
+  className: "jsx-995436206" + " " + "ftex"
 }, "Copyright 2020 \xA9 ", __jsx("span", {
-  className: "jsx-2672092748" + " " + "color-primary"
-}, "ABC"), ". Designed by ", __jsx("span", {
-  className: "jsx-2672092748" + " " + "color-primary"
+  className: "jsx-995436206" + " " + "color-primary"
+}, "ABI"), ". Designed by ", __jsx("span", {
+  className: "jsx-995436206" + " " + "color-primary"
 }, "smartpy.")))))))), __jsx("script", {
   src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
   integrity: "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n",
   crossorigin: "anonymous",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
   integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo",
   crossorigin: "anonymous",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
   integrity: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6",
   crossorigin: "anonymous",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/vendor/owl.carousel.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/vendor/jquery.magnific-popup.min.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/vendor/validator.min.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/vendor/form-scripts.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx("script", {
   src: "/js/script.js",
-  className: "jsx-2672092748"
+  className: "jsx-995436206"
 }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "2672092748"
-}, ["html,body{padding:0;margin:0;font-family:'Open Sans',sans-serif;}", ".abc-logo{width:4rem;}", ".bg-tertiary{background-color:#0070ff !important;}", ".body-box{text-align:center;}", ".body-text{max-width:100% !important;}", ".btn-primary{background-color:#fd008f !important;color:#fff !important;}", ".btn-primary:hover{background-color:#ffcc04 !important;}", ".btn-secondary{background-color:#ffcc04 !important;color:#fff !important;}", ".btn-secondary:hover{background-color:#fd008f !important;}", ".btn-light{color:#ffcc04 !important;}", ".btn-light:hover{color:#fff !important;background-color:#ffcc04 !important;}", ".footer{color:#000 !important;}", ".footer .fcopy{color:#000 !important;background-color:#ffffff;}", ".footer-title{color:#fff !important;padding:0.5rem 0 0.5rem 0 !important;}", ".footer .footer-item .list li a{position:relative;color:#000;padding-left:25px;}", ".list-info li{margin-bottom:0;}", ".section-heading{color:#fd008f !important;}", ".services{padding-top:0;}", ".title{color:#fd008f !important;}", "*{box-sizing:border-box;}", "@media (max-width:414px){.section{text-align:center;}.footer{text-align:center;}.info-text{width:100%;}}"]));
+  id: "995436206"
+}, ["html,body{padding:0;margin:0;font-family:'Open Sans',sans-serif;}", ".abc-logo{width:4rem;}", ".bg-tertiary{background-color:#0070ff !important;}", ".body-text{max-width:100% !important;}", ".btn-primary{background-color:#fd008f !important;color:#fff !important;}", ".btn-primary:hover{background-color:#ffcc04 !important;}", ".btn-secondary{background-color:#ffcc04 !important;color:#fff !important;}", ".btn-secondary:hover{background-color:#fd008f !important;}", ".btn-light{color:#ffcc04 !important;}", ".btn-light:hover{color:#fff !important;background-color:#ffcc04 !important;}", ".footer{color:#000 !important;}", ".footer .fcopy{color:#000 !important;background-color:#ffffff;}", ".footer-title{color:#fff !important;padding:0.5rem 0 0.5rem 0 !important;}", ".footer .footer-item .list li a{position:relative;color:#000;padding-left:25px;}", ".footer .footer-item .list li a:before{color:#000000 !important;}", ".info-icon{color:#000 !important;}", ".list-info li{margin-bottom:0;}", ".section-heading{color:#fd008f !important;}", ".services{padding-top:0;}", ".title{color:#fd008f !important;}", "*{box-sizing:border-box;}", "@media (max-width:414px){.section{text-align:center;}.footer{text-align:center;}.info-text{width:100%;}}"]));
 
 /* harmony default export */ __webpack_exports__["a"] = (Layout);
 
@@ -3139,7 +2905,7 @@ exports.sendPayload = sendPayload;
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/z9wd4D243fy-rbX42I51r/_buildManifest.js\",\"static/z9wd4D243fy-rbX42I51r/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/_app\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/_error\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/_polyfills\":[\"static/runtime/polyfills-b3d92c5385ed51ccd0d3.js\"],\"/about\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/admin/createPost\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/eabe11fc.cf04ea2bbe37458c9999.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/chunks/3bdc4fcf874654f45aadf29e9e0feebb30b5cc33.b779259b4f416e2608f0.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/admin/login\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/chunks/3bdc4fcf874654f45aadf29e9e0feebb30b5cc33.b779259b4f416e2608f0.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/admin/posts\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/admin/register\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/chunks/3bdc4fcf874654f45aadf29e9e0feebb30b5cc33.b779259b4f416e2608f0.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/blog\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/contact\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/index\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/p/[slug]\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"],\"/service\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/8d6a2d579118e4b38ba74a65ea3cf826de646695.f444654df87cc0b9a375.js\",\"static/runtime/main-e414ce584900f22861b2.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/996PNwyH90mtzF3ExoymI/_buildManifest.js\",\"static/996PNwyH90mtzF3ExoymI/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/_app\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/_error\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/_polyfills\":[\"static/runtime/polyfills-e48ef734bad80704fcd0.js\"],\"/about\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/admin/createPost\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/eabe11fc.cf04ea2bbe37458c9999.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/chunks/4132d8491bf7f56cab250354c6a5e28f6dde1ba4.b779259b4f416e2608f0.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/admin/login\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/chunks/4132d8491bf7f56cab250354c6a5e28f6dde1ba4.b779259b4f416e2608f0.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/admin/posts\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/admin/register\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/chunks/4132d8491bf7f56cab250354c6a5e28f6dde1ba4.b779259b4f416e2608f0.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/blog\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/contact\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/index\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/p/[slug]\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"],\"/service\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.ceaf506e42eea69867d7.js\",\"static/chunks/d115451822e7ce20c3786759aa292833e664a07e.aa2d2b3caafe6e45ab84.js\",\"static/runtime/main-28eaef75ae99ecc73241.js\"]}}");
 
 /***/ }),
 
@@ -5402,21 +5168,25 @@ const Header = () => Header_jsx(react_default.a.Fragment, null, Header_jsx("head
   className: "jsx-4261440679" + " " + "sosmed-icon d-inline-flex"
 }, Header_jsx("a", {
   href: "https://www.facebook.com/SchoolofABI/",
+  target: "_blank",
   className: "jsx-4261440679"
 }, Header_jsx("i", {
   className: "jsx-4261440679" + " " + "fa fa-facebook"
 })), Header_jsx("a", {
   href: "https://twitter.com/schoolofabi?s=20",
+  target: "_blank",
   className: "jsx-4261440679"
 }, Header_jsx("i", {
   className: "jsx-4261440679" + " " + "fa fa-twitter"
 })), Header_jsx("a", {
   href: "https://www.instagram.com/schoolofabi/",
+  target: "_blank",
   className: "jsx-4261440679"
 }, Header_jsx("i", {
   className: "jsx-4261440679" + " " + "fa fa-instagram"
 })), Header_jsx("a", {
   href: "https://www.linkedin.com/in/tawa-akib-52575452/",
+  target: "_blank",
   className: "jsx-4261440679"
 }, Header_jsx("i", {
   className: "jsx-4261440679" + " " + "fa fa-linkedin"
@@ -11271,6 +11041,242 @@ function decodeParam(param) {
     }
 }
 
+
+/***/ }),
+
+/***/ "uhwQ":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+
+    
+    
+    
+    const runtimeConfig = {}
+    const {parse} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const {renderToHTML} = __webpack_require__("/bjS");
+    const { tryGetPreviewData } = __webpack_require__("PCLx");
+    const {sendHTML} = __webpack_require__("LuNM");
+    const {sendPayload} = __webpack_require__("KyNf");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+    const Document = __webpack_require__("VDXt").default;
+    const Error = __webpack_require__("/a9y").default;
+    const App = __webpack_require__("B5Ud").default;
+    
+    const { getRouteMatcher } = __webpack_require__("gguc");
+      const { getRouteRegex } = __webpack_require__("YTqd");
+  
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+    const ComponentInfo = __webpack_require__("dz4I")
+
+    const Component = ComponentInfo.default
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
+    const getStaticProps = ComponentInfo['getStaticProp' + 's']
+    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
+    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
+
+    // kept for detecting legacy exports
+    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
+    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
+    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
+
+    
+    const dynamicRouteMatcher = getRouteMatcher(getRouteRegex("/p/[slug]"))
+  
+    
+    const getCustomRouteMatcher = pathMatch(true)
+    const {prepareDestination} = __webpack_require__("dtb4")
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params
+          )
+          Object.assign(parsedUrl.query, parsedDestination.query, params)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/p/[slug]'){
+            break
+          }
+          
+            const dynamicParams = dynamicRouteMatcher(parsedUrl.pathname);            if (dynamicParams) {
+              parsedUrl.query = {
+                ...parsedUrl.query,
+                ...dynamicParams
+              }
+              break
+            }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    const config = ComponentInfo['confi' + 'g'] || {}
+    const _app = App
+    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
+      const fromExport = renderMode === 'export' || renderMode === true;
+      
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "996PNwyH90mtzF3ExoymI",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"c5907e49d14e722849c4adba4d59d2fe",previewModeSigningKey:"cb4c2408d4748217465566f9b96e7e5b2124275b3e082a847c388b2219b6c4e8",previewModeEncryptionKey:"668351e9d756e009c383951db8d3926f7ba43db336b0549f1716112a21cf1286"},
+        env: process.env,
+        ..._renderOpts
+      }
+      let _nextData = false
+
+      const parsedUrl = handleRewrites(parse(req.url, true))
+
+      if (parsedUrl.pathname.match(/_next\/data/)) {
+        _nextData = true
+        parsedUrl.pathname = parsedUrl.pathname
+          .replace(new RegExp('/_next/data/996PNwyH90mtzF3ExoymI/'), '/')
+          .replace(/\.json$/, '')
+      }
+
+      const renderOpts = Object.assign(
+        {
+          Component,
+          pageConfig: config,
+          nextExport: fromExport
+        },
+        options,
+      )
+      try {
+        
+        const params = fromExport && !getStaticProps && !getServerSideProps ? {} : dynamicRouteMatcher(parsedUrl.pathname) || {};
+        const nowParams = req.headers && req.headers["x-now-route-matches"]
+              ? getRouteMatcher(
+                  (function() {
+                    const { re, groups } = getRouteRegex("/p/[slug]");
+                    return {
+                      re: {
+                        // Simulate a RegExp match from the `req.url` input
+                        exec: str => {
+                          const obj = parseQs(str);
+                          return Object.keys(obj).reduce(
+                            (prev, key) =>
+                              Object.assign(prev, {
+                                [key]: obj[key]
+                              }),
+                            {}
+                          );
+                        }
+                      },
+                      groups
+                    };
+                  })()
+                )(req.headers["x-now-route-matches"])
+              : null;
+          
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        const previewData = tryGetPreviewData(req, res, options.previewProps)
+        const isPreviewMode = previewData !== false
+
+        let result = await renderToHTML(req, res, "/p/[slug]", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (!renderMode) {
+          if (_nextData || getStaticProps || getServerSideProps) {
+            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
+              private: isPreviewMode,
+              stateful: !!getServerSideProps,
+              revalidate: renderOpts.revalidate,
+            })
+            return null
+          }
+        } else if (isPreviewMode) {
+          res.setHeader(
+            'Cache-Control',
+            'private, no-cache, no-store, max-age=0, must-revalidate'
+          )
+        }
+
+        if (renderMode) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            getStaticProps: undefined,
+            getStaticPaths: undefined,
+            getServerSideProps: undefined,
+            Component: Error
+          }))
+          return result
+        } else {
+          console.error(err)
+          res.statusCode = 500
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            getStaticProps: undefined,
+            getStaticPaths: undefined,
+            getServerSideProps: undefined,
+            Component: Error,
+            err
+          }))
+          return result
+        }
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendHTML(req, res, html, {generateEtags: true})
+        }
+      } catch(err) {
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        console.error(err)
+        res.statusCode = 500
+        res.end('Internal Server Error')
+      }
+    }
+  
 
 /***/ }),
 

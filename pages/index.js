@@ -122,7 +122,6 @@ const Index = () => (
                     </div>
                     <p>This involves advice and guidance on speciﬁc learning needs. Discussing programmes and strategies
                       that work to meet your child’s targets as well as strategies to improve behaviour and life skills. </p>
-                      <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
                   </div>
                 </div>
               </div>
@@ -138,7 +137,6 @@ const Index = () => (
                     </div>
                     <p>We offer a variety of assessments; including careful screening and observations on communication,
                       academia and social interaction skills.Our consultants will evaluate the milestones of your child’s </p>
-                      <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
                   </div>
                 </div>
               </div>
@@ -154,7 +152,6 @@ const Index = () => (
                     </div>
                     <p>Our interactive training programmes are designed for individuals and teams looking to achieve
                       sustainable results. We cover current issues, hands on training, best practices, tips and tools,</p>
-                    <p><a className="btn btn-lg btn-primary" href="#" role="button">More</a></p>
                   </div>
                 </div>
               </div>
@@ -179,8 +176,8 @@ const Index = () => (
 
             <div className="row">
               <div className="col-sm-12 col-md-12">
-                <p className="supheading text-center">Blogs</p>
-                <h2 className="section-heading text-center">
+                <p className="supheading text-center text-light">Blogs</p>
+                <h2 className="section-heading blog-section-heading text-center">
                   Don't miss our Contents
                 </h2>
               </div>
@@ -451,7 +448,11 @@ const Index = () => (
 			left:0;
 			right:0;
 			background:rgba(0,0,0,0.6);
-	      }
+	    }
+
+	    .blog-section-heading {
+		    color: #ffcc04 !important;
+		}
 
 	    .carousel-caption{
 	    	padding-bottom:0px !important;
