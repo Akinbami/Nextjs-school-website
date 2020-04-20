@@ -43,7 +43,9 @@ const Blog = (props) => (
                       being spoken in a home for a number of families is now seen as the norm. The question I
                       pose today </p>
                     <div className="text-center">
-                      <a href="page-events-single.html" className="btn btn-secondary">View</a>
+                      <Link href="/p/Talk-Bilingual">
+                        <a className="btn btn-secondary">View</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -60,7 +62,9 @@ const Blog = (props) => (
                     <p>Running an ABA programme can be very time-consuming and costly. There are a few
                     valuable ‘must haves’, which can potentially affect the outcomes ...</p>
                     <div className="text-center">
-                      <a href="page-events-single.html" className="btn btn-secondary">View</a>
+                      <Link href="/p/10-Basic-Program-Must-Haves">
+                        <a className="btn btn-secondary">View</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -72,52 +76,17 @@ const Blog = (props) => (
                     <img src="images/blog3.jpg" alt="" className="img-fluid" />
                   </div>
                   <div className="body-box">
-                    <div className="title">Drawing at City Park</div>
+                    <div className="title">corona</div>
                     <div className="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
                     <p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
                     <div className="text-center">
-                      <a href="page-events-single.html" className="btn btn-secondary">View</a>
+                      <Link href="/p/corona">
+                        <a className="btn btn-secondary">View</a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 mb-5">
-                <div className="rs-news-1">
-                  <div className="media-box">
-                    <img src="images/dummy-img-600x400.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="body-box">
-                    <div className="title">English Day on Carfree day</div>
-                    <div className="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-                    <p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
-                    <div className="text-center">
-                      <a href="page-events-single.html" className="btn btn-primary">VIEW</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {props.posts.map(item => {
-                  return(
-                      <div className="col-sm-12 col-md-6 col-lg-4 mb-5">
-                        <div className="rs-news-1">
-                          <div className="media-box">
-                            <img src="images/dummy-img-600x400.jpg" alt="" className="img-fluid" />
-                          </div>
-                          <div className="body-box">
-                            <div className="title"><a href={"/p/"+item.title}>{item.title}</a></div>
-                            <div className="meta-date">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
-                            <p>{item.content.slice(0, 50)}...</p>
-                            <div className="text-center">
-                              <a href="page-events-single.html" className="btn btn-primary">VIEW</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )
-              })}
-              
 
             </div>
 
@@ -160,7 +129,7 @@ const Blog = (props) => (
         .body-box{
           text-align: left;
         }
-        
+
         .body-text{
           max-width: 100% !important;
         }
@@ -179,6 +148,26 @@ const Blog = (props) => (
       `}</style>
     </Layout>
 )
+
+// {props.posts.map(item => {
+//                   return(
+//                       <div className="col-sm-12 col-md-6 col-lg-4 mb-5">
+//                         <div className="rs-news-1">
+//                           <div className="media-box">
+//                             <img src="images/dummy-img-600x400.jpg" alt="" className="img-fluid" />
+//                           </div>
+//                           <div className="body-box">
+//                             <div className="title"><a href={"/p/"+item.title}>{item.title}</a></div>
+//                             <div className="meta-date">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
+//                             <p>{item.content.slice(0, 50)}...</p>
+//                             <div className="text-center">
+//                               <a href="page-events-single.html" className="btn btn-primary">VIEW</a>
+//                             </div>
+//                           </div>
+//                         </div>
+//                       </div>
+//                     )
+//               })}
 
 Blog.getInitialProps = async function() {
   // const res = await fetch('https://0mi6xhcet3.execute-api.us-east-2.amazonaws.com/dev/api/designs');
