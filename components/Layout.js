@@ -54,11 +54,16 @@ const Layout = props => (
 		              <div className="col-sm-12 col-md-12">
 		                <div className="cta-1 text-center">
 		                          <div className="body-text mb-3">
-		                            <h3 className="my-1 text-secondary">Note!</h3>
-		                            <p className="uk18 mb-0 text-white">We create a personalised and bespoke programmes, encourages and support parental involvement.  Promote child development in communication, self confidence and independence. Provide clear guidance on teaching materials, individual educational plans and programmes. Also, we provide a calm and purposeful learning environment</p>
-		                            <Link href="/contact">
-		                              <a className="btn btn-light mt-3">CONTACT US</a>
-		                            </Link>
+		                            <h3 className="my-1 text-secondary">Note! What We Do?</h3>
+		                            <div className="what-inner">
+			                            <ul className="text-left text-light">
+			                            	<li>Create personalised academic and behavioural programmes</li>
+											<li>Encourage and support parental involvement</li>
+											<li>Promote child development in communication, self-confidence and independence</li>
+											<li>Provide clear guidance on teaching materials, individual educational plans and learning programmes</li>
+											<li>Provide a calm and purposeful learning environment</li>
+										</ul>
+									</div>
 		                          </div>
 		                      </div>
 		              </div>
@@ -74,10 +79,8 @@ const Layout = props => (
 		            <div className="row">
 		              <div className="col-sm-12 col-md-6 col-lg-3">
 		                <div className="footer-item">
-		                  <img className="abc-logo" src="/abi_logo.png" alt="logo bottom" />
+		                  <img className="abc-logo-footer" src="/abi_logo_2.png" alt="logo bottom" />
 		                  <div className="spacer-30"></div>
-		                  <p>School of Academic and Behavioural Interventions (ABI), offers a consultancy and management service to support parents and educational providers when working with children on the autistic spectrum and related disorders.</p>
-		                  <a href="/about"><i className="fa fa-angle-right"></i> Read More</a>
 		                </div>
 		              </div>          
 
@@ -89,14 +92,9 @@ const Layout = props => (
 		                  <ul className="list-info">
 		                    <li>
 		                      <div className="info-icon">
-		                        <span className="fa fa-map-marker"></span>
-		                      </div>
-		                      <div className="info-text">99 S.t Jomblo Park Pekanbaru 28292. Indonesia</div> </li>
-		                    <li>
-		                      <div className="info-icon">
 		                        <span className="fa fa-phone"></span>
 		                      </div>
-		                      <div className="info-text"> 07985 290 316</div>
+		                      <div className="info-text"> 07542 289 626</div>
 		                    </li>
 		                    <li>
 		                      <div className="info-icon">
@@ -141,8 +139,30 @@ const Layout = props => (
 		                    <a href="https://www.facebook.com/SchoolofABI/" target="_blank" className="fb"><i className="fa fa-facebook"></i></a> 
 		                    <a href="https://twitter.com/schoolofabi?s=20" className="tw" target="_blank"><i className="fa fa-twitter"></i></a> 
 		                    <a href="https://www.instagram.com/schoolofabi/" className="ig" target="_blank"><i className="fa fa-instagram"></i></a> 
-		                    <a href="https://www.linkedin.com/in/tawa-akib-52575452/" className="in" target="_blank"><i className="fa fa-linkedin"></i></a> 
 		                  </div>
+		                  <div className="subscribe-button">
+		                  	<button type="button" data-toggle="modal" data-target="#subscribe" className="btn btn-primary my-2">Subscribe to Mailing List </button>
+		                  </div>
+							<div className="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="subscribeLabel" aria-hidden="true">
+							  <div className="modal-dialog" role="document">
+							    <div className="modal-content">
+							      <div className="modal-header">
+							        <p className="modal-title h5" id="exampleModalLabel">Enter your email to Subscribe</p>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <form onSubmit="">
+								      <div className="modal-body">
+								        <input type="email" className="form-control form-control-lg" placeholder="Enter email" />
+								      </div>
+								      <div className="modal-footer">
+								        <button type="button" className="btn btn-primary">Submit</button>
+							      	</div>
+							      </form>
+							    </div>
+							  </div>
+							</div>
 		                </div>
 		              </div>
 		            </div>
@@ -184,12 +204,17 @@ const Layout = props => (
           width: 4rem;
         }
 
+        .abc-logo-footer{
+        	width: 10rem;
+        }
+
         .bg-tertiary{
           background-color: #0070ff !important;
         }
 
         .body-text{
           max-width: 100% !important;
+          float: none !important;
         }
 
         .btn-primary{
@@ -216,7 +241,17 @@ const Layout = props => (
           background-color: #ffcc04 !important;
         }
 
-        
+        .fb{
+        	background-color: #0070ff !important;
+        }
+
+        .tw{
+        	background-color: #0070ff !important;
+        }
+
+        .ig{
+        	background-color: #0070ff !important;
+        }
 
         .footer{
           color: #000 !important;
@@ -225,6 +260,7 @@ const Layout = props => (
         .footer .fcopy {
             color: #000 !important;
             background-color: #ffffff;
+            border-top: none;
         }
 
         .footer-title{
@@ -259,8 +295,17 @@ const Layout = props => (
           padding-top: 0;
         }
 
+        .subscribe-button{
+        	padding-top: 1rem;
+        }
+
         .title{
           color: #fd008f !important;
+        }
+
+        .what-inner{
+        	padding-left: 20%;
+        	padding-right: 20%;
         }
         
         * {
@@ -278,6 +323,10 @@ const Layout = props => (
 
 	        .info-text{
 	        	width: 100%;
+	        }
+	        .what-inner{
+	        	padding-left: 0;
+	        	padding-right: 0;
 	        }
 
 	    }

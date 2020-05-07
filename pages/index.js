@@ -23,11 +23,18 @@ const Index = () => (
             <div className="container">
               <div className="carousel-caption">
                 <h3>Consultation</h3>
-                <p>This involves advice and guidance on speciﬁc learning needs. Discussing programmes and strategies
-                    that work to meet your child’s targets as well as strategies to improve behaviour and life skills. We
-                    hope that by creating a clear pathway you are able to build conﬁdence for all involved in your child’s
-                    developmental journey.</p>
-                <p><a className="btn btn-lg btn-secondary" href="#" role="button">Learn More</a></p>
+                <p>
+                  All consultants provide advice and guidance on speciﬁc learning needs. 
+                  You can discuss programmes and strategies that work to meet your child’s 
+                  targets as well as techniques to improve behaviour and life skills. We hope 
+                  that by creating a clear pathway you are able to build conﬁdence for all 
+                  involved in your child’s developmental journey.
+                </p>
+                <p>
+                  <Link href="/service">
+                    <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -35,12 +42,18 @@ const Index = () => (
             <div className="container">
               <div className="carousel-caption">
                 <h3>Assessments</h3>
-                <p>We offer a variety of assessments; including careful screening and observations on communication,
-                  academia and social interaction skills.
-                  Our consultants will evaluate the milestones of your child’s development in areas such as learning,
-                  play, communication, self-help and transitioning. It is important to get an indication of your child’s
-                  stage of development in order to implement a programme at an appropriate level.</p>
-                <p><a className="btn btn-lg btn-secondary" href="#" role="button">Learn more</a></p>
+                <p>
+                  Our assessment process includes careful screening and observations on communication, 
+                  academia and social interaction. Our consultants will evaluate the milestones of your 
+                  child’s development in areas such as learning, play, communication, self-help and 
+                  transitioning. It is important to get an indication of your child’s stage of development 
+                  in order to implement a programme at an appropriate level. 
+                </p>
+                <p>
+                  <Link href="/service">
+                    <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -48,10 +61,16 @@ const Index = () => (
             <div className="container">
               <div className="carousel-caption">
                 <h3>Training Programmes</h3>
-                <p>Our interactive training programmes are designed for individuals and teams looking to achieve
-                  sustainable results. We cover current issues, hands on training, best practices, tips and tools, with
-                  real example cases on ethics.</p>
-                <p><a className="btn btn-lg btn-secondary" href="#" role="button">Browse gallery</a></p>
+                <p>
+                  Register for our interactive training sessions, specifically designed 
+                  for individuals and teams looking to achieve sustainable results. We 
+                    cover current issues, hands on training and best practices with real life case studies.
+                </p>
+                <p>
+                  <Link href="/service">
+                    <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -78,17 +97,19 @@ const Index = () => (
                 <h3 className="section-heading">
                   About Us
                 </h3>
-                <p>School of Academic and Behavioural Interventions (ABI), offers a consultancy and
-                management service to support parents and educational providers when working with
-                children on the autistic spectrum and related disorders. </p>
+                <p>
+                  School of Academic and Behavioural Interventions (ABI), offers a consultancy 
+                  and management service to support parents and educational providers when 
+                  working with children on the autistic spectrum and related developmental conditions. </p>
 
-                <p>Autism is a lifelong diagnosis. Applied Behavioural Analysis (ABA) is one of many therapeutic
-                interventions used to support the learning, development of children with autism and related
-                conditions. After several observations and discussions held with school professionals it is
-                clear that educational providers are concerned about the progress of their pupils with
-                behavioural and educational diﬃculties.</p>
+                <p>
+                  Autism is a lifelong diagnosis. Applied Behavioural Analysis (ABA) is one of many 
+                  therapeutic interventions used to support the learning and development 
+                  of children with autism. After several observations and discussions held with 
+                  school professionals, it is clear that educational providers are concerned about 
+                  the progress of their pupils with behavioural and educational diﬃculties.</p>
                 <div className="spacer-10"></div>
-                <a href="/about" className="btn btn-secondary">DISCOVER MORE</a>
+                <a href="/about" className="btn btn-secondary">Discover More</a>
                 <div className="spacer-30"></div>
               </div>
             </div>
@@ -103,9 +124,7 @@ const Index = () => (
             <div className="row">
               <div className="col-sm-12 col-md-12">
                 <p className="supheading text-center">Our Services</p>
-                <h3 className="section-heading text-center">
-                  Top Services
-                </h3>
+                
               </div>
             </div>
 
@@ -135,8 +154,10 @@ const Index = () => (
                     <div className="class-name">
                       <div className="title">Assessments</div>
                     </div>
-                    <p>We offer a variety of assessments; including careful screening and observations on communication,
-                      academia and social interaction skills.Our consultants will evaluate the milestones of your child’s </p>
+                    <p>
+                      We offer a variety of assessments; including careful screening and 
+                      observations on communication, academia and social interaction skills. 
+                      Our consultants will evaluate the milestones of your child’s... </p>
                   </div>
                 </div>
               </div>
@@ -150,8 +171,11 @@ const Index = () => (
                     <div className="class-name">
                       <div className="title">Training Programmes</div>
                     </div>
-                    <p>Our interactive training programmes are designed for individuals and teams looking to achieve
-                      sustainable results. We cover current issues, hands on training, best practices, tips and tools,</p>
+                    <p>
+                      Our interactive training sessions are designed for individuals and 
+                      teams looking to achieve sustainable results. We cover current issues, 
+                      hands on training, best practices, tips and tools and so much more…
+                    </p>
                   </div>
                 </div>
               </div>
@@ -161,7 +185,7 @@ const Index = () => (
             <div className="row">
               <div className="col-sm-12 col-md-12">
                 <div className="text-center">
-                  <a href="/service" className="btn btn-primary">SEE MORE SERVICES</a>
+                  <a href="/service" className="btn btn-primary">More About Services</a>
                 </div>
               </div>
             </div>
@@ -178,7 +202,7 @@ const Index = () => (
               <div className="col-sm-12 col-md-12">
                 <p className="supheading text-center text-light">Blogs</p>
                 <h2 className="section-heading blog-section-heading text-center">
-                  Don't miss our Contents
+                  Don't Miss Our Contents
                 </h2>
               </div>
             </div>
@@ -251,7 +275,7 @@ const Index = () => (
               <div className="col-sm-12 col-md-12">
                 <div className="text-center">
                   <Link href="/blog">
-                    <a  className="btn btn-secondary">SEE MORE BLOGS</a>
+                    <a  className="btn btn-secondary">See More Blogs</a>
                   </Link>
                 </div>
               </div>
@@ -268,7 +292,7 @@ const Index = () => (
 					<div className="col-sm-12 col-md-12">
 						<p className="supheading text-center">Our Testimonials</p>
 						<h2 className="section-heading text-center mb-5">
-							What parents say
+							What Parents Say
 						</h2>
 					</div>
 				</div>
@@ -278,128 +302,128 @@ const Index = () => (
 							<FaRegComments size="3em" />
 						</div>
 						<div id="testimonialCarousel" className="carousel slide mb-0" data-ride="carousel">
-					        <ol className="carousel-indicators">
-					          <li data-target="#testimonialCarousel" data-slide-to="0" className="active"></li>
-					          <li data-target="#testimonialCarousel" data-slide-to="1"></li>
-					          <li data-target="#testimonialCarousel" data-slide-to="2"></li>
-					        </ol>
-					        <div className="carousel-inner">
-					          <div className="carousel-item testimonial-carousel active">
-					            <div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Tawa brings her attention to detail to every project.Her consultancy skills and people skills are excellent.Very organised individual with great dose of creativity.
-										</blockquote>
-										<p className="quote-name">
-											Marzena Kot <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
-					          </div>
-					          <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 You are doing a great job so just keep up the good work, keep helping children, families and keep inspiring people!!!! Thank so much for everything you did and are doing for me :)
-										</blockquote>
-										
-										<p className="quote-name">
-											Delia Ghitelaru <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+					    <div className="carousel-inner">
+					      <div className="carousel-item testimonial-carousel active">
+					        <div className="rs-box-testimony">
+								    <div className="quote-box">
+  										<blockquote>
+  										 Tawa brings her attention to detail to every project.Her consultancy skills and people skills are excellent.Very organised individual with great dose of creativity.
+  										</blockquote>
+  										<p className="quote-name">
+  											Marzena Kot <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
+			          </div>
+			          <div className="carousel-item testimonial-carousel">
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 You are doing a great job so just keep up the good work, keep helping children, families and keep inspiring people!!!! Thank so much for everything you did and are doing for me :)
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Delia Ghitelaru <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Very informative! A price guide would be useful
-										</blockquote>
-										
-										<p className="quote-name">
-											Douglas Montaigne <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 Very informative! A price guide would be useful
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Douglas Montaigne <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Wishing you the very best with the launch of your website.
-										</blockquote>
-										
-										<p className="quote-name">
-											MediaFonics <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 Wishing you the very best with the launch of your website.
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											MediaFonics <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 I like the information posted on this website.
-										</blockquote>
-										
-										<p className="quote-name">
-											Daniel Simpson <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 I like the information posted on this website.
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Daniel Simpson <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Great website and good contents too!
-										</blockquote>
-										
-										<p className="quote-name">
-											Gary Mellon <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 Great website and good contents too!
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Gary Mellon <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Just to say thank you.
-										</blockquote>
-										
-										<p className="quote-name">
-											Mark Walters <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 Just to say thank you.
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Mark Walters <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
 							  <div className="carousel-item testimonial-carousel">
-								<div className="rs-box-testimony">
-									<div className="quote-box">
-										<blockquote>
-										 Thanks once again for your help.
-										</blockquote>
-										
-										<p className="quote-name">
-											Mark Broyle <span>Businessman</span>
-										</p>                        
-									</div>
-								</div>
+  								<div className="rs-box-testimony">
+  									<div className="quote-box">
+  										<blockquote>
+  										 Thanks once again for your help.
+  										</blockquote>
+  										
+  										<p className="quote-name">
+  											Mark Broyle <span>Businessman</span>
+  										</p>                        
+  									</div>
+  								</div>
 							  </div>
-					        </div>
-					        <a className="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-					          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-					          <span className="sr-only">Previous</span>
-					        </a>
-					        <a className="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-					          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-					          <span className="sr-only">Next</span>
-					        </a>
 					    </div>
+			        <a className="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+			          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+			          <span className="sr-only">Previous</span>
+			        </a>
+			        <a className="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+			          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+			          <span className="sr-only">Next</span>
+			        </a>
+				    </div>
 					</div>
 
 				</div>
+        <div className="container text-center">
+          <Link href="/contact">
+            <a className="btn btn-secondary my-2">Leave a Message</a>
+          </Link>
+        </div>
 			</div>
 		</div>
 	</div>
@@ -432,9 +456,10 @@ const Index = () => (
       	}
 
       	.body-box .title {
-		    font-size: 1rem;
-		    text-align: left;
-		}
+    		    font-size: 1rem;
+            font-weight: 900;
+    		    text-align: left;
+    		}
 
       	.blog-inner{
       		max-width: 80%
@@ -509,6 +534,10 @@ const Index = () => (
           justify-content: center;
           align-items: center;
         }
+
+        .quote-name{
+          color: #000 !important;
+        }
         
 
         footer img {
@@ -531,7 +560,7 @@ const Index = () => (
 		}
 
 		.testimonial-carousel{
-			height: 18rem;
+			height: 13rem;
 		}
 
 		.testimonial-section{

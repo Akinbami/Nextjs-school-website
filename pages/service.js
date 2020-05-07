@@ -32,39 +32,46 @@ const Service = (props) => (
             <div className="service-item">
               <p className="title">Consultation</p>
               <p className="service-text">
-                This involves advice and guidance on speciﬁc learning needs. 
-                Discussing programmes and strategies that work to meet your child’s 
-                targets as well as strategies to improve behaviour and life skills. 
-                We hope that by creating a clear pathway you are able to build conﬁdence
-                 for all involved in your child’s developmental journey
+                Our dedicated team of highly experienced professionals offer advice
+                 and guidance on speciﬁc learning needs. This service helps to identify 
+                 problem areas and discuss strategies that will work to meet your child’s 
+                 targets as well as improve behaviour and life skills. We hope that by 
+                 creating a clear pathway, parents are able to build conﬁdence for all 
+                 involved in theirs child’s developmental journey
               </p>
             </div>
 
             <div className="service-item">
               <p className="title">Assessments</p>
               <p className="service-text">
-                We offer a variety of assessments; including careful screening and observations on communication, academia and social interaction skills. 
-                Our consultants will evaluate the milestones of your child’s development in areas such as learning, play, communication, self-help and transitioning. It is important to get an indication of your child’s stage of development in order to implement a programme at an appropriate level. 
+                We offer a variety of assessments; including careful screening and observations 
+                on communication, academia and social interaction skills. Our consultants will 
+                evaluate the milestones of your child’s development in areas such as learning, 
+                play, communication, self-help and transitioning. It is important to get an indication 
+                of your child’s stage of development in order to implement a programme at an appropriate level.
               </p>
             </div> 
 
             <div className="service-item">
-              <p className="title">Training Programmes</p>
+              <p className="title">Training Sessions</p>
               <p className="service-text">
-                Our interactive training programmes are designed for individuals and teams 
-                looking to achieve sustainable results. We cover current issues, hands on training, 
-                best practices, tips and tools, with real example cases on ethics. 
+                Our interactive training sessions are designed for individuals and teams 
+                to ensure they are equipped to meet the ranging- characteristics of the 
+                clients and to achieve sustainable results. The sessions are led by experienced 
+                professionals who cover current issues, hands on training, best practices, 
+                alongside tips and tools with real case examples.
               </p>
             </div> 
 
             <div className="service-item">
-              <p className="title">Therapeutic Input/curriculum development</p>
+              <p className="title">Therapeutic Input</p>
               <p className="service-text">
                 Once a detailed assessment has been completed and a referral is made 
-                for therapeutic support, we are able to offer a personalised programme 
-                  to support all areas of your child’s need in the best way possible. We 
-                will work in partnership with external agencies where necessary to ensure 
-                optimal and lasting improvements. Continuous advice and updates will be given during the course of therapy. 
+                for therapeutic support, we are able to offer a personalised programme to 
+                support all areas of your child’s need in the best way possible. We will 
+                work in partnership with external agencies where necessary to ensure optimal 
+                and lasting improvements. Continuous advice and updates will be given during 
+                the course of therapy.
               </p>
             </div>  
 
@@ -76,8 +83,14 @@ const Service = (props) => (
                 organisation and have no formal associations with other agencies or 
                 consultancies on ABA therapy.
               </p>
-              <p className="service-note-text">For information and to discuss further the support we offer, contact us</p>
-            </div>            
+              <p className="service-note-text">For more information and to discuss further the support we offer, contact our team today</p>
+            </div>  
+
+            <div className="text-center">
+              <Link href="/contact">
+                <a className="btn btn-primary my-2">Book a Service</a>
+              </Link>
+            </div>          
 
           </div>
         </div>

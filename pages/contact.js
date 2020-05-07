@@ -13,7 +13,7 @@ const Contact = () => (
             <div className="title-page">Contact</div>
           </div>
           <div className="d-flex justify-content-center bd-highlight mb-3">
-              <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
               <ol className="breadcrumb ">
                 <li className="breadcrumb-item"><a href="/">Home</a></li>
                 <li className="breadcrumb-item active" aria-current="page">Contact</li>
@@ -60,7 +60,7 @@ const Contact = () => (
                      <textarea id="p_message" className="form-control" rows="6" placeholder="Enter Your Message"></textarea>
                     <div className="help-block with-errors"></div>
                   </div>
-                  <div className="form-group">
+                  <div className="form-group text-center">
                     <div id="success"></div>
                     <button type="submit" className="btn btn-primary">Send Message</button>
                   </div>

@@ -11,7 +11,7 @@ const Header = () => (
 						<div className="col-sm-8 col-md-6">
 							<div className="info">
 								<div className="info-item">
-									<i className="fa fa-phone"></i> 07985 290 316
+									<i className="fa fa-phone"></i> 07542 289 626
 								</div>
 								<div className="info-item">
 									<i className="fa fa-envelope-o"></i> <a href="mailto:info@schoolofabi.com" title="">info@schoolofabi.com</a>
@@ -23,7 +23,6 @@ const Header = () => (
 								<a href="https://www.facebook.com/SchoolofABI/" target="_blank"><i className="fa fa-facebook"></i></a> 
 								<a href="https://twitter.com/schoolofabi?s=20" target="_blank"><i className="fa fa-twitter"></i></a> 
 								<a href="https://www.instagram.com/schoolofabi/" target="_blank"><i className="fa fa-instagram"></i></a> 
-								<a href="https://www.linkedin.com/in/tawa-akib-52575452/" target="_blank"><i className="fa fa-linkedin"></i></a> 
 							</div>
 						</div>
 					</div>
