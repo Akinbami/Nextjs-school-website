@@ -241,6 +241,10 @@ const Layout = props => (
           background-color: #ffcc04 !important;
         }
 
+        .content-wrap{
+        	padding-top: 2rem;
+        }
+
         .fb{
         	background-color: #0070ff !important;
         }

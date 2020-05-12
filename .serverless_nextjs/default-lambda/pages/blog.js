@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "Gdea");
+/******/ 	return __webpack_require__(__webpack_require__.s = "MSfe");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1662,341 +1662,336 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 const Layout = props => __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, null, __jsx("meta", {
   charset: "utf-8",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("meta", {
   "http-equiv": "x-ua-compatible",
   content: "IE=9",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("meta", {
   name: "viewport",
   content: "width=device-width, initial-scale=1",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("title", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "ABC"), __jsx("meta", {
   name: "description",
   content: "ABC description",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("meta", {
   name: "keywords",
   content: "ABC",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("meta", {
   name: "author",
   content: "rometheme.net",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "shortcut icon",
   href: "/images/favicon.ico",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   href: "/images/apple-touch-icon.png",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   sizes: "72x72",
   href: "/images/apple-touch-icon-72x72.png",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "apple-touch-icon",
   sizes: "114x114",
   href: "/images/apple-touch-icon-114x114.png",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   href: "https://fonts.googleapis.com/css?family=Open+Sans&display=swap",
   rel: "stylesheet",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
   integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
   crossorigin: "anonymous",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   href: "https://getbootstrap.com/docs/4.4/examples/carousel/carousel.css",
   crossorigin: "anonymous",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/font-awesome.min.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/owl.carousel.min.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/owl.theme.default.min.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/magnific-popup.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/vendor/animate.min.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("link", {
   rel: "stylesheet",
   type: "text/css",
   href: "/css/style.css",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/vendor/modernizr.min.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 })), __jsx(_Header__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], null), __jsx("main", {
   role: "main",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, props.children, __jsx("div", {
-  className: "jsx-2096701024" + " " + "section bg-tertiary"
+  className: "jsx-4253856015" + " " + "section bg-tertiary"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "content-wrap py-5"
+  className: "jsx-4253856015" + " " + "content-wrap py-5"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "container"
+  className: "jsx-4253856015" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "row align-items-center"
+  className: "jsx-4253856015" + " " + "row align-items-center"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-12"
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-12"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "cta-1 text-center"
+  className: "jsx-4253856015" + " " + "cta-1 text-center"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "body-text mb-3"
+  className: "jsx-4253856015" + " " + "body-text mb-3"
 }, __jsx("h3", {
-  className: "jsx-2096701024" + " " + "my-1 text-secondary"
+  className: "jsx-4253856015" + " " + "my-1 text-secondary"
 }, "Note! What We Do?"), __jsx("div", {
-  className: "jsx-2096701024" + " " + "what-inner"
+  className: "jsx-4253856015" + " " + "what-inner"
 }, __jsx("ul", {
-  className: "jsx-2096701024" + " " + "text-left text-dark"
+  className: "jsx-4253856015" + " " + "text-left text-light"
 }, __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Create personalised academic and behavioural programmes"), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Encourage and support parental involvement"), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Promote child development in communication, self-confidence and independence"), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Provide clear guidance on teaching materials, individual educational plans and learning programmes"), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Provide a calm and purposeful learning environment")))))))))), __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer"
+  className: "jsx-4253856015" + " " + "footer"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "content-wrap"
+  className: "jsx-4253856015" + " " + "content-wrap"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "container"
+  className: "jsx-4253856015" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "row"
+  className: "jsx-4253856015" + " " + "row"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-item"
+  className: "jsx-4253856015" + " " + "footer-item"
 }, __jsx("img", {
-  src: "/abi_logo.png",
+  src: "/abi_logo_2.png",
   alt: "logo bottom",
-  className: "jsx-2096701024" + " " + "abc-logo"
+  className: "jsx-4253856015" + " " + "abc-logo-footer"
 }), __jsx("div", {
-  className: "jsx-2096701024" + " " + "spacer-30"
-}), __jsx("p", {
-  className: "jsx-2096701024"
-}, "School of Academic and Behavioural Interventions (ABI), offers a consultancy and management service to support parents and educational providers when working with children on the autistic spectrum and related disorders."), __jsx("a", {
-  href: "/about",
-  className: "jsx-2096701024"
-}, __jsx("i", {
-  className: "jsx-2096701024" + " " + "fa fa-angle-right"
-}), " Read More"))), __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-4253856015" + " " + "spacer-30"
+}))), __jsx("div", {
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-item"
+  className: "jsx-4253856015" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-title"
+  className: "jsx-4253856015" + " " + "footer-title"
 }, "Contact Info"), __jsx("ul", {
-  className: "jsx-2096701024" + " " + "list-info"
+  className: "jsx-4253856015" + " " + "list-info"
 }, __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-icon"
+  className: "jsx-4253856015" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2096701024" + " " + "fa fa-phone"
+  className: "jsx-4253856015" + " " + "fa fa-phone"
 })), __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-text"
+  className: "jsx-4253856015" + " " + "info-text"
 }, " 07542 289 626")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-icon"
+  className: "jsx-4253856015" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2096701024" + " " + "fa fa-envelope"
+  className: "jsx-4253856015" + " " + "fa fa-envelope"
 })), __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-text"
+  className: "jsx-4253856015" + " " + "info-text"
 }, "info@schoolofabi.com")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-icon"
+  className: "jsx-4253856015" + " " + "info-icon"
 }, __jsx("span", {
-  className: "jsx-2096701024" + " " + "fa fa-clock-o"
+  className: "jsx-4253856015" + " " + "fa fa-clock-o"
 })), __jsx("div", {
-  className: "jsx-2096701024" + " " + "info-text"
+  className: "jsx-4253856015" + " " + "info-text"
 }, "Mon - Fri 9.00am - 6.00pm"))))), __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-item"
+  className: "jsx-4253856015" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-title"
+  className: "jsx-4253856015" + " " + "footer-title"
 }, "Useful Links"), __jsx("ul", {
-  className: "jsx-2096701024" + " " + "list text-dark"
+  className: "jsx-4253856015" + " " + "list text-dark"
 }, __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("a", {
   href: "/",
   title: "About us",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Home")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("a", {
   href: "/about",
   title: "About us",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "About us")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("a", {
   href: "/",
   title: "Our Classes",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Our Services")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("a", {
   href: "/blogs",
   title: "Our Events",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Blogs")), __jsx("li", {
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("a", {
   href: "/contact",
   title: "Contact Us",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "Contact Us"))))), __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-6 col-lg-3"
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-6 col-lg-3"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-item"
+  className: "jsx-4253856015" + " " + "footer-item"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "footer-title"
+  className: "jsx-4253856015" + " " + "footer-title"
 }, "Get in Touch"), __jsx("div", {
-  className: "jsx-2096701024" + " " + "sosmed-icon d-inline-flex"
+  className: "jsx-4253856015" + " " + "sosmed-icon d-inline-flex"
 }, __jsx("a", {
   href: "https://www.facebook.com/SchoolofABI/",
   target: "_blank",
-  className: "jsx-2096701024" + " " + "fb"
+  className: "jsx-4253856015" + " " + "fb"
 }, __jsx("i", {
-  className: "jsx-2096701024" + " " + "fa fa-facebook"
+  className: "jsx-4253856015" + " " + "fa fa-facebook"
 })), __jsx("a", {
   href: "https://twitter.com/schoolofabi?s=20",
   target: "_blank",
-  className: "jsx-2096701024" + " " + "tw"
+  className: "jsx-4253856015" + " " + "tw"
 }, __jsx("i", {
-  className: "jsx-2096701024" + " " + "fa fa-twitter"
+  className: "jsx-4253856015" + " " + "fa fa-twitter"
 })), __jsx("a", {
   href: "https://www.instagram.com/schoolofabi/",
   target: "_blank",
-  className: "jsx-2096701024" + " " + "ig"
+  className: "jsx-4253856015" + " " + "ig"
 }, __jsx("i", {
-  className: "jsx-2096701024" + " " + "fa fa-instagram"
-}))), __jsx("button", {
+  className: "jsx-4253856015" + " " + "fa fa-instagram"
+}))), __jsx("div", {
+  className: "jsx-4253856015" + " " + "subscribe-button"
+}, __jsx("button", {
   type: "button",
   "data-toggle": "modal",
   "data-target": "#subscribe",
-  className: "jsx-2096701024" + " " + "btn btn-primary my-2"
-}, "Subscribe to mailing list "), __jsx("div", {
+  className: "jsx-4253856015" + " " + "btn btn-primary my-2"
+}, "Subscribe to Mailing List ")), __jsx("div", {
   id: "subscribe",
   tabindex: "-1",
   role: "dialog",
   "aria-labelledby": "subscribeLabel",
   "aria-hidden": "true",
-  className: "jsx-2096701024" + " " + "modal fade"
+  className: "jsx-4253856015" + " " + "modal fade"
 }, __jsx("div", {
   role: "document",
-  className: "jsx-2096701024" + " " + "modal-dialog"
+  className: "jsx-4253856015" + " " + "modal-dialog"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "modal-content"
+  className: "jsx-4253856015" + " " + "modal-content"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "modal-header"
+  className: "jsx-4253856015" + " " + "modal-header"
 }, __jsx("p", {
   id: "exampleModalLabel",
-  className: "jsx-2096701024" + " " + "modal-title h5"
+  className: "jsx-4253856015" + " " + "modal-title h5"
 }, "Enter your email to Subscribe"), __jsx("button", {
   type: "button",
   class: "close",
   "data-dismiss": "modal",
   "aria-label": "Close",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("span", {
   "aria-hidden": "true",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, "\xD7"))), __jsx("form", {
   onSubmit: "",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "modal-body"
+  className: "jsx-4253856015" + " " + "modal-body"
 }, __jsx("input", {
   type: "email",
   placeholder: "Enter email",
-  className: "jsx-2096701024" + " " + "form-control form-control-lg"
+  className: "jsx-4253856015" + " " + "form-control form-control-lg"
 })), __jsx("div", {
-  className: "jsx-2096701024" + " " + "modal-footer"
+  className: "jsx-4253856015" + " " + "modal-footer"
 }, __jsx("button", {
   type: "button",
-  className: "jsx-2096701024" + " " + "btn btn-primary"
+  className: "jsx-4253856015" + " " + "btn btn-primary"
 }, "Submit"))))))))))), __jsx("div", {
-  className: "jsx-2096701024" + " " + "fcopy"
+  className: "jsx-4253856015" + " " + "fcopy"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "container"
+  className: "jsx-4253856015" + " " + "container"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "row"
+  className: "jsx-4253856015" + " " + "row"
 }, __jsx("div", {
-  className: "jsx-2096701024" + " " + "col-sm-12 col-md-12"
+  className: "jsx-4253856015" + " " + "col-sm-12 col-md-12"
 }, __jsx("p", {
-  className: "jsx-2096701024" + " " + "ftex"
+  className: "jsx-4253856015" + " " + "ftex"
 }, "Copyright 2020 \xA9 ", __jsx("span", {
-  className: "jsx-2096701024" + " " + "color-primary"
+  className: "jsx-4253856015" + " " + "color-primary"
 }, "ABI"), ". Designed by ", __jsx("span", {
-  className: "jsx-2096701024" + " " + "color-primary"
+  className: "jsx-4253856015" + " " + "color-primary"
 }, "smartpy.")))))))), __jsx("script", {
   src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
   integrity: "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n",
   crossorigin: "anonymous",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
   integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo",
   crossorigin: "anonymous",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
   integrity: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6",
   crossorigin: "anonymous",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/vendor/owl.carousel.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/vendor/jquery.magnific-popup.min.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/vendor/validator.min.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/vendor/form-scripts.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx("script", {
   src: "/js/script.js",
-  className: "jsx-2096701024"
+  className: "jsx-4253856015"
 }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "2096701024"
-}, ["html,body{padding:0;margin:0;font-family:'Open Sans',sans-serif;}", ".abc-logo{width:4rem;}", ".bg-tertiary{background-color:#0070ff !important;}", ".body-text{max-width:100% !important;float:none !important;}", ".btn-primary{background-color:#fd008f !important;color:#fff !important;}", ".btn-primary:hover{background-color:#ffcc04 !important;}", ".btn-secondary{background-color:#ffcc04 !important;color:#fff !important;}", ".btn-secondary:hover{background-color:#fd008f !important;}", ".btn-light{color:#ffcc04 !important;}", ".btn-light:hover{color:#fff !important;background-color:#ffcc04 !important;}", ".footer{color:#000 !important;}", ".footer .fcopy{color:#000 !important;background-color:#ffffff;}", ".footer-title{color:#fff !important;padding:0.5rem 0 0.5rem 0 !important;}", ".footer .footer-item .list li a{position:relative;color:#000;padding-left:25px;}", ".footer .footer-item .list li a:before{color:#000000 !important;}", ".info-icon{color:#000 !important;}", ".list-info li{margin-bottom:0;}", ".section-heading{color:#fd008f !important;}", ".services{padding-top:0;}", ".title{color:#fd008f !important;}", ".what-inner{padding-left:20%;padding-right:20%;}", "*{box-sizing:border-box;}", "@media (max-width:414px){.section{text-align:center;}.footer{text-align:center;}.info-text{width:100%;}.what-inner{padding-left:0;padding-right:0;}}"]));
+  id: "4253856015"
+}, ["html,body{padding:0;margin:0;font-family:'Open Sans',sans-serif;}", ".abc-logo{width:4rem;}", ".abc-logo-footer{width:10rem;}", ".bg-tertiary{background-color:#0070ff !important;}", ".body-text{max-width:100% !important;float:none !important;}", ".btn-primary{background-color:#fd008f !important;color:#fff !important;}", ".btn-primary:hover{background-color:#ffcc04 !important;}", ".btn-secondary{background-color:#ffcc04 !important;color:#fff !important;}", ".btn-secondary:hover{background-color:#fd008f !important;}", ".btn-light{color:#ffcc04 !important;}", ".btn-light:hover{color:#fff !important;background-color:#ffcc04 !important;}", ".content-wrap{padding-top:2rem;}", ".fb{background-color:#0070ff !important;}", ".tw{background-color:#0070ff !important;}", ".ig{background-color:#0070ff !important;}", ".footer{color:#000 !important;}", ".footer .fcopy{color:#000 !important;background-color:#ffffff;border-top:none;}", ".footer-title{color:#fff !important;padding:0.5rem 0 0.5rem 0 !important;}", ".footer .footer-item .list li a{position:relative;color:#000;padding-left:25px;}", ".footer .footer-item .list li a:before{color:#000000 !important;}", ".info-icon{color:#000 !important;}", ".list-info li{margin-bottom:0;}", ".section-heading{color:#fd008f !important;}", ".services{padding-top:0;}", ".subscribe-button{padding-top:1rem;}", ".title{color:#fd008f !important;}", ".what-inner{padding-left:20%;padding-right:20%;}", "*{box-sizing:border-box;}", "@media (max-width:414px){.section{text-align:center;}.footer{text-align:center;}.info-text{width:100%;}.what-inner{padding-left:0;padding-right:0;}}"]));
 
 /* harmony default export */ __webpack_exports__["a"] = (Layout);
 
@@ -4869,205 +4864,6 @@ module.exports = global.fetch = global.fetch || (
 
 /***/ }),
 
-/***/ "Gdea":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-
-    
-    
-    
-    const runtimeConfig = {}
-    const {parse} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const {renderToHTML} = __webpack_require__("/bjS");
-    const { tryGetPreviewData } = __webpack_require__("PCLx");
-    const {sendHTML} = __webpack_require__("LuNM");
-    const {sendPayload} = __webpack_require__("KyNf");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("VDXt").default;
-    const Error = __webpack_require__("/a9y").default;
-    const App = __webpack_require__("B5Ud").default;
-    
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-    const ComponentInfo = __webpack_require__("YbiN")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const getStaticProps = ComponentInfo['getStaticProp' + 's']
-    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
-    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
-
-    // kept for detecting legacy exports
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    
-    const getCustomRouteMatcher = pathMatch(true)
-    const {prepareDestination} = __webpack_require__("dtb4")
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params
-          )
-          Object.assign(parsedUrl.query, parsedDestination.query, params)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/blog'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
-      const fromExport = renderMode === 'export' || renderMode === true;
-      
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        getStaticProps,
-        getServerSideProps,
-        getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "ehV7vtXnfA6fzPs6r7lq-",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"accd17f4515568194bf2afe9e54d457b",previewModeSigningKey:"8096390de9610797d90e15cfc44d820fe2cb8eb8481a29ce22578296c0510514",previewModeEncryptionKey:"51801a1c393065e3ef4488fd3f2cd9dbb415da7f9692ada68a3b9d2ab043cade"},
-        ..._renderOpts
-      }
-      let _nextData = false
-
-      const parsedUrl = handleRewrites(parse(req.url, true))
-
-      if (parsedUrl.pathname.match(/_next\/data/)) {
-        _nextData = true
-        parsedUrl.pathname = parsedUrl.pathname
-          .replace(new RegExp('/_next/data/ehV7vtXnfA6fzPs6r7lq\-/'), '/')
-          .replace(/\.json$/, '')
-      }
-
-      const renderOpts = Object.assign(
-        {
-          Component,
-          pageConfig: config,
-          nextExport: fromExport
-        },
-        options,
-      )
-      try {
-        
-        const params = {};
-        const nowParams = null;
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        const previewData = tryGetPreviewData(req, res, options.previewProps)
-        const isPreviewMode = previewData !== false
-
-        let result = await renderToHTML(req, res, "/blog", Object.assign({}, getStaticProps ? {} : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (!renderMode) {
-          if (_nextData || getStaticProps || getServerSideProps) {
-            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
-              private: isPreviewMode,
-              stateful: !!getServerSideProps,
-              revalidate: renderOpts.revalidate,
-            })
-            return null
-          }
-        } else if (isPreviewMode) {
-          res.setHeader(
-            'Cache-Control',
-            'private, no-cache, no-store, max-age=0, must-revalidate'
-          )
-        }
-
-        if (renderMode) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            getStaticProps: undefined,
-            getStaticPaths: undefined,
-            getServerSideProps: undefined,
-            Component: Error
-          }))
-          return result
-        } else {
-          console.error(err)
-          res.statusCode = 500
-          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-            getStaticProps: undefined,
-            getStaticPaths: undefined,
-            getServerSideProps: undefined,
-            Component: Error,
-            err
-          }))
-          return result
-        }
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendHTML(req, res, html, {generateEtags: true})
-        }
-      } catch(err) {
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        console.error(err)
-        res.statusCode = 500
-        res.end('Internal Server Error')
-      }
-    }
-  
-
-/***/ }),
-
 /***/ "HEcb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5804,7 +5600,7 @@ exports.sendPayload = sendPayload;
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/ehV7vtXnfA6fzPs6r7lq-/_buildManifest.js\",\"static/ehV7vtXnfA6fzPs6r7lq-/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_app\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_error\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_polyfills\":[\"static/runtime/polyfills-7778ce4f7728deacbe73.js\"],\"/about\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/createPost\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/eabe11fc.6b7a3bd1d227423433bb.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/chunks/12f4b48d75d47fbd9a3bed8f72d20f3b6baa70a3.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/login\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/chunks/12f4b48d75d47fbd9a3bed8f72d20f3b6baa70a3.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/posts\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/register\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/chunks/12f4b48d75d47fbd9a3bed8f72d20f3b6baa70a3.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/blog\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/contact\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/index\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/p/[slug]\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/service\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/4a90365ad87e0fb06525350bb33f1ab4482ebc46.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/AiiBkPzmUOtB-xWL4FE2U/_buildManifest.js\",\"static/AiiBkPzmUOtB-xWL4FE2U/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_app\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_error\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/_polyfills\":[\"static/runtime/polyfills-7778ce4f7728deacbe73.js\"],\"/about\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/createPost\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/eabe11fc.6b7a3bd1d227423433bb.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/chunks/ee6eac43c8b38e305978aa708eb822472065045e.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/login\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/chunks/ee6eac43c8b38e305978aa708eb822472065045e.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/posts\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/admin/register\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/chunks/ee6eac43c8b38e305978aa708eb822472065045e.41c3a0b7caaf1e8b3e6c.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/blog\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/contact\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/index\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/1bfc9850.ebc7acd4984fbd32ce71.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/p/[slug]\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"],\"/service\":[\"static/runtime/webpack-9369c5c69dbf6d4912cb.js\",\"static/chunks/framework.aa6821c2d233f81df405.js\",\"static/chunks/commons.b0ce49c01c4ac5c30a65.js\",\"static/chunks/f673ab6c0aa892345132b4dda022ab6109d4c6a2.b329829220e42159d8e4.js\",\"static/runtime/main-941cdb81b6b3e8183e6c.js\"]}}");
 
 /***/ }),
 
@@ -6024,6 +5820,205 @@ function checkEncoding(name) {
     toUpperCase();
 }
 
+
+/***/ }),
+
+/***/ "MSfe":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+
+    
+    
+    
+    const runtimeConfig = {}
+    const {parse} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const {renderToHTML} = __webpack_require__("/bjS");
+    const { tryGetPreviewData } = __webpack_require__("PCLx");
+    const {sendHTML} = __webpack_require__("LuNM");
+    const {sendPayload} = __webpack_require__("KyNf");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+    const Document = __webpack_require__("VDXt").default;
+    const Error = __webpack_require__("/a9y").default;
+    const App = __webpack_require__("B5Ud").default;
+    
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+    const ComponentInfo = __webpack_require__("YbiN")
+
+    const Component = ComponentInfo.default
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
+    const getStaticProps = ComponentInfo['getStaticProp' + 's']
+    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
+    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
+
+    // kept for detecting legacy exports
+    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
+    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
+    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
+
+    
+    
+    const getCustomRouteMatcher = pathMatch(true)
+    const {prepareDestination} = __webpack_require__("dtb4")
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params
+          )
+          Object.assign(parsedUrl.query, parsedDestination.query, params)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/blog'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    const config = ComponentInfo['confi' + 'g'] || {}
+    const _app = App
+    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
+      const fromExport = renderMode === 'export' || renderMode === true;
+      
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "AiiBkPzmUOtB-xWL4FE2U",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"d9685e7b8e99389e6a48beb32e394335",previewModeSigningKey:"2517a0271ef330a97d53ef9abb0495a16c1000c73713c938909b48236ec8cc18",previewModeEncryptionKey:"ed2fa916b1c6f03d55abadc64a59023f933c621004c3f91eab4761bf3edd1f42"},
+        ..._renderOpts
+      }
+      let _nextData = false
+
+      const parsedUrl = handleRewrites(parse(req.url, true))
+
+      if (parsedUrl.pathname.match(/_next\/data/)) {
+        _nextData = true
+        parsedUrl.pathname = parsedUrl.pathname
+          .replace(new RegExp('/_next/data/AiiBkPzmUOtB\-xWL4FE2U/'), '/')
+          .replace(/\.json$/, '')
+      }
+
+      const renderOpts = Object.assign(
+        {
+          Component,
+          pageConfig: config,
+          nextExport: fromExport
+        },
+        options,
+      )
+      try {
+        
+        const params = {};
+        const nowParams = null;
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        const previewData = tryGetPreviewData(req, res, options.previewProps)
+        const isPreviewMode = previewData !== false
+
+        let result = await renderToHTML(req, res, "/blog", Object.assign({}, getStaticProps ? {} : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (!renderMode) {
+          if (_nextData || getStaticProps || getServerSideProps) {
+            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
+              private: isPreviewMode,
+              stateful: !!getServerSideProps,
+              revalidate: renderOpts.revalidate,
+            })
+            return null
+          }
+        } else if (isPreviewMode) {
+          res.setHeader(
+            'Cache-Control',
+            'private, no-cache, no-store, max-age=0, must-revalidate'
+          )
+        }
+
+        if (renderMode) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            getStaticProps: undefined,
+            getStaticPaths: undefined,
+            getServerSideProps: undefined,
+            Component: Error
+          }))
+          return result
+        } else {
+          console.error(err)
+          res.statusCode = 500
+          const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+            getStaticProps: undefined,
+            getStaticPaths: undefined,
+            getServerSideProps: undefined,
+            Component: Error,
+            err
+          }))
+          return result
+        }
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendHTML(req, res, html, {generateEtags: true})
+        }
+      } catch(err) {
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        console.error(err)
+        res.statusCode = 500
+        res.end('Internal Server Error')
+      }
+    }
+  
 
 /***/ }),
 

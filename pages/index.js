@@ -419,7 +419,7 @@ const Index = () => (
 					</div>
 
 				</div>
-        <div className="container text-center">
+        <div className="container text-center pb-5">
           <Link href="/contact">
             <a className="btn btn-secondary my-2">Leave a Message</a>
           </Link>
