@@ -76,11 +76,11 @@ const Blog = (props) => (
                     <img src="images/blog3.jpg" alt="" className="img-fluid" />
                   </div>
                   <div className="body-box">
-                    <div className="title">corona</div>
+                    <div className="title">How Mental Health Makes You Question Everything</div>
                     <div className="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-                    <p>We provide high quality design at vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores...</p>
+                    <p>You may have heard it over and over again, ‘Get your mind right’ or ‘Think positive if you want positive results!!’</p>
                     <div className="text-center">
-                      <Link href="/p/corona">
+                      <Link href="/p/How-Mental-Health-Makes-You-Question-Everything">
                         <a className="btn btn-secondary">View</a>
                       </Link>
                     </div>

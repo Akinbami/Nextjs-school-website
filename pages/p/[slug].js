@@ -35,7 +35,7 @@ const Detail = props => {
 								<div className="single-news">
 									
 									<h2 className="title"> {props.post.title} </h2> 
-									<img src="/images/dummy-img-900x600.jpg" alt="" className="img-fluid rounded" /> 
+									<img src={props.post.image} alt="" className="img-fluid rounded" /> 
 
 									<div className="meta-date">{props.post.date_posted}</div>
 									{props.post.content.map(item =><p>{item}</p>) }
