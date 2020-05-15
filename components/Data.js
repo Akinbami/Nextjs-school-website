@@ -1,4 +1,29 @@
 export default {
+	'How-Mental-Health-Makes-You-Question-Everything' : {
+					    	'title': 'How Mental Health Makes You Question Everything',
+					    	'content': ["You may have heard it over and over again, ‘Get your mind right’ or ‘Think positive if you want positive results!!’",
+										"It can be hard sometimes to coach yourself through difficult times, especially when it seems as if your difficult time never ends. The truth is, they are right!! Do not underestimate the power of your mental state, it should take precedence over everything.",
+										"I found myself struggling to manage home life, work life- being all things to everyone around me, but never looking out for myself. I started to realise I was getting weaker and weaker, losing control in all areas. I started having a lot of anxiety because I couldn&#39;t fully complete my daily tasks. Before bed, I would be thinking how I could accomplish tomorrow&#39;s tasks. My mind was all over the place, I couldn&#39;t sleep properly, I couldn&#39;t remember simple things or hold conversations without forgetting what I wanted to say. I would even write things down and forget to go back to what was written. How much worse could it really get?? I was digging a hole for myself, just waiting to fall in.",
+										"You can be faced with any situation big or small and still overcome it, provided you are mentally prepared. Get your mind right; get yourself back to a place where you feel in control, a place you are able to regulate and manage your emotions to the point you feel energised enough to take on the world. You will be able to parent better- your attitude will change, your tone won&#39;t be as harsh, your expressions will be relaxed, and you can provide solutions.",
+										"For some, you may be able to get your mind to a healthy state in a few weeks, for others it may take months or even years. But, once recovered it can last a lifetime. Invest in yourself- it allows you to do more.",
+										"Do not solely rely on the people around you to get you there, this is really a journey for you alone, regardless of all the encouragement and support they provide. This is a battle you have to fight all by yourself.",
+										"Your mind-set is what separates the best from the rest. So here is ‘The 10 useful tips to a healthy mind:",
+										"1. Accept you can&#39;t do everything it doesn&#39;t mean you have failed",
+										"2. Take each day as it comes, setting small goals that are achievable",
+										"3. Don&#39;t worry, remember tomorrow is another opportunity to get things done",
+										"4. Schedule yourself in for a treat",
+										"5. Don&#39;t be afraid to ask for help",
+										"6. Laugh a little bit more- surround yourself with people and things that make you happy",
+										"7. Self-proclaim - repeat to yourself positive messages",
+										"8. Look at what you do have rather than what you don&#39;t",
+										"9. It&#39;s okay to say ‘No’",
+										"10. Consider counselling if you need extra support and don’t feel guilty about it.",
+
+										"When you fly on an airplane, before you take off, the attendant instructs, put your oxygen mask on first, before helping others. Do you know why? You are no good to anyone if you aren&#39;t at your best.",
+										"So whatever you do - start &#39;doing you first&#39; at any cost."],
+					    	'date': 'May 14, 2020 / 08:00 am - 10:00 am',
+					    	'image': '/images/blog3.jpg'
+					    },
     'Talk-Bilingual' : {
 					    	'title': 'Talk Bilingual',
 					    	'content': ["In the U.K we are known for our vast multi-cultural society; having more than two languages being spoken in a home for a number of families is now seen as the norm. The question Ipose today is whether a bilingual home, is an advantage or detrimental to the early development of a child?",
@@ -13,7 +38,7 @@ export default {
 										"Be patient with your child, not all children grasp another language as easy as others. In addition observe your child&#39;s learning styles and modes of interaction. Make sure you adapt your teaching of the second language accordingly.",
 										"In my opinion when choosing to bring your child up in a bilingual home it is a personal choice that should be agreed on by both parents. There are many factors to consider, but essentially it should be based on what&#39;s best for your child. You are the primary source of language for your child; they imitate, practice and engage in activities through interactions with you. Social interaction can be deﬁcit in some homes, so provide a natural and comfortable environment and if speaking your native tongue encourages social interaction and inclusion in the home, then go for it!!"
 										],
-					    	'date': 'March 19, 2016 / 08:00 am - 10:00 am',
+					    	'date': 'May 8, 2020 / 08:00 am - 10:00 am',
 					    	'image': '/images/blog1.jpg'
 					    },
     '10-Basic-Program-Must-Haves' : {
@@ -71,34 +96,9 @@ export default {
 
 										"So this is your progress notebook... As time goes on, I would like you to note down anything the child did, that you didn’t see or realise they could do before and date it. Every so often you feel disheartened or need some encouragement, I would like you to open your notebook. When you look back you will be amazed at how much they have accomplished and how far they have come. I hope this helps in your progress to success!!"
 										],
-					    	'date': 'March 19, 2016 / 08:00 am - 10:00 am',
+					    	'date': 'May 8, 2020 / 08:00 am - 10:00 am',
 					    	'image': '/images/blog2.jpg'
-					    },
-	'How-Mental-Health-Makes-You-Question-Everything' : {
-					    	'title': 'How Mental Health Makes You Question Everything',
-					    	'content': ["You may have heard it over and over again, ‘Get your mind right’ or ‘Think positive if you want positive results!!’",
-										"It can be hard sometimes to coach yourself through difficult times, especially when it seems as if your difficult time never ends. The truth is, they are right!! Do not underestimate the power of your mental state, it should take precedence over everything.",
-										"I found myself struggling to manage home life, work life- being all things to everyone around me, but never looking out for myself. I started to realise I was getting weaker and weaker, losing control in all areas. I started having a lot of anxiety because I couldn&#39;t fully complete my daily tasks. Before bed, I would be thinking how I could accomplish tomorrow&#39;s tasks. My mind was all over the place, I couldn&#39;t sleep properly, I couldn&#39;t remember simple things or hold conversations without forgetting what I wanted to say. I would even write things down and forget to go back to what was written. How much worse could it really get?? I was digging a hole for myself, just waiting to fall in.",
-										"You can be faced with any situation big or small and still overcome it, provided you are mentally prepared. Get your mind right; get yourself back to a place where you feel in control, a place you are able to regulate and manage your emotions to the point you feel energised enough to take on the world. You will be able to parent better- your attitude will change, your tone won&#39;t be as harsh, your expressions will be relaxed, and you can provide solutions.",
-										"For some, you may be able to get your mind to a healthy state in a few weeks, for others it may take months or even years. But, once recovered it can last a lifetime. Invest in yourself- it allows you to do more.",
-										"Do not solely rely on the people around you to get you there, this is really a journey for you alone, regardless of all the encouragement and support they provide. This is a battle you have to fight all by yourself.",
-										"Your mind-set is what separates the best from the rest. So here is ‘The 10 useful tips to a healthy mind:",
-										"1. Accept you can&#39;t do everything it doesn&#39;t mean you have failed",
-										"2. Take each day as it comes, setting small goals that are achievable",
-										"3. Don&#39;t worry, remember tomorrow is another opportunity to get things done",
-										"4. Schedule yourself in for a treat",
-										"5. Don&#39;t be afraid to ask for help",
-										"6. Laugh a little bit more- surround yourself with people and things that make you happy",
-										"7. Self-proclaim - repeat to yourself positive messages",
-										"8. Look at what you do have rather than what you don&#39;t",
-										"9. It&#39;s okay to say ‘No’",
-										"10. Consider counselling if you need extra support and don’t feel guilty about it.",
-
-										"When you fly on an airplane, before you take off, the attendant instructs, put your oxygen mask on first, before helping others. Do you know why? You are no good to anyone if you aren&#39;t at your best.",
-										"So whatever you do - start &#39;doing you first&#39; at any cost."],
-					    	'date': 'March 19, 2016 / 08:00 am - 10:00 am',
-					    	'image': '/images/blog3.jpg'
-					    },
+					    }
 };
 
 
