@@ -6,7 +6,7 @@ module.exports =
 /******/ 	// object to store loaded chunks
 /******/ 	// "0" means "already loaded"
 /******/ 	var installedChunks = {
-/******/ 		4: 0,
+/******/ 		5: 0,
 /******/ 		0: 0,
 /******/ 		1: 0
 /******/ 	};
@@ -103,7 +103,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "Uzkd");
+/******/ 	return __webpack_require__(__webpack_require__.s = "5leb");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2418,6 +2418,215 @@ module.exports = JSON.parse("[[\"0\",\"\\u0000\",127],[\"8141\",\"갂갃갅갆�
 
 /***/ }),
 
+/***/ "5leb":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
+/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
+
+    
+    
+    
+
+    
+    const runtimeConfig = {}
+    const {parse} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const {renderToHTML} = __webpack_require__("/bjS");
+    const { tryGetPreviewData } = __webpack_require__("PCLx");
+    const {sendHTML} = __webpack_require__("LuNM");
+    const {sendPayload} = __webpack_require__("KyNf");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+    const Document = __webpack_require__("VDXt").default;
+    const Error = __webpack_require__("/a9y").default;
+    const App = __webpack_require__("B5Ud").default;
+    
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+    const ComponentInfo = __webpack_require__("FBZP")
+
+    const Component = ComponentInfo.default
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
+    const getStaticProps = ComponentInfo['getStaticProp' + 's']
+    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
+    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
+
+    // kept for detecting legacy exports
+    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
+    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
+    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
+
+    
+    
+    const getCustomRouteMatcher = pathMatch(true)
+    const {prepareDestination} = __webpack_require__("dtb4")
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params,
+            parsedUrl.query
+          )
+          Object.assign(parsedUrl.query, parsedDestination.query, params)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/admin/editPost'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    const config = ComponentInfo['confi' + 'g'] || {}
+    const _app = App
+    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
+      const fromExport = renderMode === 'export' || renderMode === true;
+      
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "xYaWIurVWfd1VVw2wYj4H",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"9a8d90b2967429f5e972eed9276728b1",previewModeSigningKey:"777d0d94a7ad9f92570873ae662bf26055996bb8cf30b2de23249a60cb837352",previewModeEncryptionKey:"c37225edc5de9b85f098e95d8cad052bca9487b1a215cfa7a821db6f9cf8f0c9"},
+        env: process.env,
+        basePath: "",
+        ..._renderOpts
+      }
+      let _nextData = false
+      let parsedUrl
+
+      try {
+        parsedUrl = handleRewrites(parse(req.url, true))
+
+        if (parsedUrl.pathname.match(/_next\/data/)) {
+          _nextData = true
+          parsedUrl.pathname = parsedUrl.pathname
+            .replace(new RegExp('/_next/data/xYaWIurVWfd1VVw2wYj4H/'), '/')
+            .replace(/\.json$/, '')
+        }
+
+        const renderOpts = Object.assign(
+          {
+            Component,
+            pageConfig: config,
+            nextExport: fromExport
+          },
+          options,
+        )
+
+        
+
+        const params = {};
+        const nowParams = null;
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        const previewData = tryGetPreviewData(req, res, options.previewProps)
+        const isPreviewMode = previewData !== false
+
+        let result = await renderToHTML(req, res, "/admin/editPost", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (!renderMode) {
+          if (_nextData || getStaticProps || getServerSideProps) {
+            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
+              private: isPreviewMode,
+              stateful: !!getServerSideProps,
+              revalidate: renderOpts.revalidate,
+            })
+            return null
+          }
+        } else if (isPreviewMode) {
+          res.setHeader(
+            'Cache-Control',
+            'private, no-cache, no-store, max-age=0, must-revalidate'
+          )
+        }
+
+        if (renderMode) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (!parsedUrl) {
+          parsedUrl = parse(req.url, true)
+        }
+
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+        } else if (err.code === 'DECODE_FAILED') {
+          res.statusCode = 400
+        } else {
+          console.error(err)
+          res.statusCode = 500
+        }
+
+        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+          getStaticProps: undefined,
+          getStaticPaths: undefined,
+          getServerSideProps: undefined,
+          Component: Error,
+          err: res.statusCode === 404 ? undefined : err
+        }))
+        return result
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendHTML(req, res, html, {generateEtags: true})
+        }
+      } catch(err) {
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        console.error(err)
+        res.statusCode = 500
+        res.end('Internal Server Error')
+      }
+    }
+  
+
+/***/ }),
+
 /***/ "67Bq":
 /***/ (function(module) {
 
@@ -4566,6 +4775,511 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
+
+/***/ }),
+
+/***/ "FBZP":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("MX0m");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("q1tI");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("YFqc");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("8Kt/");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("a6RD");
+/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("I5XY");
+/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_overlay__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("rX5s");
+/* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_cookie__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("Ma5Y");
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("GXyi");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("nOHt");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_AdminLayout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("hJmc");
+/* harmony import */ var _components_AdminMainNav__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("Cix5");
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+ // import ReactQuill from 'react-quill';
+
+
+
+
+
+
+
+
+
+
+ // import 'react-quill/dist/quill.snow.css'
+// import FormHtmlEditor from '../components/FormHtmlEditor'
+
+const ReactQuill = false ? undefined : () => false;
+const QuillNoSSRWrapper = next_dynamic__WEBPACK_IMPORTED_MODULE_4___default()(() => Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, "rmP6", 7)), {
+  ssr: false,
+  loading: () => __jsx("p", null, "Loading ..."),
+  loadableGenerated: {
+    webpack: () => [/*require.resolve*/("rmP6")],
+    modules: ['react-quill']
+  }
+});
+const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts";
+const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod";
+
+const EditPost = props => {
+  const {
+    0: title,
+    1: setTitle
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.title);
+  const {
+    0: content,
+    1: setContent
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.content);
+  const {
+    0: category,
+    1: setCategory
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.category);
+  const {
+    0: imageLocation,
+    1: setImageLocation
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.image_url);
+  const {
+    0: draft,
+    1: setDraft
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.is_draft);
+  const {
+    0: isPublished,
+    1: setIsPublish
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.blogItem.is_published);
+  const {
+    0: isLoading,
+    1: setIsLoading
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
+  const {
+    0: error,
+    1: setError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null);
+  const [cookies, setCookie] = Object(react_cookie__WEBPACK_IMPORTED_MODULE_6__["useCookies"])(['token']);
+  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_9__["useRouter"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    if (props.loggedIn == false) {
+      window.location.href = '/admin/login';
+    }
+  });
+
+  const handleChange = value => {
+    console.log("value ", value);
+    setContent(value);
+  };
+
+  const handleTitle = e => {
+    e.preventDefault();
+    setPostTitle(e.target.value);
+    console.log(postTitle);
+  };
+
+  const handleUpdate = () => {
+    console.log("cookies ", cookies);
+    console.log("this is the image location: ", imageLocation);
+    let token = cookies['token'];
+
+    if (title == "" || content == "") {
+      console.log("family", postTitle, content);
+      setError("Empty title or Content");
+    } else {
+      console.log("content ", content);
+      console.log("title ", title);
+      setIsLoading(true);
+      const API = POST_API + `/${props.blogItem.id}`;
+      console.log("this is the update api ", API);
+      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(API, {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify({
+          title: title,
+          content: content,
+          image_url: imageLocation,
+          category: category,
+          is_draft: draft,
+          is_published: isPublished
+        })
+      }).then(response => response.json()).then(data => {
+        console.log(data);
+        router.push('/admin/posts');
+        setIsLoading(false);
+      }).catch(error => {
+        setIsLoading(false);
+        console.log(error);
+      });
+    }
+  };
+
+  const handleImageUpload = e => {
+    e.preventDefault();
+    console.log(e.target.files[0].name);
+    console.log(e.target.files[0].type);
+    let file = e.target.files[0];
+    var reader = new FileReader();
+    reader.addEventListener('loadend', function (e) {
+      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(apiBaseURL + "/requestUploadURL", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: file.name,
+          type: file.type
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        console.log(json);
+        let img = 'https://slsuploadabi.s3.us-east-2.amazonaws.com/' + file.name;
+        console.log("image location after post ", img);
+        setImageLocation(img);
+        return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(json.uploadURL, {
+          method: "PUT",
+          body: new Blob([reader.result], {
+            type: file.type
+          })
+        });
+      }).catch(error => {
+        setIsLoading(false);
+        console.log(error);
+      });
+    });
+    reader.readAsArrayBuffer(file);
+  };
+
+  const handleCategory = e => {
+    console.log(e.target.id);
+    setCategory(e.target.id);
+  };
+
+  const handleCancel = () => {
+    next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/admin/posts');
+  };
+
+  const modules = {
+    toolbar: [[{
+      'header': '1'
+    }, {
+      'header': '2'
+    }, {
+      'font': []
+    }], [{
+      size: []
+    }], ['bold', 'italic', 'underline', 'strike', 'blockquote'], [{
+      'list': 'ordered'
+    }, {
+      'list': 'bullet'
+    }, {
+      'indent': '-1'
+    }, {
+      'indent': '+1'
+    }], ['link', 'image', 'video'], ['clean']],
+    clipboard: {
+      // toggle to add extra line breaks when pasting HTML:
+      matchVisual: false
+    }
+  };
+  /*
+   * Quill editor formats
+   * See https://quilljs.com/docs/formats/
+   */
+
+  const formats = ['header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'list', 'bullet', 'indent', 'link', 'image', 'video'];
+  return __jsx(react_loading_overlay__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    active: isLoading,
+    spinner: true,
+    text: "Loading your content..."
+  }, __jsx(_components_AdminLayout__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"], {
+    sidebar: true
+  }, __jsx("main", {
+    className: "jsx-2430398980" + " " + "main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3"
+  }, __jsx(_components_AdminMainNav__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], null), __jsx("div", {
+    className: "jsx-2430398980" + " " + "main-content-container container-fluid px-4"
+  }, error == null ? "" : __jsx("div", {
+    role: "alert",
+    className: "jsx-2430398980" + " " + "alert alert-danger"
+  }, error), __jsx("div", {
+    className: "jsx-2430398980" + " " + "page-header row no-gutters py-4"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "col-12 col-sm-4 text-center text-sm-left mb-0"
+  }, __jsx("span", {
+    className: "jsx-2430398980" + " " + "text-uppercase page-subtitle"
+  }, "Update Post"), __jsx("h3", {
+    className: "jsx-2430398980" + " " + "page-title"
+  }, title))), __jsx("div", {
+    className: "jsx-2430398980" + " " + "row"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "col-lg-9 col-md-12"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "card card-small mb-3"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "card-body"
+  }, __jsx("form", {
+    className: "jsx-2430398980" + " " + "add-new-post"
+  }, __jsx("input", {
+    type: "text",
+    defaultValue: title,
+    placeholder: title,
+    onChange: e => setTitle(e.target.value),
+    className: "jsx-2430398980" + " " + "form-control form-control-lg mb-3"
+  }), __jsx("div", {
+    className: "jsx-2430398980" + " " + "add-new-post__editor mb-1"
+  }, __jsx(QuillNoSSRWrapper, {
+    modules: modules,
+    formats: formats,
+    theme: "snow",
+    defaultValue: content,
+    onChange: handleChange
+  })), __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-group files color"
+  }, __jsx("label", {
+    className: "jsx-2430398980"
+  }, "Upload Your Image "), __jsx("input", {
+    "data-required": "image",
+    type: "file",
+    multiple: "",
+    onChange: handleImageUpload,
+    className: "jsx-2430398980" + " " + "form-control"
+  })))))), __jsx("div", {
+    className: "jsx-2430398980" + " " + "col-lg-3 col-md-12"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + 'card card-small mb-3'
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "card-header border-bottom"
+  }, __jsx("h6", {
+    className: "jsx-2430398980" + " " + "m-0"
+  }, "Categories")), __jsx("div", {
+    className: "jsx-2430398980" + " " + 'card-body p-0'
+  }, __jsx("ul", {
+    className: "jsx-2430398980" + " " + "list-group list-group-flush"
+  }, __jsx("li", {
+    className: "jsx-2430398980" + " " + "list-group-item px-3 pb-2"
+  }, __jsx("fieldset", {
+    className: "jsx-2430398980"
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-check custom-radio mb-1"
+  }, __jsx("input", {
+    type: "radio",
+    name: "category",
+    onChange: e => setCategory(e.target.value),
+    id: "Uncategorized",
+    value: "Uncategorized",
+    className: "jsx-2430398980" + " " + "form-check-input"
+  }), __jsx("label", {
+    for: "Uncategorized",
+    className: "jsx-2430398980" + " " + "form-check-label"
+  }, "Uncategorized")), __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-check custom-radio mb-1"
+  }, __jsx("input", {
+    type: "radio",
+    name: "category",
+    onChange: e => setCategory(e.target.value),
+    id: "Design",
+    value: "Design",
+    className: "jsx-2430398980" + " " + "form-check-input"
+  }), __jsx("label", {
+    for: "Design",
+    className: "jsx-2430398980" + " " + "form-check-label"
+  }, "Design")), __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-check custom-radio mb-1"
+  }, __jsx("input", {
+    type: "radio",
+    name: "category",
+    onChange: e => setCategory(e.target.value),
+    id: "Development",
+    value: "Development",
+    className: "jsx-2430398980" + " " + "form-check-input"
+  }), __jsx("label", {
+    for: "Development",
+    className: "jsx-2430398980" + " " + "form-check-label"
+  }, "Development")), __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-check custom-radio mb-1"
+  }, __jsx("input", {
+    type: "radio",
+    name: "category",
+    onChange: e => setCategory(e.target.value),
+    id: "Writing",
+    value: "Writing",
+    className: "jsx-2430398980" + " " + "form-check-input"
+  }), __jsx("label", {
+    for: "Writing",
+    className: "jsx-2430398980" + " " + "form-check-label"
+  }, "Writing")), __jsx("div", {
+    className: "jsx-2430398980" + " " + "form-check custom-radio mb-1"
+  }, __jsx("input", {
+    type: "radio",
+    name: "category",
+    onChange: e => setCategory(e.target.value),
+    id: "Books",
+    value: "Books",
+    className: "jsx-2430398980" + " " + "form-check-input"
+  }), __jsx("label", {
+    for: "Books",
+    className: "jsx-2430398980" + " " + "form-check-label"
+  }, "Books"))))))), __jsx("div", {
+    className: "jsx-2430398980" + " " + 'card card-small mb-3'
+  }, __jsx("div", {
+    className: "jsx-2430398980" + " " + "card-header border-bottom"
+  }, __jsx("h6", {
+    className: "jsx-2430398980" + " " + "m-0"
+  }, "Actions")), __jsx("div", {
+    className: "jsx-2430398980" + " " + 'card-body p-0'
+  }, __jsx("ul", {
+    className: "jsx-2430398980" + " " + "list-group list-group-flush"
+  }, __jsx("li", {
+    className: "jsx-2430398980" + " " + "list-group-item p-3"
+  }, __jsx("span", {
+    className: "jsx-2430398980" + " " + "d-flex mb-2"
+  }, __jsx("i", {
+    className: "jsx-2430398980" + " " + "material-icons mr-1"
+  }, "flag"), __jsx("strong", {
+    className: "jsx-2430398980" + " " + "mr-1"
+  }, "Status:"), " Draft", __jsx("div", {
+    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1 ml-auto"
+  }, __jsx("input", {
+    type: "checkbox",
+    defaultValue: draft,
+    onChange: e => setDraft(e.target.value),
+    id: "draft",
+    className: "jsx-2430398980" + " " + "custom-control-input"
+  }), __jsx("label", {
+    htmlFor: "draft",
+    className: "jsx-2430398980" + " " + "custom-control-label"
+  }))), __jsx("span", {
+    className: "jsx-2430398980" + " " + "d-flex mb-2"
+  }, __jsx("i", {
+    className: "jsx-2430398980" + " " + "material-icons mr-1"
+  }, "calendar_today"), __jsx("strong", {
+    className: "jsx-2430398980" + " " + "mr-1"
+  }, "Schedule:"), " Now", __jsx("div", {
+    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1 ml-auto"
+  }, __jsx("input", {
+    type: "checkbox",
+    defaultValue: isPublished,
+    onChange: e => setIsPublish(e.target.value),
+    id: "schedule",
+    className: "jsx-2430398980" + " " + "custom-control-input"
+  }), __jsx("label", {
+    htmlFor: "schedule",
+    className: "jsx-2430398980" + " " + "custom-control-label"
+  }))), __jsx("span", {
+    className: "jsx-2430398980" + " " + "d-flex"
+  }, __jsx("i", {
+    className: "jsx-2430398980" + " " + "material-icons mr-1"
+  }, "score"), __jsx("strong", {
+    className: "jsx-2430398980" + " " + "mr-1"
+  }, "Readability:"), __jsx("strong", {
+    className: "jsx-2430398980" + " " + "text-warning"
+  }, "Ok"))), __jsx("li", {
+    className: "jsx-2430398980" + " " + "list-group-item d-flex px-3"
+  }, __jsx("button", {
+    onClick: handleCancel,
+    className: "jsx-2430398980" + " " + "btn btn-sm btn-outline-accent"
+  }, __jsx("i", {
+    className: "jsx-2430398980" + " " + "material-icons"
+  }, "save"), " Cancel"), __jsx("button", {
+    onClick: handleUpdate,
+    className: "jsx-2430398980" + " " + "btn btn-sm btn-accent ml-auto"
+  }, __jsx("i", {
+    className: "jsx-2430398980" + " " + "material-icons"
+  }, "file_copy"), " Update")))))))), __jsx("footer", {
+    className: "jsx-2430398980" + " " + "main-footer d-flex p-2 px-3 bg-white border-top"
+  }, __jsx("ul", {
+    className: "jsx-2430398980" + " " + "nav"
+  }, __jsx("li", {
+    className: "jsx-2430398980" + " " + "nav-item"
+  }, __jsx("a", {
+    href: "#",
+    className: "jsx-2430398980" + " " + "nav-link"
+  }, "Home")), __jsx("li", {
+    className: "jsx-2430398980" + " " + "nav-item"
+  }, __jsx("a", {
+    href: "#",
+    className: "jsx-2430398980" + " " + "nav-link"
+  }, "Services")), __jsx("li", {
+    className: "jsx-2430398980" + " " + "nav-item"
+  }, __jsx("a", {
+    href: "#",
+    className: "jsx-2430398980" + " " + "nav-link"
+  }, "About")), __jsx("li", {
+    className: "jsx-2430398980" + " " + "nav-item"
+  }, __jsx("a", {
+    href: "#",
+    className: "jsx-2430398980" + " " + "nav-link"
+  }, "Products")), __jsx("li", {
+    className: "jsx-2430398980" + " " + "nav-item"
+  }, __jsx("a", {
+    href: "#",
+    className: "jsx-2430398980" + " " + "nav-link"
+  }, "Blog"))), __jsx("span", {
+    className: "jsx-2430398980" + " " + "copyright ml-auto my-auto mr-2"
+  }, "Copyright \xA9 2018", __jsx("a", {
+    href: "https://designrevision.com",
+    rel: "nofollow",
+    className: "jsx-2430398980"
+  }, "DesignRevision")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "2430398980"
+  }, [".files.jsx-2430398980 input.jsx-2430398980{outline:2px dashed #92b0b3;outline-offset:-10px;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;transition:outline-offset .15s ease-in-out,background-color .15s linear;padding:120px 0px 85px 35%;text-align:center !important;margin:0;width:100% !important;}", ".files.jsx-2430398980 input.jsx-2430398980:focus{outline:2px dashed #92b0b3;outline-offset:-10px;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;transition:outline-offset .15s ease-in-out,background-color .15s linear;border:1px solid #92b0b3;}", ".files.jsx-2430398980{position:relative;}", ".files.jsx-2430398980:after{pointer-events:none;position:absolute;top:60px;left:0;width:50px;right:0;height:56px;content:\"\";background-image:url(https://image.flaticon.com/icons/png/128/109/109612.png);display:block;margin:0 auto;background-size:100%;background-repeat:no-repeat;}", ".color.jsx-2430398980 input.jsx-2430398980{background-color:#f1f1f1;}", ".files.jsx-2430398980:before{position:absolute;bottom:10px;left:0;pointer-events:none;width:100%;right:0;height:57px;content:\" or drag it here. \";display:block;margin:0 auto;color:#2ea591;font-weight:600;text-transform:capitalize;text-align:center;}"])));
+};
+
+EditPost.getInitialProps = async context => {
+  // getting token from cookies
+  const auth_token = next_cookies__WEBPACK_IMPORTED_MODULE_7___default()(context).token;
+  console.log("this is the token ", auth_token);
+  console.log(context.query);
+  const AUTHORIZE = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/secret"; // getting current logged in user with the token
+
+  const headers = {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + auth_token
+    }
+  };
+  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(AUTHORIZE, headers);
+  const data = await res.json();
+  console.log(data);
+
+  if (data.valid) {
+    console.log("valid token");
+    const {
+      id
+    } = context.query;
+    const API = POST_API + `${id}`;
+    console.log("this is the API", API);
+    const post_res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(POST_API + `/${id}`); // const res = await fetch(GET_POSTS_API);
+
+    const data = await post_res.json();
+    return {
+      loggedIn: true,
+      blogItem: data
+    };
+  } else {
+    console.log("invalid token");
+    return {
+      loggedIn: false,
+      blogItem: data
+    };
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EditPost);
 
 /***/ }),
 
@@ -6934,487 +7648,6 @@ var WeakMap = getNative(root, 'WeakMap');
 
 module.exports = WeakMap;
 
-
-/***/ }),
-
-/***/ "Oklt":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("MX0m");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("q1tI");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("YFqc");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("8Kt/");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("a6RD");
-/* harmony import */ var next_dynamic__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_dynamic__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("I5XY");
-/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_loading_overlay__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("rX5s");
-/* harmony import */ var react_cookie__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_cookie__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("Ma5Y");
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("GXyi");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("nOHt");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_AdminLayout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("hJmc");
-/* harmony import */ var _components_AdminMainNav__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("Cix5");
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
- // import ReactQuill from 'react-quill';
-
-
-
-
-
-
-
-
-
-
- // import 'react-quill/dist/quill.snow.css'
-// import FormHtmlEditor from '../components/FormHtmlEditor'
-
-const ReactQuill = false ? undefined : () => false;
-const QuillNoSSRWrapper = next_dynamic__WEBPACK_IMPORTED_MODULE_4___default()(() => Promise.resolve(/* import() */).then(__webpack_require__.t.bind(null, "rmP6", 7)), {
-  ssr: false,
-  loading: () => __jsx("p", null, "Loading ..."),
-  loadableGenerated: {
-    webpack: () => [/*require.resolve*/("rmP6")],
-    modules: ['react-quill']
-  }
-});
-const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts";
-const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod";
-
-const CreatePost = props => {
-  const {
-    0: title,
-    1: setTitle
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
-  const {
-    0: content,
-    1: setContent
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
-  const {
-    0: category,
-    1: setCategory
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("Uncategorized");
-  const {
-    0: imageLocation,
-    1: setImageLocation
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("");
-  const {
-    0: draft,
-    1: setDraft
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
-  const {
-    0: isPublish,
-    1: setIsPublish
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
-  const {
-    0: isLoading,
-    1: setIsLoading
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false);
-  const {
-    0: error,
-    1: setError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null);
-  const [cookies, setCookie] = Object(react_cookie__WEBPACK_IMPORTED_MODULE_6__["useCookies"])(['token']);
-  const router = Object(next_router__WEBPACK_IMPORTED_MODULE_9__["useRouter"])();
-  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
-    if (props.loggedIn == false) {
-      window.location.href = '/admin/login';
-    }
-  });
-
-  const handleChange = value => {
-    console.log("value ", value);
-    setContent(value);
-  };
-
-  const publish = () => {
-    console.log("cookies ", cookies);
-    let token = cookies['token'];
-
-    if (title == "" || content == "") {
-      console.log("family", title, content);
-      setError("Empty title or Content");
-    } else {
-      console.log("content ", content);
-      setIsLoading(true);
-      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(POST_API, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
-        },
-        body: JSON.stringify({
-          title: title,
-          content: content,
-          image_url: imageLocation,
-          category: category,
-          is_draft: draft,
-          is_published: publish
-        })
-      }).then(response => response.json()).then(data => {
-        console.log(data);
-        router.push('/admin/posts');
-        setIsLoading(false);
-      }).catch(error => {
-        setIsLoading(false);
-        console.log(error);
-      });
-    }
-  };
-
-  const handleCategory = e => {
-    console.log(e.target.id);
-    setCategory(e.target.id);
-  };
-
-  const handleDraft = e => {
-    e.preventDefault();
-    console.log(draft);
-    setDraft(e.target.value);
-  };
-
-  const handleImageUpload = e => {
-    e.preventDefault();
-    console.log(e.target.files[0].name);
-    console.log(e.target.files[0].type);
-    let file = e.target.files[0];
-    var reader = new FileReader();
-    reader.addEventListener('loadend', function (e) {
-      isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(apiBaseURL + "/requestUploadURL", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: file.name,
-          type: file.type
-        })
-      }).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        console.log(json);
-        setImageLocation('https://slsuploadabi.s3.us-east-2.amazonaws.com/' + file.name);
-        return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(json.uploadURL, {
-          method: "PUT",
-          body: new Blob([reader.result], {
-            type: file.type
-          })
-        });
-      }).catch(error => {
-        setIsLoading(false);
-        console.log(error);
-      });
-    });
-    reader.readAsArrayBuffer(file); // const UPLOAD_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/image/upload"
-    // let token = cookies['token']
-    // const form_data = new FormData();
-    // form_data.append('image', e.target.files[0]);
-    // fetch(UPLOAD_API, {
-    //     method: 'POST',
-    //     headers: {
-    //             'Authorization': 'Bearer ' + token
-    //       },
-    //     body: form_data
-    // })
-    // .then(res => res.json())
-    // .then(json => console.log(json))
-    // .catch(err => console.error(err));
-  };
-
-  const modules = {
-    toolbar: [[{
-      'header': '1'
-    }, {
-      'header': '2'
-    }, {
-      'font': []
-    }], [{
-      size: []
-    }], ['bold', 'italic', 'underline', 'strike', 'blockquote'], [{
-      'list': 'ordered'
-    }, {
-      'list': 'bullet'
-    }, {
-      'indent': '-1'
-    }, {
-      'indent': '+1'
-    }], ['link', 'image', 'video'], ['clean']],
-    clipboard: {
-      // toggle to add extra line breaks when pasting HTML:
-      matchVisual: false
-    }
-  };
-  /*
-   * Quill editor formats
-   * See https://quilljs.com/docs/formats/
-   */
-
-  const formats = ['header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'list', 'bullet', 'indent', 'link', 'image', 'video'];
-  return __jsx(react_loading_overlay__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    active: isLoading,
-    spinner: true,
-    text: "Loading your content..."
-  }, __jsx(_components_AdminLayout__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"], {
-    sidebar: true
-  }, __jsx("main", {
-    className: "jsx-2430398980" + " " + "main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3"
-  }, __jsx(_components_AdminMainNav__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"], null), __jsx("div", {
-    className: "jsx-2430398980" + " " + "main-content-container container-fluid px-4"
-  }, error == null ? "" : __jsx("div", {
-    role: "alert",
-    className: "jsx-2430398980" + " " + "alert alert-danger"
-  }, error), __jsx("div", {
-    className: "jsx-2430398980" + " " + "page-header row no-gutters py-4"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "col-12 col-sm-4 text-center text-sm-left mb-0"
-  }, __jsx("span", {
-    className: "jsx-2430398980" + " " + "text-uppercase page-subtitle"
-  }, "Blog Posts"), __jsx("h3", {
-    className: "jsx-2430398980" + " " + "page-title"
-  }, "Add New Post"))), __jsx("div", {
-    className: "jsx-2430398980" + " " + "row"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "col-lg-9 col-md-12"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "card card-small mb-3"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "card-body"
-  }, __jsx("form", {
-    className: "jsx-2430398980" + " " + "add-new-post"
-  }, __jsx("input", {
-    type: "text",
-    placeholder: "Your Post Title",
-    onChange: e => setTitle(e.target.value),
-    className: "jsx-2430398980" + " " + "form-control form-control-lg mb-3"
-  }), __jsx("div", {
-    className: "jsx-2430398980" + " " + "add-new-post__editor mb-1"
-  }, __jsx(QuillNoSSRWrapper, {
-    modules: modules,
-    formats: formats,
-    theme: "snow",
-    onChange: handleChange
-  })), __jsx("div", {
-    className: "jsx-2430398980" + " " + "form-group files color"
-  }, __jsx("label", {
-    className: "jsx-2430398980"
-  }, "Upload Your Image "), __jsx("input", {
-    "data-required": "image",
-    type: "file",
-    multiple: "",
-    onChange: handleImageUpload,
-    className: "jsx-2430398980" + " " + "form-control"
-  })))))), __jsx("div", {
-    className: "jsx-2430398980" + " " + "col-lg-3 col-md-12"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + 'card card-small mb-3'
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "card-header border-bottom"
-  }, __jsx("h6", {
-    className: "jsx-2430398980" + " " + "m-0"
-  }, "Categories")), __jsx("div", {
-    className: "jsx-2430398980" + " " + 'card-body p-0'
-  }, __jsx("ul", {
-    className: "jsx-2430398980" + " " + "list-group list-group-flush"
-  }, __jsx("li", {
-    className: "jsx-2430398980" + " " + "list-group-item px-3 pb-2"
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: handleCategory,
-    id: "Uncategorized",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "Uncategorized",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }, "Uncategorized")), __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: handleCategory,
-    id: "Design",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "Design",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }, "Design")), __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: handleCategory,
-    id: "Development",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "Development",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }, "Development")), __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: handleCategory,
-    id: "Writing",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "Writing",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }, "Writing")), __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: handleCategory,
-    id: "Books",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "Books",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }, "Books")))))), __jsx("div", {
-    className: "jsx-2430398980" + " " + 'card card-small mb-3'
-  }, __jsx("div", {
-    className: "jsx-2430398980" + " " + "card-header border-bottom"
-  }, __jsx("h6", {
-    className: "jsx-2430398980" + " " + "m-0"
-  }, "Actions")), __jsx("div", {
-    className: "jsx-2430398980" + " " + 'card-body p-0'
-  }, __jsx("ul", {
-    className: "jsx-2430398980" + " " + "list-group list-group-flush"
-  }, __jsx("li", {
-    className: "jsx-2430398980" + " " + "list-group-item p-3"
-  }, __jsx("span", {
-    className: "jsx-2430398980" + " " + "d-flex mb-2"
-  }, __jsx("i", {
-    className: "jsx-2430398980" + " " + "material-icons mr-1"
-  }, "flag"), __jsx("strong", {
-    className: "jsx-2430398980" + " " + "mr-1"
-  }, "Status:"), " Draft", __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1 ml-auto"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: e => setDraft(e.target.value),
-    id: "draft",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "draft",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }))), __jsx("span", {
-    className: "jsx-2430398980" + " " + "d-flex mb-2"
-  }, __jsx("i", {
-    className: "jsx-2430398980" + " " + "material-icons mr-1"
-  }, "calendar_today"), __jsx("strong", {
-    className: "jsx-2430398980" + " " + "mr-1"
-  }, "Schedule:"), " Now", __jsx("div", {
-    className: "jsx-2430398980" + " " + "custom-control custom-checkbox mb-1 ml-auto"
-  }, __jsx("input", {
-    type: "checkbox",
-    onChange: e => setIsPublish(e.target.value),
-    id: "schedule",
-    className: "jsx-2430398980" + " " + "custom-control-input"
-  }), __jsx("label", {
-    htmlFor: "schedule",
-    className: "jsx-2430398980" + " " + "custom-control-label"
-  }))), __jsx("span", {
-    className: "jsx-2430398980" + " " + "d-flex"
-  }, __jsx("i", {
-    className: "jsx-2430398980" + " " + "material-icons mr-1"
-  }, "score"), __jsx("strong", {
-    className: "jsx-2430398980" + " " + "mr-1"
-  }, "Readability:"), __jsx("strong", {
-    className: "jsx-2430398980" + " " + "text-warning"
-  }, "Ok"))), __jsx("li", {
-    className: "jsx-2430398980" + " " + "list-group-item d-flex px-3"
-  }, __jsx("button", {
-    onClick: handleDraft,
-    className: "jsx-2430398980" + " " + "btn btn-sm btn-outline-accent"
-  }, __jsx("i", {
-    className: "jsx-2430398980" + " " + "material-icons"
-  }, "save"), " Save Draft"), __jsx("button", {
-    onClick: publish,
-    className: "jsx-2430398980" + " " + "btn btn-sm btn-accent ml-auto"
-  }, __jsx("i", {
-    className: "jsx-2430398980" + " " + "material-icons"
-  }, "file_copy"), " Publish")))))))), __jsx("footer", {
-    className: "jsx-2430398980" + " " + "main-footer d-flex p-2 px-3 bg-white border-top"
-  }, __jsx("ul", {
-    className: "jsx-2430398980" + " " + "nav"
-  }, __jsx("li", {
-    className: "jsx-2430398980" + " " + "nav-item"
-  }, __jsx("a", {
-    href: "#",
-    className: "jsx-2430398980" + " " + "nav-link"
-  }, "Home")), __jsx("li", {
-    className: "jsx-2430398980" + " " + "nav-item"
-  }, __jsx("a", {
-    href: "#",
-    className: "jsx-2430398980" + " " + "nav-link"
-  }, "Services")), __jsx("li", {
-    className: "jsx-2430398980" + " " + "nav-item"
-  }, __jsx("a", {
-    href: "#",
-    className: "jsx-2430398980" + " " + "nav-link"
-  }, "About")), __jsx("li", {
-    className: "jsx-2430398980" + " " + "nav-item"
-  }, __jsx("a", {
-    href: "#",
-    className: "jsx-2430398980" + " " + "nav-link"
-  }, "Products")), __jsx("li", {
-    className: "jsx-2430398980" + " " + "nav-item"
-  }, __jsx("a", {
-    href: "#",
-    className: "jsx-2430398980" + " " + "nav-link"
-  }, "Blog"))), __jsx("span", {
-    className: "jsx-2430398980" + " " + "copyright ml-auto my-auto mr-2"
-  }, "Copyright \xA9 2018", __jsx("a", {
-    href: "https://designrevision.com",
-    rel: "nofollow",
-    className: "jsx-2430398980"
-  }, "DesignRevision")))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "2430398980"
-  }, [".files.jsx-2430398980 input.jsx-2430398980{outline:2px dashed #92b0b3;outline-offset:-10px;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;transition:outline-offset .15s ease-in-out,background-color .15s linear;padding:120px 0px 85px 35%;text-align:center !important;margin:0;width:100% !important;}", ".files.jsx-2430398980 input.jsx-2430398980:focus{outline:2px dashed #92b0b3;outline-offset:-10px;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;-webkit-transition:outline-offset .15s ease-in-out,background-color .15s linear;transition:outline-offset .15s ease-in-out,background-color .15s linear;border:1px solid #92b0b3;}", ".files.jsx-2430398980{position:relative;}", ".files.jsx-2430398980:after{pointer-events:none;position:absolute;top:60px;left:0;width:50px;right:0;height:56px;content:\"\";background-image:url(https://image.flaticon.com/icons/png/128/109/109612.png);display:block;margin:0 auto;background-size:100%;background-repeat:no-repeat;}", ".color.jsx-2430398980 input.jsx-2430398980{background-color:#f1f1f1;}", ".files.jsx-2430398980:before{position:absolute;bottom:10px;left:0;pointer-events:none;width:100%;right:0;height:57px;content:\" or drag it here. \";display:block;margin:0 auto;color:#2ea591;font-weight:600;text-transform:capitalize;text-align:center;}"])));
-};
-
-CreatePost.getInitialProps = async context => {
-  // getting token from cookies
-  const auth_token = next_cookies__WEBPACK_IMPORTED_MODULE_7___default()(context).token;
-  console.log("this is the token ", auth_token);
-  const AUTHORIZE = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/secret"; // getting current logged in user with the token
-
-  const headers = {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + auth_token
-    }
-  };
-  const res = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()(AUTHORIZE, headers);
-  const data = await res.json();
-  console.log(data);
-
-  if (data.valid) {
-    console.log("valid token");
-    return {
-      loggedIn: true
-    };
-  } else {
-    console.log("invalid token");
-    return {
-      loggedIn: false
-    };
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (CreatePost);
 
 /***/ }),
 
@@ -10350,215 +10583,6 @@ var _default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
 
 exports.default = _default;
 module.exports = exports["default"];
-
-/***/ }),
-
-/***/ "Uzkd":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("fkL1");
-/* harmony import */ var next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_node_polyfill_fetch__WEBPACK_IMPORTED_MODULE_2__);
-
-    
-    
-    
-
-    
-    const runtimeConfig = {}
-    const {parse} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const {renderToHTML} = __webpack_require__("/bjS");
-    const { tryGetPreviewData } = __webpack_require__("PCLx");
-    const {sendHTML} = __webpack_require__("LuNM");
-    const {sendPayload} = __webpack_require__("KyNf");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("VDXt").default;
-    const Error = __webpack_require__("/a9y").default;
-    const App = __webpack_require__("B5Ud").default;
-    
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-    const ComponentInfo = __webpack_require__("Oklt")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const getStaticProps = ComponentInfo['getStaticProp' + 's']
-    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
-    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
-
-    // kept for detecting legacy exports
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    
-    const getCustomRouteMatcher = pathMatch(true)
-    const {prepareDestination} = __webpack_require__("dtb4")
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params,
-            parsedUrl.query
-          )
-          Object.assign(parsedUrl.query, parsedDestination.query, params)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/admin/createPost'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
-      const fromExport = renderMode === 'export' || renderMode === true;
-      
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        getStaticProps,
-        getServerSideProps,
-        getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "xYaWIurVWfd1VVw2wYj4H",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"9a8d90b2967429f5e972eed9276728b1",previewModeSigningKey:"777d0d94a7ad9f92570873ae662bf26055996bb8cf30b2de23249a60cb837352",previewModeEncryptionKey:"c37225edc5de9b85f098e95d8cad052bca9487b1a215cfa7a821db6f9cf8f0c9"},
-        env: process.env,
-        basePath: "",
-        ..._renderOpts
-      }
-      let _nextData = false
-      let parsedUrl
-
-      try {
-        parsedUrl = handleRewrites(parse(req.url, true))
-
-        if (parsedUrl.pathname.match(/_next\/data/)) {
-          _nextData = true
-          parsedUrl.pathname = parsedUrl.pathname
-            .replace(new RegExp('/_next/data/xYaWIurVWfd1VVw2wYj4H/'), '/')
-            .replace(/\.json$/, '')
-        }
-
-        const renderOpts = Object.assign(
-          {
-            Component,
-            pageConfig: config,
-            nextExport: fromExport
-          },
-          options,
-        )
-
-        
-
-        const params = {};
-        const nowParams = null;
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        const previewData = tryGetPreviewData(req, res, options.previewProps)
-        const isPreviewMode = previewData !== false
-
-        let result = await renderToHTML(req, res, "/admin/createPost", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (!renderMode) {
-          if (_nextData || getStaticProps || getServerSideProps) {
-            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
-              private: isPreviewMode,
-              stateful: !!getServerSideProps,
-              revalidate: renderOpts.revalidate,
-            })
-            return null
-          }
-        } else if (isPreviewMode) {
-          res.setHeader(
-            'Cache-Control',
-            'private, no-cache, no-store, max-age=0, must-revalidate'
-          )
-        }
-
-        if (renderMode) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (!parsedUrl) {
-          parsedUrl = parse(req.url, true)
-        }
-
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-        } else if (err.code === 'DECODE_FAILED') {
-          res.statusCode = 400
-        } else {
-          console.error(err)
-          res.statusCode = 500
-        }
-
-        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-          getStaticProps: undefined,
-          getStaticPaths: undefined,
-          getServerSideProps: undefined,
-          Component: Error,
-          err: res.statusCode === 404 ? undefined : err
-        }))
-        return result
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendHTML(req, res, html, {generateEtags: true})
-        }
-      } catch(err) {
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        console.error(err)
-        res.statusCode = 500
-        res.end('Internal Server Error')
-      }
-    }
-  
 
 /***/ }),
 

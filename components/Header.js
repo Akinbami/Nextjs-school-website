@@ -78,6 +78,11 @@ const Header = () => (
 	    
 	    	
 		 <style jsx global>{`
+
+		 	.navbar-main.stiky .navbar-brand img{
+		 		width: 4rem;
+		 	}
+
 		  .navbar-brand{
 	      	padding-top: 0;
 		  }

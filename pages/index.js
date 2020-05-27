@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 import Layout from '../components/Layout';
 import Banner from '../components/Banner';
-
+import dateformat from 'dateformat';
 import { FaRegComments } from 'react-icons/fa';
 
+const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 
 
 
-
-const Index = () => (
+const Index = (props) => (
     <Layout>
       
       <div id="myCarousel" className="carousel slide" data-ride="carousel">
@@ -210,62 +210,26 @@ const Index = () => (
 	        <div className="blog-inner">
 
             	<div className="row mt-4">
-                <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
-                  <div className="rs-news-1">
-                    <div className="media-box">
-                      <img src="images/blog3.jpg" alt="" className="img-fluid" />
-                    </div>
-                    <div className="body-box">
-                      <div className="title">How Mental Health Makes You Question Everything</div>
-                      <div className="meta-date">May 14, 2020 / 08:00 am - 10:00 am</div>
-                      <p>You may have heard it over and over again, ‘Get your mind right’ or ‘Think positive if you want positive results!!’...</p>
-                      <div className="text-center">
-                        <Link href="/p/How-Mental-Health-Makes-You-Question-Everything">
-                            <a className="btn btn-secondary">View</a>
-                          </Link>
+                {props.posts.slice(0,3).map(item=>(
+                    <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
+                      <div className="rs-news-1">
+                        <div className="media-box">
+                          <img src={item.image_url} alt="" className="img-fluid" />
+                        </div>
+                        <div className="body-box">
+                          <div className="title">{item.title}</div>
+                          <div className="meta-date">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
+                          <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 200)}}></div>
+                          <div className="text-center">
+                            <Link href={`/p/${item.slug}?pd=${item.id}`}>
+                                <a className="btn btn-secondary">View</a>
+                              </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-	              
-	              <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
-	                <div className="rs-news-1">
-	                  <div className="media-box">
-	                    <img src="images/blog1.jpg" alt="" className="img-fluid" />
-	                  </div>
-	                  <div className="body-box">
-	                    <div className="title">Talk Bilingual</div>
-	                    <div className="meta-date">May 8, 2020 / 08:00 am - 10:00 am</div>
-	                    <p>In the U.K we are known for our vast multi-cultural society; having more than two languages
-	                      being spoken in a home for a number of families is now seen as the norm. The question I
-	                      pose today </p>
-	                    <div className="text-center">
-	                    	<Link href="/p/Talk-Bilingual">
-	                      		<a className="btn btn-secondary">View</a>
-	                      	</Link>
-	                    </div>
-	                  </div>
-	                </div>
-	              </div>
-
-	              <div className="col-sm-12 col-md-12 col-lg-4 mb-5">
-	                <div className="rs-news-1">
-	                  <div className="media-box">
-	                    <img src="images/blog2.jpg" alt="" className="img-fluid" />
-	                  </div>
-	                  <div className="body-box">
-	                    <div className="title">10 Basic Program Must Haves</div>
-	                    <div className="meta-date">May 8, 2020 / 08:00 am - 10:00 am</div>
-	                  <p>Running an ABA programme can be very time-consuming and costly. There are a few
-	                    valuable ‘must haves’, which can potentially affect the outcomes ...</p>
-	                    <div className="text-center">
-	                    	<Link href="/p/10-Basic-Program-Must-Haves">
-	                      		<a className="btn btn-secondary">View</a>
-	                      	</Link>
-	                    </div>
-	                  </div>
-	                </div>
-	              </div>
+                  ))
+	              }
               </div>
             </div>
 
@@ -688,5 +652,18 @@ const Index = () => (
       
     </Layout>
 )
+
+Index.getInitialProps = async function(context) {
+  const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+
+  const res = await fetch(POST_API);
+  const posts = await res.json();
+
+  console.log(`Fetched post: ${posts}`);
+
+
+  return { posts };
+};
+
 
 export default Index

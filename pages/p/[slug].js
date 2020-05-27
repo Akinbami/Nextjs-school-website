@@ -2,8 +2,9 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import Layout from '../../components/Layout';
+import dateformat from 'dateformat';
 import fetch from 'isomorphic-unfetch';
-import data from '../../components/Data';
+// import data from '../../components/Data';
 // import Markdown from 'react-markdown';
 
 const Detail = props => {
@@ -35,46 +36,33 @@ const Detail = props => {
 								<div className="single-news">
 									
 									<h2 className="title"> {props.post.title} </h2> 
-									<img src={props.post.image} alt="" className="img-fluid rounded" /> 
+									<img src={props.post.image_url} alt="" className="img-fluid rounded" /> 
 
-									<div className="meta-date">{props.post.date_posted}</div>
-									{props.post.content.map(item =><p>{item}</p>) }
-	                    			<div className="meta-date">{props.post.date}</div>
+									<div className="meta-date">{dateformat(props.post.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
+                        			<div dangerouslySetInnerHTML={{__html: props.post.content}}></div>
 								</div>
 							</div>
-							
+
 							<div className="col-sm-12 col-md-12 col-lg-3">
-								<h3 className="title"> Related Blogs </h3> 
-				                <div className="rs-news-1 mb-2">
-				                  <div className="media-box">
-				                    <img src="/images/blog1.jpg" alt="" className="img-fluid" />
-				                  </div>
-				                  <div className="body-box">
-				                    <div className="title">Talk Bilingual</div>
-				                    <div className="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-				                    <div className="text-center">
-				                    	<Link href="/p/Talk-Bilingual">
-				                      		<a className="btn btn-secondary">View</a>
-				                      	</Link>
-				                    </div>
-				                  </div>
-				                </div>
-
-				                <div className="rs-news-1 mb-2">
-				                  <div className="media-box">
-				                    <img src="/images/blog2.jpg" alt="" className="img-fluid" />
-				                  </div>
-				                  <div className="body-box">
-				                    <div className="title">10 Basic Program Must Haves</div>
-				                    <div className="meta-date">March 19, 2016 / 08:00 am - 10:00 am</div>
-				                   <div className="text-center">
-				                    	<Link href="/p/10-Basic-Program-Must-Haves">
-				                      		<a className="btn btn-secondary">View</a>
-				                      	</Link>
-				                    </div>
-				                  </div>
-				                </div>
-
+								<h3 className="title"> Related Blogs </h3>
+								{props.related.map(item=>(
+										<div className="rs-news-1 mb-2">
+						                  <div className="media-box">
+						                    <img src={item.image_url} alt="" className="img-fluid" />
+						                  </div>
+						                  <div className="body-box">
+						                    <div className="title">{item.title}</div>
+						                    <div className="meta-date">{dateformat(props.post.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
+						                    <div className="text-center">
+						                    	<Link href={`/p/${item.slug}?pd=${item.id}`}>
+						                      		<a className="btn btn-secondary">View</a>
+						                      	</Link>
+						                    </div>
+						                  </div>
+						                </div>
+									)
+								)} 
+					            
 							</div>
 							
 
@@ -117,14 +105,22 @@ const Detail = props => {
 };
 
 Detail.getInitialProps = async function(context) {
-  const { slug } = context.query;
-  // const res = await fetch(`https://6j0n7kx92c.execute-api.us-east-2.amazonaws.com/dev/api/posts/${slug}`);
-  // const post = await res.json();
-  const post  = data[slug];
+  const { slug,pd } = context.query;
+  const BASE_POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+  const POST_API = BASE_POST_API + `/${pd}`
+
+  const res = await fetch(POST_API);
+  const post = await res.json();
+  // const post  = data[slug];
+
+  const related_res = await fetch(BASE_POST_API);
+  const related_post = await related_res.json();
 
   console.log(`Fetched post: ${post}`);
+  console.log(`Fetched related posts: ${related_post}`);
 
-  return { post };
+
+  return { "post": post, "related": related_post.slice(0,2) };
 };
 
 export default Detail;

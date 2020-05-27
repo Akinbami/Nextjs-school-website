@@ -11,7 +11,7 @@ import AdminLayout from '../../components/AdminLayout';
 import MainNav from '../../components/AdminMainNav';
 
 
-const GET_POSTS_API = "https://6j0n7kx92c.execute-api.us-east-2.amazonaws.com/dev/api/posts"
+const GET_POSTS_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 
 const AdminPost = (props) => {
     const [title,setTitle] = useState("");
@@ -40,74 +40,25 @@ const AdminPost = (props) => {
                         return(
                             <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={item.id}>
                               <div className="card card-small card-post card-post--1">
-                                <div className="card-post__image" style={{"backgroundImage": "url('/images/content-management/1.jpeg')"}}>
-                                  <a href="#" className="card-post__category badge badge-pill badge-dark">Business</a>
+                                <div className="card-post__image" style={{"backgroundImage": `url(${item.image_url})`}}>
+                                  <a href="#" className="card-post__category badge badge-pill badge-dark">{item.category}</a>
                                   <div className="card-post__author d-flex">
                                     <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/images/avatars/0.jpg')"}}>Written by Anna Kunis</a>
                                   </div>
                                 </div>
                                 <div className="card-body">
                                   <h5 className="card-title">
-                                    <a className="text-fiord-blue" href="#">{item.title}</a>
+                                    <Link href={`/admin/p/${item.id}`}>
+                                      <a className="text-fiord-blue" href="#">{item.title}</a>
+                                    </Link>
                                   </h5>
-                                  <p className="card-text d-inline-block mb-3">{item.content.slice(0, 50)}</p>
+                                  <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 50)}}></div>
                                   <span className="text-muted">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</span>
                                 </div>
                               </div>
                             </div>
                             )
                       })}
-                      <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div className="card card-small card-post card-post--1">
-                          <div className="card-post__image" style={{"backgroundImage": "url('/images/content-management/2.jpeg')"}}>
-                            <a href="#" className="card-post__category badge badge-pill badge-info">Travel</a>
-                            <div className="card-post__author d-flex">
-                              <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/images/avatars/1.jpg')"}}>Written by James Jamerson</a>
-                            </div>
-                          </div>
-                          <div className="card-body">
-                            <h5 className="card-title">
-                              <a className="text-fiord-blue" href="#">Off tears are day blind smile alone had ready</a>
-                            </h5>
-                            <p className="card-text d-inline-block mb-3">Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...</p>
-                            <span className="text-muted">29 February 2019</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div className="card card-small card-post card-post--1">
-                          <div className="card-post__image" style={{"backgroundImage": "url('/images/content-management/3.jpeg')"}}>
-                            <a href="#" className="card-post__category badge badge-pill badge-primary">Technology</a>
-                            <div className="card-post__author d-flex">
-                              <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/images/avatars/2.jpg')"}}>Written by Jimmy Jackson</a>
-                            </div>
-                          </div>
-                          <div className="card-body">
-                            <h5 className="card-title">
-                              <a className="text-fiord-blue" href="#">Difficult in delivered extensive at direction</a>
-                            </h5>
-                            <p className="card-text d-inline-block mb-3">Is at purse tried jokes china ready decay an. Small its shy way had woody downs power. To denoting admitted speaking learning my...</p>
-                            <span className="text-muted">29 February 2019</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div className="card card-small card-post card-post--1">
-                          <div className="card-post__image" style={{"backgroundImage": "url('/images/content-management/4.jpeg')"}}>
-                            <a href="#" className="card-post__category badge badge-pill badge-warning">Technology</a>
-                            <div className="card-post__author d-flex">
-                              <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/images/avatars/3.jpg')"}}>Written by John James</a>
-                            </div>
-                          </div>
-                          <div className="card-body">
-                            <h5 className="card-title">
-                              <a className="text-fiord-blue" href="#">It so numerous if he may outlived disposal</a>
-                            </h5>
-                            <p className="card-text d-inline-block mb-3">How but sons mrs lady when. Her especially are unpleasant out alteration continuing unreserved ready road market resolution...</p>
-                            <span className="text-muted">29 February 2019</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     
                   </div>

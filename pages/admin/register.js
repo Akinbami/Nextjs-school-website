@@ -72,13 +72,16 @@ const Register = () => {
           
 
           <AdminLayout sidebar={false} >
-	          <div className="d-flex justify-content-center">
+	          <div className="w-100 d-flex justify-content-center">
 	          	<div className="auth-card">
-		   			<div className="card card-small mb-4">
+		   			      <div className="card card-small mb-4">
 		                <div className="card-header border-bottom text-center">
 		                    <h6 className="m-0">Register</h6>
 		                </div>
 		                <div className="login-group w-50 mx-auto">
+                        {error!==null?<div className="alert alert-danger" role="alert">
+                            {error}
+                          </div>:""}
 		                    <form>
 		                        <strong className="text-muted d-block mb-2">Username</strong>
 		                        <div className="input-group mb-3">
@@ -119,14 +122,14 @@ const Register = () => {
 	        </div>
             <style jsx>{`
               .auth-card{
-              	width: 40%;
-              	margin-top: 5rem;
+                width: 30rem;
+                margin-top: 5rem;
               }
 
 
               .login-group{
-              	padding-top: 10%;
-              	padding-bottom: 10%;
+                padding-top: 10%;
+                padding-bottom: 10%;
               }
             `}</style>
           </AdminLayout>

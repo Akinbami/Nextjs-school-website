@@ -9,7 +9,7 @@ import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 
 
-import { useRouter } from 'next/router';
+import Router,{ useRouter } from 'next/router';
 
 
 
@@ -29,13 +29,14 @@ const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/ap
 const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod"
 
 
-const CreatePost = (props) => {
-    const [title,setTitle] = useState("");
-    const [content,setContent] = useState("");
-    const [category, setCategory] = useState("Uncategorized")
-    const [imageLocation, setImageLocation] = useState("")
-    const [draft,setDraft] = useState(false);
-    const [isPublish,setIsPublish] = useState(false);
+
+const EditPost = (props) => {
+    const [title,setTitle] = useState(props.blogItem.title);
+    const [content,setContent] = useState(props.blogItem.content);
+    const [category, setCategory] = useState(props.blogItem.category)
+    const [imageLocation, setImageLocation] = useState(props.blogItem.image_url)
+    const [draft,setDraft] = useState(props.blogItem.is_draft);
+    const [isPublished,setIsPublish] = useState(props.blogItem.is_published);
     const [isLoading,setIsLoading] = useState(false);
     const [error,setError] = useState(null);
 
@@ -56,17 +57,28 @@ const CreatePost = (props) => {
       setContent(value);
     }
 
-    const publish = () =>{
+    const handleTitle =(e)=>{
+      e.preventDefault();
+      setPostTitle(e.target.value)
+      console.log(postTitle)
+    }
+
+    const handleUpdate = () =>{
       console.log("cookies ",cookies)
+      console.log("this is the image location: ",imageLocation)
       let token = cookies['token']
       if(title==""||content==""){
-        console.log("family", title,content)
+        console.log("family", postTitle,content)
         setError("Empty title or Content")
       }else{
         console.log("content ", content)
+        console.log("title ", title)
+
         setIsLoading(true)
-        fetch(POST_API, {
-            method: 'POST',
+        const API = POST_API+`/${props.blogItem.id}`
+        console.log("this is the update api ",API)
+        fetch(API, {
+            method: 'PUT',
             headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
@@ -78,7 +90,7 @@ const CreatePost = (props) => {
                  image_url: imageLocation,
                  category: category,
                  is_draft: draft,
-                 is_published: publish
+                 is_published: isPublished
                })
             })
             .then(response => response.json())
@@ -93,17 +105,6 @@ const CreatePost = (props) => {
               console.log(error)
             }) 
       }
-    }
-
-    const handleCategory =(e)=>{
-      console.log(e.target.id)
-      setCategory(e.target.id)
-    }
-
-    const handleDraft = (e) =>{
-      e.preventDefault();
-      console.log(draft)
-      setDraft(e.target.value)
     }
 
     const handleImageUpload = (e)=>{
@@ -129,7 +130,9 @@ const CreatePost = (props) => {
         })
         .then(function(json){
           console.log(json)
-          setImageLocation('https://slsuploadabi.s3.us-east-2.amazonaws.com/'+ file.name)
+          let img= 'https://slsuploadabi.s3.us-east-2.amazonaws.com/'+ file.name
+          console.log("image location after post ",img)
+          setImageLocation(img)
           return fetch(json.uploadURL, {
             method: "PUT",
             body: new Blob([reader.result], {type: file.type})
@@ -141,22 +144,15 @@ const CreatePost = (props) => {
             })
       });
       reader.readAsArrayBuffer(file);
+    }
 
-      // const UPLOAD_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/image/upload"
-      // let token = cookies['token']
-      // const form_data = new FormData();
-      // form_data.append('image', e.target.files[0]);
-      // fetch(UPLOAD_API, {
-      //     method: 'POST',
-      //     headers: {
-      //             'Authorization': 'Bearer ' + token
-      //       },
-      //     body: form_data
-      // })
-      // .then(res => res.json())
-      // .then(json => console.log(json))
-      // .catch(err => console.error(err));
+    const handleCategory =(e)=>{
+      console.log(e.target.id)
+      setCategory(e.target.id)
+    }
 
+    const handleCancel = () =>{
+      Router.push('/admin/posts')
     }
 
     const modules = {
@@ -203,8 +199,8 @@ const CreatePost = (props) => {
                         </div>}
                   <div className="page-header row no-gutters py-4">
                     <div className="col-12 col-sm-4 text-center text-sm-left mb-0">
-                      <span className="text-uppercase page-subtitle">Blog Posts</span>
-                      <h3 className="page-title">Add New Post</h3>
+                      <span className="text-uppercase page-subtitle">Update Post</span>
+                      <h3 className="page-title">{title}</h3>
                     </div>
                   </div>
                   <div className="row">
@@ -212,12 +208,13 @@ const CreatePost = (props) => {
                       <div className="card card-small mb-3">
                         <div className="card-body">
                           <form className="add-new-post">
-                            <input className="form-control form-control-lg mb-3" type="text" placeholder="Your Post Title" onChange={e=>setTitle(e.target.value)} />
+                            <input className="form-control form-control-lg mb-3" type="text" defaultValue={title}  placeholder={title} onChange={e=>setTitle(e.target.value)} />
                             <div className="add-new-post__editor mb-1">
                                <QuillNoSSRWrapper
                                   modules={modules}
                                   formats={formats}
                                   theme='snow'
+                                  defaultValue={content}
                                   onChange={handleChange}
                                 />
                             </div>
@@ -237,26 +234,39 @@ const CreatePost = (props) => {
                         <div className='card-body p-0'>
                           <ul className="list-group list-group-flush">
                             <li className="list-group-item px-3 pb-2">
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Uncategorized"  />
-                                <label className="custom-control-label" htmlFor="Uncategorized">Uncategorized</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Design"  />
-                                <label className="custom-control-label" htmlFor="Design">Design</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Development" />
-                                <label className="custom-control-label" htmlFor="Development">Development</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Writing" />
-                                <label className="custom-control-label" htmlFor="Writing">Writing</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Books" />
-                                <label className="custom-control-label" htmlFor="Books">Books</label>
-                              </div>
+                              
+                              <fieldset>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Uncategorized" value="Uncategorized" />
+                                  <label className="form-check-label" for="Uncategorized">
+                                    Uncategorized
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Design" value="Design"  />
+                                  <label className="form-check-label" for="Design">
+                                    Design
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Development" value="Development"  />
+                                  <label className="form-check-label" for="Development">
+                                    Development
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Writing" value="Writing"  />
+                                  <label className="form-check-label" for="Writing">
+                                    Writing
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Books" value="Books"  />
+                                  <label className="form-check-label" for="Books">
+                                    Books
+                                  </label>
+                                </div>
+                              </fieldset>
                             </li>
                           </ul>
                         </div>
@@ -272,7 +282,7 @@ const CreatePost = (props) => {
                                 <i className="material-icons mr-1">flag</i>
                                 <strong className="mr-1">Status:</strong> Draft
                                 <div className="custom-control custom-checkbox mb-1 ml-auto">
-                                  <input type="checkbox" className="custom-control-input" onChange={e=>setDraft(e.target.value)}id="draft" />
+                                  <input type="checkbox" className="custom-control-input" defaultValue={draft} onChange={e=>setDraft(e.target.value)}  id="draft" />
                                   <label className="custom-control-label" htmlFor="draft"></label>
                                 </div>
                               </span>
@@ -280,7 +290,7 @@ const CreatePost = (props) => {
                                 <i className="material-icons mr-1">calendar_today</i>
                                 <strong className="mr-1">Schedule:</strong> Now
                                 <div className="custom-control custom-checkbox mb-1 ml-auto">
-                                  <input type="checkbox" className="custom-control-input" onChange={e=>setIsPublish(e.target.value)} id="schedule" />
+                                  <input type="checkbox" className="custom-control-input"  defaultValue={isPublished} onChange={e=>setIsPublish(e.target.value)} id="schedule" />
                                   <label className="custom-control-label" htmlFor="schedule"></label>
                                 </div>                              
                               </span>
@@ -291,10 +301,10 @@ const CreatePost = (props) => {
                               </span>
                             </li>
                             <li className="list-group-item d-flex px-3">
-                              <button className="btn btn-sm btn-outline-accent" onClick={handleDraft}>
-                                <i className="material-icons">save</i> Save Draft</button>
-                              <button className="btn btn-sm btn-accent ml-auto" onClick={publish}>
-                                <i className="material-icons">file_copy</i> Publish</button>
+                              <button className="btn btn-sm btn-outline-accent" onClick={handleCancel}>
+                                <i className="material-icons">save</i> Cancel</button>
+                              <button className="btn btn-sm btn-accent ml-auto" onClick={handleUpdate}>
+                                <i className="material-icons">file_copy</i> Update</button>
                             </li>
                           </ul>
                         </div>
@@ -380,11 +390,12 @@ const CreatePost = (props) => {
 }
 
 
-CreatePost.getInitialProps = async context => {
+EditPost.getInitialProps = async context => {
   // getting token from cookies
   const auth_token = cookies(context).token
   
   console.log("this is the token ",auth_token)
+  console.log(context.query)
 
   const AUTHORIZE = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/secret"
 
@@ -403,13 +414,19 @@ CreatePost.getInitialProps = async context => {
   
   if (data.valid){
     console.log("valid token")
-    return { loggedIn: true };
+    const { id } = context.query;
+    const API = POST_API+`${id}`
+    console.log("this is the API",API)
+    const post_res = await fetch(POST_API+`/${id}`);
+    // const res = await fetch(GET_POSTS_API);
+    const data = await post_res.json();
+    return { loggedIn: true, blogItem: data };
   }else{ 
     console.log("invalid token")
-    return { loggedIn: false };
+    return { loggedIn: false, blogItem: data  };
   }
 };
 
-export default CreatePost;
+export default EditPost;
 
 

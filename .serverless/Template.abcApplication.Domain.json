@@ -1,0 +1,13 @@
+{
+  "region": "us-east-1",
+  "privateZone": false,
+  "domain": "schoolofabi.com",
+  "subdomains": [
+    {
+      "domain": "www.schoolofabi.com",
+      "distributionId": "E1LAOXD900LMRG",
+      "url": "https://ddmep5rm5jg2q.cloudfront.net",
+      "type": "awsCloudFront"
+    }
+  ]
+}

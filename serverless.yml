@@ -9,3 +9,5 @@
 
 abcApplication:
   component: serverless-next.js
+  inputs:
+    domain: schoolofabi.com
