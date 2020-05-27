@@ -111,7 +111,7 @@ const Login = () => {
 		                        <div className="float-right">
 		                        	<button type="button" onClick={()=>login()} class="mb-2 btn btn-sm btn-primary mr-1">Submit</button>
 		                        </div>
-		                        <p>Don't have an Account! <a href="/register">Sign Up Here</a></p>
+		                        
           						      <p>Forgot <a href="#">Password?</a></p>
   		                    </form>
     		                </div>
