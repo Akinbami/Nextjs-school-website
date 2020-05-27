@@ -32,7 +32,8 @@ const Login = () => {
     }
 
     const login = () =>{
-
+      console.log("this is this username and password")
+      console.log(username, password)
       if(username==""||password==""){
       	console.log(username, password)
         setError("please complete the form and try again")
@@ -109,7 +110,7 @@ const Login = () => {
 		                          </div>
 		                        </div>
 		                        <div className="float-right">
-		                        	<button type="button" onClick={()=>login()} class="mb-2 btn btn-sm btn-primary mr-1">Submit</button>
+		                        	<button type="button" onClick={login} class="mb-2 btn btn-sm btn-primary mr-1">Submit</button>
 		                        </div>
 		                        
           						      <p>Forgot <a href="#">Password?</a></p>
