@@ -88,7 +88,7 @@ const Contact = () => {
                   {contactSuccess?<div className="alert alert-success text-center" role="alert">
                     {contactSuccess}
                   </div>:""}
-                  <form onSubmit={handleSubmit}>
+                  <form>
                     <div className="row">
                       <div className="col-sm-6 col-md-6">
                         <div className="form-group">
@@ -128,7 +128,7 @@ const Contact = () => {
                             <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             sending...
                           </button>:
-                          <button type="submit" className="btn btn-primary">Send Message</button>
+                          <button type="button" onClick={handleSubmit} className="btn btn-primary">Send Message</button>
                       }
                       
                     </div>
