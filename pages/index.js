@@ -109,7 +109,7 @@ const Index = (props) => (
                   school professionals, it is clear that educational providers are concerned about 
                   the progress of their pupils with behavioural and educational diﬃculties.</p>
                 <div className="spacer-10"></div>
-                <a href="/about" className="btn btn-secondary">Discover More</a>
+                <a href="/about-us" className="btn btn-secondary">Discover More</a>
                 <div className="spacer-30"></div>
               </div>
             </div>
@@ -185,7 +185,7 @@ const Index = (props) => (
             <div className="row">
               <div className="col-sm-12 col-md-12">
                 <div className="text-center">
-                  <a href="/service" className="btn btn-primary">More About Services</a>
+                  <a href="/services" className="btn btn-primary">More About Services</a>
                 </div>
               </div>
             </div>

@@ -242,10 +242,7 @@ const Layout = props => {
 		<script src="/js/vendor/owl.carousel.js"></script>
 		<script src="/js/vendor/jquery.magnific-popup.min.js"></script>
 
-		<script src="/js/vendor/validator.min.js"></script>
-		<script src="/js/vendor/form-scripts.js"></script>
 		
-		<script src="/js/script.js"></script>
 		<style jsx global>{`
         html,
         body {

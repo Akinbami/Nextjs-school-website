@@ -88,7 +88,7 @@ const Contact = () => {
                   {contactSuccess?<div className="alert alert-success text-center" role="alert">
                     {contactSuccess}
                   </div>:""}
-                  <form action="#" className="form-contact" onSubmit={handleSubmit} id="contactForm" data-toggle="validator" novalidate="true">
+                  <form className="form-contact" onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-sm-6 col-md-6">
                         <div className="form-group">
