@@ -206,7 +206,7 @@ const Layout = props => {
 							                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 							                            sending...
 							                          </button>:
-							                          <button type="button"  onClick={handleSubmit} className="btn btn-primary">Submit</button>
+							                          <button type="button"  onClick={handleSubmit} className="btn btn-primary">Subscribe</button>
 							                      }
 									      	</div>
 									      </form>
