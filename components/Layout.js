@@ -1,26 +1,68 @@
-import React from 'react';
+import React,  {useState, useEffect, useContext} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
 import Header from './Header';
 
+const SUBSCRIPTION_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/subscriptions";
 
-const Layout = props => (
+const Layout = props => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [subscriptionEmail, setSubscriptionEmail] = useState("");
+    const [subscriptionSuccess, setsubscriptionSuccess] = useState(null);
+
+
+	const handleSubmit = (e) =>{
+      	e.preventDefault();
+      	console.log(subscriptionEmail)
+
+	    setIsLoading(true);
+	    fetch(SUBSCRIPTION_API, {
+	          method: 'POST',
+	          headers: {
+	                'Accept': 'application/json',
+	                'Content-Type': 'application/json'
+	          }, 
+	          body: JSON.stringify({
+	               email: subscriptionEmail,
+	             })
+	          })
+	          .then(response => response.json())
+	          .then(data =>{
+	            console.log(data);
+	            setIsLoading(false)
+	            if(data.error){
+	              setPhoneError("Already registered")
+	            }else{
+	              setsubscriptionSuccess("Thanks for subscribing!!! you will get an email soon.")
+	            }
+	          })
+	          .catch(error =>{
+	            setIsLoading(false)
+	            console.log(error)
+	            setPhoneError("Failed")
+	          })    
+      
+    }
+	return (
   <React.Fragment>
   		<Head>
 	        <meta charset="utf-8" />
 	        <meta http-equiv="x-ua-compatible" content="IE=9" />
 	        <meta name="viewport" content="width=device-width, initial-scale=1" />
-	        <title>ABC</title>
-	        <meta name="description" content="ABC description" />
-	        <meta name="keywords" content="ABC" />
+	        <title>ABI</title>
+	        <meta name="description" content="School of Academic and Behavioural Interventions (ABI), 
+                    offers a consultancy and management service to support 
+                    parents and educational providers when working with children 
+                    on the autistic spectrum and related disorders." />
+	        <meta name="keywords" content="ABI" />
 	        <meta name="author" content="rometheme.net" /> 
 	      
 	      
-	        <link rel="shortcut icon" href="/images/favicon.ico" />
-	        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-	        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png" />
-	        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png" />
+	        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+	        <link rel="apple-touch-icon" href="/favicon/apple-icon.png" />
+	        <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
+	        <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png" />
 	        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 	        
 	        
@@ -146,20 +188,30 @@ const Layout = props => (
 							<div className="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="subscribeLabel" aria-hidden="true">
 							  <div className="modal-dialog" role="document">
 							    <div className="modal-content">
-							      <div className="modal-header">
-							        <p className="modal-title h5" id="exampleModalLabel">Enter your email to Subscribe</p>
-							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							          <span aria-hidden="true">&times;</span>
-							        </button>
-							      </div>
-							      <form onSubmit="">
-								      <div className="modal-body">
-								        <input type="email" className="form-control form-control-lg" placeholder="Enter email" />
-								      </div>
-								      <div className="modal-footer">
-								        <button type="button" className="btn btn-primary">Submit</button>
-							      	</div>
-							      </form>
+							    	{subscriptionSuccess?<h3 className="m-5 text-center">{subscriptionSuccess}</h3>:
+							    		<React.Fragment>
+									      <div className="modal-header">
+									        <p className="modal-title h5" id="exampleModalLabel">Enter your email to Subscribe</p>
+									        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									          <span aria-hidden="true">&times;</span>
+									        </button>
+									      </div>
+									      <form onSubmit={handleSubmit}>
+										      <div className="modal-body">
+										        <input type="email" className="form-control form-control-lg" onChange={e=>setSubscriptionEmail(e.target.value)}   placeholder="Enter email" />
+										      </div>
+										      <div className="modal-footer">
+										      	{isLoading?
+							                          <button className="btn btn-danger" type="button" disabled>
+							                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+							                            sending...
+							                          </button>:
+							                          <button type="submit" className="btn btn-primary">Submit</button>
+							                      }
+									      	</div>
+									      </form>
+									    </React.Fragment>
+									}
 							    </div>
 							  </div>
 							</div>
@@ -338,6 +390,7 @@ const Layout = props => (
       `}</style>
 
   </React.Fragment>
-);
+)
+}
 
 export default Layout;

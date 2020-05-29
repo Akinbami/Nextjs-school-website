@@ -47,7 +47,7 @@ const Header = () => (
 				            		</ActiveLink>
 				                </li>
 				            	<li className="nav-item">
-				            		<ActiveLink activeClassName="active" href="/about">
+				            		<ActiveLink activeClassName="active" href="/about-us">
 				            			<a className="nav-link">ABOUT US</a>
 				            		</ActiveLink>
 				                </li>
@@ -57,13 +57,13 @@ const Header = () => (
 				            		</ActiveLink>
 				                </li>
 				            	<li className="nav-item">
-				            		<ActiveLink activeClassName="active" href="/service">
+				            		<ActiveLink activeClassName="active" href="/services">
 				                    	<a className="nav-link">SERVICES</a>
 				                    </ActiveLink>
 				                </li>
 				            	
 				            	<li className="nav-item">
-				            		<ActiveLink activeClassName="active" href="/contact">
+				            		<ActiveLink activeClassName="active" href="/contact-us">
 				                    	<a className="nav-link">CONTACT US</a>
 				                    </ActiveLink>
 				                </li>
