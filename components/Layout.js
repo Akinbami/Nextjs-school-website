@@ -12,6 +12,11 @@ const Layout = props => {
     const [subscriptionSuccess, setsubscriptionSuccess] = useState(null);
 
 
+     const handleEmail =(e)=>{
+     	e.preventDefault()
+     	console.log(e.target.value)
+     	setSubscriptionEmail(e.target.value)
+     }
 	const handleSubmit = (e) =>{
       	e.preventDefault();
       	console.log(subscriptionEmail)
@@ -196,9 +201,8 @@ const Layout = props => {
 									          <span aria-hidden="true">&times;</span>
 									        </button>
 									      </div>
-									      <form>
 										      <div className="modal-body">
-										        <input type="email" className="form-control form-control-lg" onChange={e=>setSubscriptionEmail(e.target.value)}   placeholder="Enter email" />
+										        <input type="email" className="form-control form-control-lg" onChange={handleEmail}   placeholder="Enter email" />
 										      </div>
 										      <div className="modal-footer">
 										      	{isLoading?
@@ -209,7 +213,6 @@ const Layout = props => {
 							                          <button type="button"  onClick={handleSubmit} className="btn btn-primary">Subscribe</button>
 							                      }
 									      	</div>
-									      </form>
 									    </React.Fragment>
 									}
 							    </div>

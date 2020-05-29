@@ -31,7 +31,7 @@ const Index = (props) => (
                   involved in your child’s developmental journey.
                 </p>
                 <p>
-                  <Link href="/service">
+                  <Link href="/services">
                     <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
                   </Link>
                 </p>
@@ -50,7 +50,7 @@ const Index = (props) => (
                   in order to implement a programme at an appropriate level. 
                 </p>
                 <p>
-                  <Link href="/service">
+                  <Link href="/services">
                     <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
                   </Link>
                 </p>
@@ -67,7 +67,7 @@ const Index = (props) => (
                     cover current issues, hands on training and best practices with real life case studies.
                 </p>
                 <p>
-                  <Link href="/service">
+                  <Link href="/services">
                     <a className="btn btn-lg btn-secondary" role="button">Learn More</a>
                   </Link>
                 </p>
