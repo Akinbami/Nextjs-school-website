@@ -196,7 +196,7 @@ const Layout = props => {
 									          <span aria-hidden="true">&times;</span>
 									        </button>
 									      </div>
-									      <form onSubmit={handleSubmit}>
+									      <form>
 										      <div className="modal-body">
 										        <input type="email" className="form-control form-control-lg" onChange={e=>setSubscriptionEmail(e.target.value)}   placeholder="Enter email" />
 										      </div>
@@ -206,7 +206,7 @@ const Layout = props => {
 							                            <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 							                            sending...
 							                          </button>:
-							                          <button type="submit" className="btn btn-primary">Submit</button>
+							                          <button type="button"  onClick={handleSubmit} className="btn btn-primary">Submit</button>
 							                      }
 									      	</div>
 									      </form>
