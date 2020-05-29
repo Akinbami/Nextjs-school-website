@@ -88,7 +88,7 @@ const Contact = () => {
                   {contactSuccess?<div className="alert alert-success text-center" role="alert">
                     {contactSuccess}
                   </div>:""}
-                  <form className="form-contact" onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-sm-6 col-md-6">
                         <div className="form-group">
