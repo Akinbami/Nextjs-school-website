@@ -27,7 +27,6 @@ const Blog = (props) => {
             </div>
         </div>
       </div>
-      <form onSubmit={e=>console.log("form submited")}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -37,8 +36,7 @@ const Blog = (props) => {
           <label htmlFor="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" id="exampleInputPassword1" />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+        <button type="button" onClick={e=>console.log("this is a new form ")} className="btn btn-primary">Submit</button>
       <div className="section">
         <div className="content-wrap">
           <div className="container">       
