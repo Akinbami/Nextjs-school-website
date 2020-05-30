@@ -62,7 +62,7 @@ const Layout = props => {
                     parents and educational providers when working with children 
                     on the autistic spectrum and related disorders." />
 	        <meta name="keywords" content="ABI" />
-	        <meta name="author" content="rometheme.net" /> 
+	        <meta name="author" content="Akinbami Dayo" /> 
 	      
 	      
 	        <link rel="shortcut icon" href="/favicon/favicon.ico" />
