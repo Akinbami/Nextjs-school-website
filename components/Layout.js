@@ -9,6 +9,7 @@ const SUBSCRIPTION_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com
 const Layout = props => {
     const [isLoading, setIsLoading] = useState(false);
     const [subscriptionEmail, setSubscriptionEmail] = useState("");
+    const [phoneError, setPhoneError] = useState(null);
     const [subscriptionSuccess, setsubscriptionSuccess] = useState(null);
 
 
@@ -37,7 +38,7 @@ const Layout = props => {
 	            console.log(data);
 	            setIsLoading(false)
 	            if(data.error){
-	              setPhoneError("Already registered")
+	              setsubscriptionSuccess(data.data)
 	            }else{
 	              setsubscriptionSuccess("Thanks for subscribing!!! you will get an email soon.")
 	            }
