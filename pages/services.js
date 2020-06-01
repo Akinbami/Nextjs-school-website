@@ -87,7 +87,7 @@ const Service = (props) => (
             </div>  
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/contact-us">
                 <a className="btn btn-primary my-2">Book a Service</a>
               </Link>
             </div>          

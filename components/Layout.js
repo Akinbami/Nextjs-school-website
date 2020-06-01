@@ -74,6 +74,7 @@ const Layout = props => {
 	        
 	        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 	        <link rel="stylesheet" href="https://getbootstrap.com/docs/4.4/examples/carousel/carousel.css" crossorigin="anonymous" />
+	        <link rel="stylesheet" href="https://unpkg.com/react-phone-number-input@3.x/bundle/style.css"/>
 
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/font-awesome.min.css" />
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/owl.carousel.min.css" />

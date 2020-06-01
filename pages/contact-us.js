@@ -1,7 +1,6 @@
 import React,  {useState, useEffect, useContext} from 'react';
 import Link from 'next/link';
-import {isValidPhoneNumber } from 'react-phone-number-input';
-import PhoneInput from 'react-phone-number-input/input';
+import PhoneInput, {isValidPhoneNumber } from 'react-phone-number-input';
 import Router from 'next/router';
 
 import Layout from '../components/Layout';
@@ -110,7 +109,7 @@ const Contact = () => {
                       </div>
                       <div className="col-sm-6 col-md-6">
                         <div className="form-group">
-                          <PhoneInput className="form-control" defaultCountry="NG" placeholder="Enter Mobile Number" value={phone} onChange={setPhone}
+                          <PhoneInput className="form-control" defaultCountry="US" placeholder="Enter Mobile Number" value={phone} onChange={setPhone}
                            error={phone ? (isValidPhoneNumber(phone) ? undefined : <small className="form-text text-danger">Invalid phone number</small>) : <small className="form-text text-danger">Phone number required</small>}/>
                           {phone==="" || isValidPhoneNumber(phone) ? "" : <small className="form-text text-danger">Invalid phone number</small>}
           
