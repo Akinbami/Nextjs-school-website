@@ -25,41 +25,39 @@ const Contact = () => {
       console.log(phone)
       console.log(message)
 
-      if(phone.length!=14){
-        setPhoneError("invalid phone number!")
-      }else{
-        setPhoneError(null)
-        setIsLoading(true);
-        fetch(CONTACT_API, {
-              method: 'POST',
-              headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-              }, 
-              body: JSON.stringify({
-                   phone: phone,
-                   email: email,
-                   subject: subject,
-                   name: name,
-                   message: message,
-                 })
-              })
-              .then(response => response.json())
-              .then(data =>{
-                console.log(data);
-                setIsLoading(false)
-                if(data.error){
-                  setPhoneError("Already registered")
-                }else{
-                  setContactSuccess("Message successfully sent!!! you will get an email soon.")
-                }
-              })
-              .catch(error =>{
-                setIsLoading(false)
-                console.log(error)
-                setPhoneError("Failed")
-              })    
-      }
+      
+      setPhoneError(null)
+      setIsLoading(true);
+      fetch(CONTACT_API, {
+            method: 'POST',
+            headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify({
+                 phone: phone,
+                 email: email,
+                 subject: subject,
+                 name: name,
+                 message: message,
+               })
+            })
+            .then(response => response.json())
+            .then(data =>{
+              console.log(data);
+              setIsLoading(false)
+              if(data.error){
+                setPhoneError("Already registered")
+              }else{
+                setContactSuccess("Message successfully sent!!! you will get an email soon.")
+              }
+            })
+            .catch(error =>{
+              setIsLoading(false)
+              console.log(error)
+              setPhoneError("Failed")
+            })    
+      
     }
     return (
       <Layout>
