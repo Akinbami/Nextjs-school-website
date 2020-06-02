@@ -27,47 +27,61 @@ const Aside = () => (
           <div className="nav-wrapper">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a className="nav-link " href="index.html">
-                  <i className="material-icons">edit</i>
-                  <span>Blog Dashboard</span>
-                </a>
+                <Link href="/admin/dashboard">
+                  <a className="nav-link " >
+                    <i className="material-icons">edit</i>
+                    <span>Blog Dashboard</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="/admin/posts">
-                  <i className="material-icons">vertical_split</i>
-                  <span>Blog Posts</span>
-                </a>
+                <Link href="/admin/posts">
+                  <a className="nav-link " >
+                    <i className="material-icons">vertical_split</i>
+                    <span>Blog Posts</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/admin/createPost">
-                  <i className="material-icons">note_add</i>
-                  <span>Add New Post</span>
-                </a>
+                <Link href="/admin/createPost">
+                  <a className="nav-link" >
+                    <i className="material-icons">note_add</i>
+                    <span>Add New Post</span>
+                  </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link " href="/admin/testimonies">
-                  <i className="material-icons">vertical_split</i>
-                  <span>Testimonies</span>
-                </a>
+                <Link href="/admin/testimonies">
+                  <a className="nav-link " >
+                    <i className="material-icons">vertical_split</i>
+                    <span>Testimonies</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/admin/createTestimony">
-                  <i className="material-icons">note_add</i>
-                  <span>Add New Testimony</span>
-                </a>
+                <Link  href="/admin/createTestimony">
+                  <a className="nav-link">
+                    <i className="material-icons">note_add</i>
+                    <span>Add New Testimony</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="/admin/contacts">
-                  <i className="material-icons">vertical_split</i>
-                  <span>Contacts</span>
-                </a>
+                <Link  href="/admin/contacts">
+                  <a className="nav-link ">
+                    <i className="material-icons">vertical_split</i>
+                    <span>Contacts</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="/admin/subscriptions">
-                  <i className="material-icons">vertical_split</i>
-                  <span>Subscriptions</span>
-                </a>
+                <Link  href="/admin/subscriptions">
+                  <a className="nav-link ">
+                    <i className="material-icons">vertical_split</i>
+                    <span>Subscriptions</span>
+                  </a>
+                </Link>
               </li>
               
             </ul>
