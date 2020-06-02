@@ -3,7 +3,7 @@ import React, {useState,useEffect,useRef} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import dynamic from 'next/dynamic'
-import LoadingOverlay from 'react-loading-overlay'
+import LoadingOverlay from 'react-loading-overlay';
 import { useCookies } from 'react-cookie';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
@@ -102,7 +102,7 @@ const CreatePost = (props) => {
 
     const handleDraft = (e) =>{
       e.preventDefault();
-      console.log(draft)
+      console.log(e.target.value)
       setDraft(e.target.value)
     }
 
@@ -235,30 +235,38 @@ const CreatePost = (props) => {
                           <h6 className="m-0">Categories</h6>
                         </div>
                         <div className='card-body p-0'>
-                          <ul className="list-group list-group-flush">
-                            <li className="list-group-item px-3 pb-2">
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Uncategorized"  />
-                                <label className="custom-control-label" htmlFor="Uncategorized">Uncategorized</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Design"  />
-                                <label className="custom-control-label" htmlFor="Design">Design</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Development" />
-                                <label className="custom-control-label" htmlFor="Development">Development</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Writing" />
-                                <label className="custom-control-label" htmlFor="Writing">Writing</label>
-                              </div>
-                              <div className="custom-control custom-checkbox mb-1">
-                                <input type="checkbox" className="custom-control-input" onChange={handleCategory} id="Books" />
-                                <label className="custom-control-label" htmlFor="Books">Books</label>
-                              </div>
-                            </li>
-                          </ul>
+                          <fieldset className="p-3">
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Uncategorized" value="Uncategorized" />
+                                  <label className="form-check-label" for="Uncategorized">
+                                    Uncategorized
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Design" value="Design"  />
+                                  <label className="form-check-label" for="Design">
+                                    Design
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Development" value="Development"  />
+                                  <label className="form-check-label" for="Development">
+                                    Development
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Writing" value="Writing"  />
+                                  <label className="form-check-label" for="Writing">
+                                    Writing
+                                  </label>
+                                </div>
+                                <div className="form-check custom-radio mb-1">
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Books" value="Books"  />
+                                  <label className="form-check-label" for="Books">
+                                    Books
+                                  </label>
+                                </div>
+                              </fieldset>
                         </div>
                       </div>
                       <div className='card card-small mb-3'>
@@ -272,7 +280,7 @@ const CreatePost = (props) => {
                                 <i className="material-icons mr-1">flag</i>
                                 <strong className="mr-1">Status:</strong> Draft
                                 <div className="custom-control custom-checkbox mb-1 ml-auto">
-                                  <input type="checkbox" className="custom-control-input" onChange={e=>setDraft(e.target.value)}id="draft" />
+                                  <input type="checkbox" className="custom-control-input" onChange={handleDraft} id="draft" />
                                   <label className="custom-control-label" htmlFor="draft"></label>
                                 </div>
                               </span>

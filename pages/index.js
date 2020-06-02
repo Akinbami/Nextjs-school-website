@@ -4,12 +4,24 @@ import Layout from '../components/Layout';
 import Banner from '../components/Banner';
 import dateformat from 'dateformat';
 import { FaRegComments } from 'react-icons/fa';
+import Slider from "react-slick";
+
 
 const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 
 
 
-const Index = (props) => (
+const Index = (props) =>{ 
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+    };
+    return (
     <Layout>
       
       <div id="myCarousel" className="carousel slide" data-ride="carousel">
@@ -246,10 +258,9 @@ const Index = (props) => (
           </div>
         </div>
       </div>
-
+      
       <div className="section testimonial-section">
 		<div className="content-wrap">
-			<div className="container">
 				<div className="row">
 					<div className="col-sm-12 col-md-12">
 						<p className="supheading text-center">Our Testimonials</p>
@@ -263,126 +274,32 @@ const Index = (props) => (
 						<div className="text-center text-secondary mb-3">
 							<FaRegComments size="3em" />
 						</div>
-						<div id="testimonialCarousel" className="carousel slide mb-0" data-ride="carousel">
-					    <div className="carousel-inner">
-					      <div className="carousel-item testimonial-carousel active">
-					        <div className="rs-box-testimony">
-								    <div className="quote-box">
-  										<blockquote>
-  										 Tawa brings her attention to detail to every project.Her consultancy skills and people skills are excellent.Very organised individual with great dose of creativity.
-  										</blockquote>
-  										<p className="quote-name">
-  											Marzena Kot <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-			          </div>
-			          <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 You are doing a great job so just keep up the good work, keep helping children, families and keep inspiring people!!!! Thank so much for everything you did and are doing for me :)
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Delia Ghitelaru <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 Very informative! A price guide would be useful
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Douglas Montaigne <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 Wishing you the very best with the launch of your website.
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											MediaFonics <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 I like the information posted on this website.
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Daniel Simpson <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 Great website and good contents too!
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Gary Mellon <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 Just to say thank you.
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Mark Walters <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-							  <div className="carousel-item testimonial-carousel">
-  								<div className="rs-box-testimony">
-  									<div className="quote-box">
-  										<blockquote>
-  										 Thanks once again for your help.
-  										</blockquote>
-  										
-  										<p className="quote-name">
-  											Mark Broyle <span>Businessman</span>
-  										</p>                        
-  									</div>
-  								</div>
-							  </div>
-					    </div>
-			        <a className="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-			          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-			          <span className="sr-only">Previous</span>
-			        </a>
-			        <a className="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-			          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-			          <span className="sr-only">Next</span>
-			        </a>
-				    </div>
-					</div>
+
+            <Slider {...settings}>
+              {props.testimonies.map(item=>{
+                if(item.is_active){
+                  return (<div className="testimonial-carousel">
+                            <div className="rs-box-testimony">
+                              <div className="quote-box">
+                                <blockquote>
+                                {item.message}
+                                </blockquote>
+                                <p className="quote-name">
+                                 {item.name} <span>{item.occupation}</span>
+                                </p>                        
+                              </div>
+                            </div>
+                          </div>
+                        )
+                }
+              }
+              )}
+            </Slider>
+            
 
 				</div>
         <div className="container text-center pb-5">
-          <Link href="/contact">
+          <Link href="/contact-us">
             <a className="btn btn-secondary my-2">Leave a Message</a>
           </Link>
         </div>
@@ -651,18 +568,26 @@ const Index = (props) => (
 
       
     </Layout>
-)
+  )
+}
 
 Index.getInitialProps = async function(context) {
   const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+  const TESTIMONIAL_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
 
   const res = await fetch(POST_API);
   const posts = await res.json();
 
+  const tes_res = await fetch(TESTIMONIAL_API);
+  const testimonies = await tes_res.json();
+
+
   console.log(`Fetched post: ${posts}`);
+  console.log(`Fetched testimonies: ${testimonies}`);
 
 
-  return { posts };
+
+  return { posts: posts, testimonies:testimonies };
 };
 
 

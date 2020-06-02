@@ -75,6 +75,8 @@ const Layout = props => {
 	        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 	        <link rel="stylesheet" href="https://getbootstrap.com/docs/4.4/examples/carousel/carousel.css" crossorigin="anonymous" />
 	        <link rel="stylesheet" href="https://unpkg.com/react-phone-number-input@3.x/bundle/style.css"/>
+	        <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/font-awesome.min.css" />
 	        <link rel="stylesheet" type="text/css" href="/css/vendor/owl.carousel.min.css" />
@@ -170,10 +172,10 @@ const Layout = props => {
 		                  
 		                  <ul className="list text-dark">
 		                    <li><a href="/" title="About us">Home</a></li>
-		                    <li><a href="/about" title="About us">About us</a></li>
-		                    <li><a href="/" title="Our Classes">Our Services</a></li>
-		                    <li><a href="/blogs" title="Our Events">Blogs</a></li>
-		                    <li><a href="/contact" title="Contact Us">Contact Us</a></li>
+		                    <li><a href="/about-us" title="About us">About us</a></li>
+		                    <li><a href="/services" title="Our Classes">Our Services</a></li>
+		                    <li><a href="/blog" title="Our Events">Blogs</a></li>
+		                    <li><a href="/contact-us" title="Contact Us">Contact Us</a></li>
 		                  </ul>
 		                    
 		                </div>

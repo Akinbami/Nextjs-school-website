@@ -7,7 +7,7 @@ const Aside = () => (
             <nav className="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
               <a className="navbar-brand w-100 mr-0" href="#" style={{lineHeight: "25px"}}>
                 <div className="d-table m-auto">
-                  <span className="d-none d-md-inline ml-1">ABC Dashboard</span>
+                  <span className="d-none d-md-inline ml-1">ABI Dashboard</span>
                 </div>
               </a>
               <a className="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -44,13 +44,32 @@ const Aside = () => (
                   <span>Add New Post</span>
                 </a>
               </li>
-              
+
               <li className="nav-item">
-                <a className="nav-link " href="user-profile-lite.html">
-                  <i className="material-icons">person</i>
-                  <span>User Profile</span>
+                <a className="nav-link " href="/admin/testimonies">
+                  <i className="material-icons">vertical_split</i>
+                  <span>Testimonies</span>
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/admin/createTestimony">
+                  <i className="material-icons">note_add</i>
+                  <span>Add New Testimony</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link " href="/admin/contacts">
+                  <i className="material-icons">vertical_split</i>
+                  <span>Contacts</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link " href="/admin/subscriptions">
+                  <i className="material-icons">vertical_split</i>
+                  <span>Subscriptions</span>
+                </a>
+              </li>
+              
             </ul>
           </div>
         </aside>
