@@ -65,10 +65,10 @@ const AdminSubscriptions = (props) => {
                                 </tr>
                               </thead>
                               <tbody>
-                                {props.subscriptions.map(item => {
+                                {props.subscriptions.map((item,index) => {
                                   return(
-                                    <tr key={item.id}>
-                                      <td>{item.id}</td>
+                                    <tr key={index+1}>
+                                      <td>{index+1}</td>
                                       <td>{item.email}</td>
                                       <td>{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</td>
                                     </tr>
