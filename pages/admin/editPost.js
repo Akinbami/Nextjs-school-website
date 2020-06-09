@@ -3,7 +3,8 @@ import React, {useState,useEffect,useRef} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import dynamic from 'next/dynamic'
-import LoadingOverlay from 'react-loading-overlay'
+import LoadingOverlay from 'react-loading-overlay';
+
 import { useCookies } from 'react-cookie';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
@@ -25,6 +26,7 @@ const ReactQuill = typeof window === 'object' ? require('react-quill') : () => f
 const QuillNoSSRWrapper = dynamic(
     import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> }
 )
+
 const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod"
 
@@ -39,6 +41,7 @@ const EditPost = (props) => {
     const [isPublished,setIsPublish] = useState(props.blogItem.is_published);
     const [isLoading,setIsLoading] = useState(false);
     const [error,setError] = useState(null);
+    const [publishedDate, setPublishedDate] = useState(new Date());
 
 
     const [cookies, setCookie] = useCookies(['token']);
@@ -90,7 +93,8 @@ const EditPost = (props) => {
                  image_url: imageLocation,
                  category: category,
                  is_draft: draft,
-                 is_published: isPublished
+                 is_published: isPublished,
+                 date: publishedDate
                })
             })
             .then(response => response.json())
@@ -189,7 +193,6 @@ const EditPost = (props) => {
               >
             
             <AdminLayout sidebar={true}>  
-              
               <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
                 <MainNav />
                 <div className="main-content-container container-fluid px-4">
@@ -232,43 +235,39 @@ const EditPost = (props) => {
                           <h6 className="m-0">Categories</h6>
                         </div>
                         <div className='card-body p-0'>
-                          <ul className="list-group list-group-flush">
-                            <li className="list-group-item px-3 pb-2">
                               
-                              <fieldset>
+                              <fieldset className="p-3">
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Uncategorized" value="Uncategorized" />
-                                  <label className="form-check-label" for="Uncategorized">
-                                    Uncategorized
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Accademia" value="Accademia" />
+                                  <label className="form-check-label" for="Accademia">
+                                    Accademia
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Design" value="Design"  />
-                                  <label className="form-check-label" for="Design">
-                                    Design
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Social" value="Social"  />
+                                  <label className="form-check-label" for="Social">
+                                    Social
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Development" value="Development"  />
-                                  <label className="form-check-label" for="Development">
-                                    Development
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Behaviour" value="Behaviour"  />
+                                  <label className="form-check-label" for="Behaviour">
+                                    Behaviour
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Writing" value="Writing"  />
-                                  <label className="form-check-label" for="Writing">
-                                    Writing
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="sensorimotor" value="sensorimotor"  />
+                                  <label className="form-check-label" for="sensorimotor">
+                                    sensorimotor
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Books" value="Books"  />
-                                  <label className="form-check-label" for="Books">
-                                    Books
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Other" value="Other"  />
+                                  <label className="form-check-label" for="Other">
+                                    Other
                                   </label>
                                 </div>
                               </fieldset>
-                            </li>
-                          </ul>
                         </div>
                       </div>
                       <div className='card card-small mb-3'>
@@ -295,9 +294,7 @@ const EditPost = (props) => {
                                 </div>                              
                               </span>
                               <span className="d-flex">
-                                <i className="material-icons mr-1">score</i>
-                                <strong className="mr-1">Readability:</strong>
-                                <strong className="text-warning">Ok</strong>
+                                <input className="form-control" value={publishedDate} onChange={e=>setPublishedDate(e.target.value)} type="date" />
                               </span>
                             </li>
                             <li className="list-group-item d-flex px-3">
@@ -335,7 +332,6 @@ const EditPost = (props) => {
                   </span>
                 </footer>
               </main>
-
               <style jsx>{`
                 .files input {
                     outline: 2px dashed #92b0b3;

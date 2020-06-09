@@ -102,7 +102,7 @@ const CreatePost = (props) => {
 
     const handleDraft = (e) =>{
       e.preventDefault();
-      console.log(e.target.value)
+      console.log(e.targets.value)
       setDraft(e.target.value)
     }
 
@@ -237,33 +237,33 @@ const CreatePost = (props) => {
                         <div className='card-body p-0'>
                           <fieldset className="p-3">
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Uncategorized" value="Uncategorized" />
-                                  <label className="form-check-label" for="Uncategorized">
-                                    Uncategorized
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Academia" value="Academia" />
+                                  <label className="form-check-label" for="Academia">
+                                    Academia
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Design" value="Design"  />
-                                  <label className="form-check-label" for="Design">
-                                    Design
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Social" value="Social"  />
+                                  <label className="form-check-label" for="Social">
+                                    Social
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Development" value="Development"  />
-                                  <label className="form-check-label" for="Development">
-                                    Development
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Behaviour" value="Behaviour"  />
+                                  <label className="form-check-label" for="Behaviour">
+                                    Behaviour
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Writing" value="Writing"  />
-                                  <label className="form-check-label" for="Writing">
-                                    Writing
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="sensorimotor" value="sensorimotor"  />
+                                  <label className="form-check-label" for="sensorimotor">
+                                    sensorimotor
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Books" value="Books"  />
-                                  <label className="form-check-label" for="Books">
-                                    Books
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Other" value="Other"  />
+                                  <label className="form-check-label" for="Other">
+                                    Other
                                   </label>
                                 </div>
                               </fieldset>

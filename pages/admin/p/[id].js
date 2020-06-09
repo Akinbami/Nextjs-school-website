@@ -60,7 +60,9 @@ const AdminSinglePost = (props) => {
 
     const handleEdit =(e)=>{
       e.preventDefault();
-      Router.push(`/admin/editPost?id=${props.data.id}`)
+      console.log("clicked")
+      // router.push('/admin/posts')
+      router.push(`/admin/editPost?id=${props.data.id}`)
     }
 
     
@@ -132,8 +134,8 @@ const AdminSinglePost = (props) => {
                               <li className="list-group-item d-flex px-3">
                                 <button className="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
                                   <i className="material-icons">save</i> Delete</button>
-                                <button className="btn btn-sm btn-accent ml-auto" onClick={handleEdit}>
-                                  <i className="material-icons">file_copy</i> Edit</button>
+                                  <a href={`/admin/editPost?id=${props.data.id}`} className="btn btn-sm btn-outline-accent ml-auto">
+                                  <i className="material-icons">file_copy</i> Edit</a>
                               </li>
                             </ul>
                           </div>
@@ -142,21 +144,21 @@ const AdminSinglePost = (props) => {
                     </div>
                   </div>
 
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
+                          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                           {props.data.title}
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-outline-success" data-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-outline-danger"  onClick={handleDelete}>Delete</button>
+                        <div className="modal-footer">
+                          <button type="button" className="btn btn-outline-success" data-dismiss="modal">Cancel</button>
+                          <button type="button" className="btn btn-outline-danger"  onClick={handleDelete}>Delete</button>
                         </div>
                       </div>
                     </div>

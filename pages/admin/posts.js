@@ -43,7 +43,7 @@ const AdminPost = (props) => {
                                 <div className="card-post__image" style={{"backgroundImage": `url(${item.image_url})`}}>
                                   <a href="#" className="card-post__category badge badge-pill badge-dark">{item.category}</a>
                                   <div className="card-post__author d-flex">
-                                    <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/images/avatars/0.jpg')"}}>Written by Anna Kunis</a>
+                                    <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/favicon/apple-icon.png')"}}>Written by Anna Kunis</a>
                                   </div>
                                 </div>
                                 <div className="card-body">
@@ -65,7 +65,9 @@ const AdminPost = (props) => {
                 </main>
             
             <style jsx>{`
-              
+              .card-post__image{
+                background-size: 100% 100% !important;
+              }
             `}</style>
           </AdminLayout>
       )

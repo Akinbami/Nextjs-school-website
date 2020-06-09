@@ -103,10 +103,10 @@ const AdminTestimonies = (props) => {
                                 </tr>
                               </thead>
                               <tbody>
-                                {props.testimonies.map(item => {
+                                {props.testimonies.map((item,index) => {
                                   return(
-                                    <tr key={item.id}>
-                                      <td>{item.id}</td>
+                                    <tr key={index+1}>
+                                      <td>{index+1}</td>
                                       <td>{item.name}</td>
                                       <td>{item.occupation}</td>
                                       <td>{item.message}</td>
