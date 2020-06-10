@@ -60,6 +60,11 @@ const EditPost = (props) => {
       setContent(value);
     }
 
+    const handleDraft = (e)=>{
+      e.preventDefault();
+      console.log("hello ",e.target.checked)
+    }
+
     const handleTitle =(e)=>{
       e.preventDefault();
       setPostTitle(e.target.value)
@@ -238,9 +243,9 @@ const EditPost = (props) => {
                               
                               <fieldset className="p-3">
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Accademia" value="Accademia" />
-                                  <label className="form-check-label" for="Accademia">
-                                    Accademia
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Academia" value="Academia" />
+                                  <label className="form-check-label" for="Academia">
+                                    Academia
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
@@ -256,9 +261,9 @@ const EditPost = (props) => {
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
-                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="sensorimotor" value="sensorimotor"  />
-                                  <label className="form-check-label" for="sensorimotor">
-                                    sensorimotor
+                                  <input className="form-check-input" type="radio" name="category" onChange={e=>setCategory(e.target.value)} id="Sensorimotor" value="Sensorimotor"  />
+                                  <label className="form-check-label" for="Sensorimotor">
+                                    Sensorimotor
                                   </label>
                                 </div>
                                 <div className="form-check custom-radio mb-1">
@@ -281,7 +286,7 @@ const EditPost = (props) => {
                                 <i className="material-icons mr-1">flag</i>
                                 <strong className="mr-1">Status:</strong> Draft
                                 <div className="custom-control custom-checkbox mb-1 ml-auto">
-                                  <input type="checkbox" className="custom-control-input" defaultValue={draft} onChange={e=>setDraft(e.target.value)}  id="draft" />
+                                  <input type="checkbox" className="custom-control-input" checked={draft} onChange={e=>setDraft(!draft)}  id="draft" />
                                   <label className="custom-control-label" htmlFor="draft"></label>
                                 </div>
                               </span>

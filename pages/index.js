@@ -231,7 +231,7 @@ const Index = (props) =>{
                         <div className="body-box">
                           <div className="title">{item.title}</div>
                           <div className="meta-date">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
-                          <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 200)}}></div>
+                          <div className="blog-content" dangerouslySetInnerHTML={{__html: item.content.slice(0, 200)}}></div>
                           <div className="text-center">
                             <Link href={`/p/${item.slug}?pd=${item.id}`}>
                                 <a className="btn btn-secondary">View</a>
@@ -434,6 +434,8 @@ const Index = (props) =>{
           text-decoration: none;
         }
 
+        
+
         .supheading {
 		    margin-bottom: 0;
 		}
@@ -566,13 +568,19 @@ const Index = (props) =>{
         }
       `}</style>
 
+      <style jsx global>{`
+        div.blog-content > p{
+            margin-bottom: .4rem !important;
+        }
+      `}</style>
+
       
     </Layout>
   )
 }
 
 Index.getInitialProps = async function(context) {
-  const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+  const POST_API = `https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
   const TESTIMONIAL_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
 
   const res = await fetch(POST_API);

@@ -96,6 +96,10 @@ const Detail = props => {
 		          text-transform: uppercase;
 		        }
 
+		        p{
+		        	margin-bottom: .4rem !important;
+		        }
+
 		        .title{
 		        	text-align: center;
 		        }

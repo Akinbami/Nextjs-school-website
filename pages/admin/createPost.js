@@ -102,8 +102,8 @@ const CreatePost = (props) => {
 
     const handleDraft = (e) =>{
       e.preventDefault();
-      console.log(e.targets.value)
-      setDraft(e.target.value)
+      setDraft(!draft)
+      console.log(e.target.checked)
     }
 
     const handleImageUpload = (e)=>{
@@ -280,7 +280,7 @@ const CreatePost = (props) => {
                                 <i className="material-icons mr-1">flag</i>
                                 <strong className="mr-1">Status:</strong> Draft
                                 <div className="custom-control custom-checkbox mb-1 ml-auto">
-                                  <input type="checkbox" className="custom-control-input" onChange={handleDraft} id="draft" />
+                                  <input type="checkbox" className="custom-control-input" checked={draft} onChange={e=>setDraft(!draft)} id="draft" />
                                   <label className="custom-control-label" htmlFor="draft"></label>
                                 </div>
                               </span>

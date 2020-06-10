@@ -105,6 +105,10 @@ const Blog = (props) => {
           background-image: url("images/Blog_Banner.jpg");
         }
 
+        p{
+            margin-bottom: .4rem !important;
+          }
+
         .services{
           padding-top: 0;
         }
@@ -139,7 +143,7 @@ const Blog = (props) => {
 
 Blog.getInitialProps = async function() {
   // const res = await fetch('https://0mi6xhcet3.execute-api.us-east-2.amazonaws.com/dev/api/designs');
-  const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+  const POST_API = `https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
 
   const res = await fetch(POST_API);
   const data = await res.json();

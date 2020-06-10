@@ -68,6 +68,9 @@ const AdminPost = (props) => {
               .card-post__image{
                 background-size: 100% 100% !important;
               }
+              p{
+                margin-bottom: .4rem !important;
+              }
             `}</style>
           </AdminLayout>
       )
