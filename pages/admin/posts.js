@@ -42,6 +42,7 @@ const AdminPost = (props) => {
                               <div className="card card-small card-post card-post--1">
                                 <div className="card-post__image" style={{"backgroundImage": `url(${item.image_url})`}}>
                                   <a href="#" className="card-post__category badge badge-pill badge-dark">{item.category}</a>
+                                  {item.is_draft?<a href="#" className="card-post__category badge badge-pill badge-warning m-top">draft</a>:""}
                                   <div className="card-post__author d-flex">
                                     <a href="#" className="card-post__author-avatar card-post__author-avatar--small" style={{"backgroundImage": "url('/favicon/apple-icon.png')"}}>Written by Anna Kunis</a>
                                   </div>
@@ -52,7 +53,6 @@ const AdminPost = (props) => {
                                       <a className="text-fiord-blue" href="#">{item.title}</a>
                                     </Link>
                                   </h5>
-                                  <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 50)}}></div>
                                   <span className="text-muted">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</span>
                                 </div>
                               </div>
@@ -67,6 +67,10 @@ const AdminPost = (props) => {
             <style jsx>{`
               .card-post__image{
                 background-size: 100% 100% !important;
+              }
+              .m-top{
+                margin-top: 1.5rem;
+                text-align: right;
               }
               p{
                 margin-bottom: .4rem !important;
