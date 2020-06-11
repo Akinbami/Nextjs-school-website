@@ -42,7 +42,7 @@ const Blog = (props) => {
                       <div className="body-box">
                         <div className="title">{item.title}</div>
                         <div className="meta-date">{dateformat(item.date_posted, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
-                        <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 200)}}></div>
+                        <div dangerouslySetInnerHTML={{__html: item.content.slice(0, 200)+"..."}}></div>
                         <div className="text-center">
                           <Link href={`/p/${item.slug}?pd=${item.id}`}>
                             <a className="btn btn-secondary">View</a>
