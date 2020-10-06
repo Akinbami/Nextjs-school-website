@@ -110,7 +110,7 @@ const Detail = props => {
 
 Detail.getInitialProps = async function(context) {
   const { slug,pd } = context.query;
-  const BASE_POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+	const BASE_POST_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts"
   const POST_API = BASE_POST_API + `/${pd}`
 
   const res = await fetch(POST_API);

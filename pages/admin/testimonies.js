@@ -16,8 +16,8 @@ import AdminLayout from '../../components/AdminLayout';
 import MainNav from '../../components/AdminMainNav';
 
 
-const GET_TESTIMONIES_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
-const SINGLE_TESTIMONIES_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
+const GET_TESTIMONIES_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
+const SINGLE_TESTIMONIES_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
 
 
 const AdminTestimonies = (props) => {

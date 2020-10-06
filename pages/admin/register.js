@@ -13,7 +13,7 @@ import AdminLayout from '../../components/AdminLayout';
 
 
 
-const REGISTER_API = "https://6j0n7kx92c.execute-api.us-east-2.amazonaws.com/dev/api/login"
+const REGISTER_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/login"
 
 const Register = () => {
     const [username,setUsername] = useState("");

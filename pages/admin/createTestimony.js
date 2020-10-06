@@ -17,8 +17,8 @@ import AdminLayout from '../../components/AdminLayout';
 import MainNav from '../../components/AdminMainNav';
 
 
-const TESTIMONIAL_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
-const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod"
+const TESTIMONIAL_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
+const apiBaseURL = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod"
 
 
 const CreatePost = (props) => {
@@ -212,7 +212,7 @@ CreatePost.getInitialProps = async context => {
   
   console.log("this is the token ",auth_token)
 
-  const AUTHORIZE = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/secret"
+  const AUTHORIZE = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/secret"
 
   // getting current logged in user with the token
   const headers = {

@@ -6,7 +6,7 @@ import Router from 'next/router';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner';
 
-const CONTACT_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/contacts";
+const CONTACT_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/contacts";
 
 const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);

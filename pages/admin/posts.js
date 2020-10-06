@@ -11,7 +11,7 @@ import AdminLayout from '../../components/AdminLayout';
 import MainNav from '../../components/AdminMainNav';
 
 
-const GET_POSTS_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+const GET_POSTS_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 
 const AdminPost = (props) => {
     const [title,setTitle] = useState("");

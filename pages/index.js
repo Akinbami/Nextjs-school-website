@@ -579,8 +579,8 @@ const Index = (props) =>{
 }
 
 Index.getInitialProps = async function(context) {
-  const POST_API = `https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
-  const TESTIMONIAL_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
+  const POST_API = `https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
+  const TESTIMONIAL_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/testimonies"
 
   const res = await fetch(POST_API);
   const posts = await res.json();

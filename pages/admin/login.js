@@ -14,7 +14,7 @@ import AdminLayout from '../../components/AdminLayout';
 
 
 
-const LOGIN_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/login"
+const LOGIN_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/login"
 // const cookies = new Cookies();
 
 const Login = () => {

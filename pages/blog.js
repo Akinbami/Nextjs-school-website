@@ -143,7 +143,7 @@ const Blog = (props) => {
 
 Blog.getInitialProps = async function() {
   // const res = await fetch('https://0mi6xhcet3.execute-api.us-east-2.amazonaws.com/dev/api/designs');
-  const POST_API = `https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
+  const POST_API = `https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts?draft=${false}`
 
   const res = await fetch(POST_API);
   const data = await res.json();

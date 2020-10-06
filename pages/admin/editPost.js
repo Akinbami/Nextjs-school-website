@@ -27,8 +27,8 @@ const QuillNoSSRWrapper = dynamic(
     import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> }
 )
 
-const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
-const apiBaseURL = "https://z2evkvjux4.execute-api.us-east-2.amazonaws.com/prod"
+const POST_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+const apiBaseURL = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod"
 
 
 
@@ -139,7 +139,7 @@ const EditPost = (props) => {
         })
         .then(function(json){
           console.log(json)
-          let img= 'https://slsuploadabi.s3.us-east-2.amazonaws.com/'+ file.name
+          let img = 'https://school-abi-blog-images.s3.us-east-2.amazonaws.com/'+ file.name
           console.log("image location after post ",img)
           setImageLocation(img)
           return fetch(json.uploadURL, {
@@ -398,7 +398,7 @@ EditPost.getInitialProps = async context => {
   console.log("this is the token ",auth_token)
   console.log(context.query)
 
-  const AUTHORIZE = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/secret"
+  const AUTHORIZE = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/secret"
 
   // getting current logged in user with the token
   const headers = {

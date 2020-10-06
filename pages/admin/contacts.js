@@ -16,7 +16,7 @@ import AdminLayout from '../../components/AdminLayout';
 import MainNav from '../../components/AdminMainNav';
 
 
-const GET_CONTACTS_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/contacts"
+const GET_CONTACTS_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/contacts"
 
 
 const AdminContacts = (props) => {
