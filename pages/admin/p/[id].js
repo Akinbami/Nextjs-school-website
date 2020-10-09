@@ -16,7 +16,7 @@ import AdminLayout from '../../../components/AdminLayout';
 import MainNav from '../../../components/AdminMainNav';
 
 
-const POST_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts"
+const POST_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts"
 
 const AdminSinglePost = (props) => {
     const [title,setTitle] = useState("");
@@ -178,7 +178,7 @@ const AdminSinglePost = (props) => {
 
 AdminSinglePost.getInitialProps = async function(context) {
   const { id } = context.query;
-  const res = await fetch(`https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/posts/${id}`);
+  const res = await fetch(`https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts/${id}`);
   // const res = await fetch(GET_POSTS_API);
   const data = await res.json();
 
