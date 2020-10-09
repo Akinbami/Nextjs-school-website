@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Header from './Header';
 
-const SUBSCRIPTION_API = "https://gwh3ump9m0.execute-api.us-east-2.amazonaws.com/prod/api/subscriptions";
+const SUBSCRIPTION_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/subscriptions";
 
 const Layout = props => {
     const [isLoading, setIsLoading] = useState(false);

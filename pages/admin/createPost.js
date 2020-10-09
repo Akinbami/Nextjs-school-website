@@ -26,8 +26,7 @@ const QuillNoSSRWrapper = dynamic(
     import('react-quill'), { ssr: false, loading: () => <p>Loading ...</p> }
 )
 const POST_API = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod/api/posts"
-const apiBaseURL = "https://nephkcspdl.execute-api.us-east-2.amazonaws.com/prod"
-
+const uploadBaseURL = "https://fyqzgpokyj.execute-api.us-east-2.amazonaws.com/prod"
 
 const CreatePost = (props) => {
     const [title,setTitle] = useState("");
@@ -114,7 +113,7 @@ const CreatePost = (props) => {
 
       var reader = new FileReader();
       reader.addEventListener('loadend', function(e){
-        fetch(apiBaseURL+"/requestUploadURL", {
+        fetch(uploadBaseURL+"/requestUploadURL", {
           method: "POST",
           headers: {
             'Content-Type': 'application/json'
@@ -128,8 +127,8 @@ const CreatePost = (props) => {
           return response.json();
         })
         .then(function(json){
-          console.log(json)
-          setImageLocation('https://school-abi-blog-images.s3.us-east-2.amazonaws.com/'+ file.name)
+          let imgLocation = json.uploadURL.split('?')[0]
+          setImageLocation(imgLocation)
           return fetch(json.uploadURL, {
             method: "PUT",
             body: new Blob([reader.result], {type: file.type})
